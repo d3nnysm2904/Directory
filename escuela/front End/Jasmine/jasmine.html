@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<title>Taxes Tests</title>
+
+<!-- include CSS for Jasmine -->
+<link rel="stylesheet"
+  href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css" />
+</head>
+<body>
+
+    <ul>
+        <li> <B> it(..) </B> is a function that accepts two arguments,the first argument is the name used to refer the test ;this helps us find the test if it fails </li>
+    
+        <li> the second argument is a callback function that executes the tests</li>
+        <li>we pass the JS that we want to test as the first argument to the 'expect()' function   </li>
+        <li>the formats is <b>expect(someValue).someMatcher(..)</b></li>
+    </ul>
+
+    <h2>Matchers</h2>
+<ul>
+  <li><b>toEqual(obj)</b> checks that the value is the same (different list with same values match)</li>
+  <li><b>toBe(obj)</b>is the same object(different list with same values doesnt work</li>
+  <li><b>toContains(obj)</b> Does object/array contais this item</li>
+  <li><b>not.</b> add before matcher to invert (expect(...).not.toEqual(7)</li>
+<li><b>toBeInstanceOf(number , string or Array)</b></li>
+  <li>full list <a href="http://jasmine.github.io/api./edge/matchers.html"></a></li>
+
+</ul>
+
+<h2>cleaning up test </h2>
+<ul>
+  <li></li>
+</ul>
+
+
+<p>Unit testing vs integration testing </p>
+
+<ul>
+  <li>Unit test :narrow in scope  ;
+    verify a module of code is doing it is intended to do  </li>
+<li>simple and cheap </li>
+
+  <li>integration test :broader scope , verify that multiples modules of code  </li>
+</ul>
+<!-- <input type="text"  id="nameInput"> -->
+
+<!-- include JS for Jasmine -->  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/4.0.1/jasmine.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/4.0.1/jasmine-html.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/4.0.1/boot0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/4.0.1/boot1.min.js"></script>
+
+<!-- include your JS & test file -->
+<script src="taxes.js"></script> 
+<script src="taxes.test.js"></script>
+</body>
+</html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

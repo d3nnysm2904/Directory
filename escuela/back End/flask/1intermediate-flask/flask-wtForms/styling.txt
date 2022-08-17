@@ -1,0 +1,30 @@
+styling wtforms 
+
+templates/add_new_employee
+
+
+<body>
+  <h1>Edit Employee</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden'%}
+    <p>
+      {{field.label}}
+
+
+      *{{field (class_='style_me')}}*
+
+
+      {% for err in field.errors %}
+
+
+
+      
+      {{err}}
+      {% endfor %}
+    </p>
+    {% endfor %}
+    <button>Save</button>
+  </form>
+
+</body>

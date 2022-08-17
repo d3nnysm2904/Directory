@@ -1,0 +1,75 @@
+ body{
+    background-image:url("img/background.jpg") ;
+    background-size:cover;
+    
+}  
+
+#start{
+
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-family: 'Titan One', cursive;
+   font-size: 4rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+    text-decoration-color: red;
+    background-color :rgb(239, 184, 16);
+    border: solid rgb(30, 2, 2) 5px;
+    border-radius: 10px;
+
+}
+
+.rgb{
+    font-size: 6rem;
+}
+
+/* #rgb1{display: ;
+    margin-left: 200px;
+}
+#rgb2{position: relative;
+   margin-top: -126px;
+    margin-left: 700px
+}  */
+
+
+#rgb1 {
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+}
+
+#rgb2{
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+#game{
+    display: grid;
+    grid-template-columns: repeat(4,250px );
+   margin-top: 0px; 
+ justify-content: center;
+
+ ;
+}
+
+
+/* #game{
+ display: flex;
+ flex-wrap:wrap;
+ width:fit-contents;
+ height: 400px;
+align-items:baseline;
+text-align: center;
+;
+} */
+
+/* .img-png{
+    display: flexbox;
+    justify-content: center;
+    padding: 10px;
+} */
+

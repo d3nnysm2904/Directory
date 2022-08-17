@@ -1,0 +1,56 @@
+Flask debug toolbar 
+
+Ultra useful add-on for Flask that shows, in browser, details about app
+install add-on produt 
+in terminal:
+
+pip3 install flask-debugtoolbar
+
+pip3 freeze > requirements.txt
+
+inside app.py 
+
+from flask import Flask, request, render_template
+from flask_debugtoolbar import DebugtoolbarExtension
+
+app=Flask(__name__)
+app.config['SECRET KEY']= 'oh secret' #this needs to be inside our app for the debugger to work 
+
+debug =DebugToolbarExtension(app)
+
+
+-------------------
+to change the pin we can use in terminal 
+
+WERKZEUG_DEBUG_PIN=123456789 flask run 
+
+-------------------------------------
+python debugger also known as pdb
+
+to add a breakpoint to your code 
+
+def my_function():
+    ...
+    import pbd 
+    pbd.set_trace()
+
+    ...
+
+in terminal :
+python -m unittest file_name.py
+
+Debugger basic 
+? get help
+l  list code where i am
+p print this expresion
+pp Pretty print thid expresion
+n Go to next line (step over)
+s Step into function call 
+r Return from function call 
+c Continue to next breakpoint
+w print frame (where i am)
+q quit debugger 
+
+
+
+"*.html": "jinja-html","html"

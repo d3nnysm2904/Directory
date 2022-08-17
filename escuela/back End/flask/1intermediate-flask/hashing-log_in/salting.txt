@@ -1,0 +1,26 @@
+Salting
+
+Popular Algorithms
+
+
+Cryptographic Hashes:                                           Password Hashes:
+
+MD5                                                                 Argon2
+
+
+SHA (family)                                                        Bcrypt
+
+
+(Fast, non-reversible, output very different)                       Scrypt
+                                                                (Same but slow and hard to optimize)
+
+ 
+Salt:a random string introduced before hashing 
+
+password      salt     hased result 
+-------------------------------------
+penguin1      xab17     qovoyc8|xab17 
+penguin1      meeps     qovonft|meeps 
+
+
+rainbow table 

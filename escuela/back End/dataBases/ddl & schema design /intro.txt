@@ -1,0 +1,35 @@
+DDL basic 
+shell commad :
+
+ createdb datab_name
+ dropdb datab_name 
+
+
+Creating and Droping  databases inside psql shell :
+
+ CREATE DATABASE yet_another_db;
+
+ DROP DATABASE yet_another_db;
+
+---------------------------------------------------------
+
+Creating Tables 
+we create the table and inside () we specify kind of key value pairs 
+between a column name and then a data type 
+We have different data types 
+
+CREATE TABLE name_tables (
+id SERIAL PRIMARY KEY,
+title TEXT,
+author TEXT,
+price FLOAT,
+page_count INTEGER,
+publisher TEXT,
+publication_date DATE 
+
+);
+
+
+inside terminal we can drop a table username 
+
+DROP TABLE name_tables 

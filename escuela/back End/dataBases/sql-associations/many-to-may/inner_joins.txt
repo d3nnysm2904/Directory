@@ -1,0 +1,53 @@
+in sql-associations model.py in flask  app 
+
+Costum join queries 
+
+ Joining 
+ Can also specify joins directly 
+ Can be more explicit about what u want to get 
+ Connect tables withaout defined relationship
+ Needed for outer joins 
+
+     
+
+
+
+cross join 
+
+db.session.query(Emp.name, Dt.phone).all()
+This will get all names and matche it with every single phone in Dt 
+
+[('Denny Sanchez', '645-5675'),
+ ('Jenny Mosquera', '645-5675'),
+ ('Yaki Obando', '645-5675'),
+ ('Adolis Barzaga', '645-5675'),
+ ('Luisa Mejias', '645-5675'),
+ ('Denny Sanchez', '344-567'),
+ ('Jenny Mosquera', '344-567'),
+ ('Yaki Obando', '344-567'),
+ ('Adolis Barzaga', '344-567'),
+ ('Luisa Mejias', '344-567'),
+ ('Denny Sanchez', None),
+ ('Jenny Mosquera', None),
+ ('Yaki Obando', None),
+ ('Adolis Barzaga', None),
+ ('Luisa Mejias', None)]
+
+
+ Usually we want to be more specific to teh info we get 
+
+join 
+db.session.query(Emp.name,Dt.dept_name,Dt.phone).join.(Dt).all())
+
+db.session.query(Emp.name, Dt.phone).join(Emp).filter(Emp.state=='FL').all()
+
+def join():
+    '''Show Model_name with join'''
+
+    emmps=(db.session.query(Emp.name, 
+                            Dt.dept_name,
+                            Dt.phone)
+            .join.(Dt).all())
+
+    for name,dept,phone in emps :
+        print(name,dept, phone)    

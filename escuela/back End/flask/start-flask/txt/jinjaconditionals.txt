@@ -1,0 +1,10 @@
+working in @app.route('/lucky')
+
+
+{% IF CONDITION_EXPR %} ... {% ENDIF %}
+
+
+{% if complement %}
+    You're so:
+    ...
+{% endif %}    

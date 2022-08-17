@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+   
+</head>
+<h1>Forms Demos</h1>
+<body>
+    <input type="text"><br>
+    <form >
+      <input name="City " type="text"><br>
+
+    </form>
+
+<hr>
+
+<h1>Register </h1>
+
+<form ><input
+     type="text"
+     name="Enter "
+      placeholder="Enter Name "
+    value="Name"  maxlength="10"
+        minlength="2">
+         <!--this is for the minimum and maximum caracters in the form required-->
+        
+       </form><br>
+ 
+
+
+
+
+
+
+<form> 
+   the form wont submit with type button  <button type="button">Our <b>first button</b>  </button><br>
+   <input name="city" type="text" placeholder="Enter a city ">
+   <input type="email" name="Email" placeholder="email"><br>
+   <input type="password" name="password" placeholder="password ">
+   <input type="checkbox" name=""to-agree> I agree to the terms of service 
+   <button type="submit">Submit Form </button>
+</form><br>
+
+<form>
+   <!-- <input type="submit" value="Next" >-->
+</form><br>
+
+<h2>Radio </h2>
+<form> 
+    <input type="radio" name="Bike-type" value="Road "> Road<br>
+    <input type="radio" name="Bike-type" value="Mountain "> Mountain<br>
+    <input type="radio" name="Bike-type" value="Hybrid "> Hybrid <br>
+</form> <!-- in radio buttons need same name to be able to select , value is the information sed once subbmited -->
+
+<h2>Other input types </h2>
+<form >
+ Pick a color    <input type="color" name="Color"><br>
+
+ Pick a date  <input type="date" id="Start" name="Trip-start" value="2018-07-22" min="2018-12-31" max="2018-12-31" ><br>
+ <input type="range" name="Joy" min="1" max="10"><br>
+ <input type="image" id="image" alt="Login"
+ src=https://1.bp.blogspot.com/-33yWnmi1pDs/UQfUtNjwhOI/AAAAAAAAg08/xzu7cauygLY/s1600/TatraPhotographylake2534671.jpg" width="200" height="200" alt="">>
+<button type="submit"> Submit <br> </button>
+</form>
+<hr>
+<h2>Options </h2>
+<select name="animal" >
+    <option value="">Choose the animal </option>
+    <option value="cat">Cat</option>
+    <option value="dog">Dog</option>
+    <option value="Horse">Horse</option>
+</select>
+
+<textarea name="Bio" cols="10" rows="10" minlength="10" maxlength="100"></textarea>
+
+
+
+<h3>LABELS </h3>
+<form >  
+    <!-- labels using nesting  -->
+    <label >Enter email</label>
+    <input type="email"  name="Email" placeholder="Email"> <br>
+    <label > Enter Password 
+    <input type="password"  name="password" placeholder="password"></label><br>
+    <label ><input type="checkbox"  name="checkbox">
+     I agree</label> <br>
+    <p>Please select a option </p>
+       <!--label using id and for -->
+        <label for="email ">
+        <input type="radio" name="1" value="1" id="email ">1</label>
+        <label > <input type="radio" name="1" value="2">2</label>
+        <label ><input type="radio" name="1" value="3">3</label>
+    
+</form>
+
+<!--<form><input type="file"></form> this is not the way ti import a file -->
+<form method="post" enctype="multipart/form-data" >Choose file to upload 
+    <input type="file" name="File "> 
+    <button type="submit"> Upload File </button>
+</form>
+
+
+
+
+</html>
+

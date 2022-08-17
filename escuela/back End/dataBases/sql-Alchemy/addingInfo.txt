@@ -1,0 +1,38 @@
+Adding several info to our table 
+
+
+ names =['Rocky','Yuma','King']
+ species=['Bully','Dog','Criollo']
+ pets= [Pet(name=n,species=s)for n,s in zip(names,species)]
+
+ zip creates a tuple and relates names with species: Rocky -Bully ; Yuma-Dog; King - Criollo 
+
+ then to add all info to the table db 
+ db.session.add_all(pets)
+
+Modifying a pet in the table so far we have this 
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  2 | Blue          | Cat     |     15
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+
+
+in ipython there is avariable blue that contains information about blue name species and hunger and id ,
+if i want to change this instance in the table 
+
+blue.name= 'Blue Sanchez'
+
+db.session.addd(blue)
+db.session.commit()
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+  2 | Blue Sanchez  | Cat     |     15

@@ -1,0 +1,314 @@
+Refer to app.py inside flaskapp
+
+SQLAlchemy ORM
+  Popular ,powerful Python-based ORM (object-relational mapping)
+  Instead of writing SQL in flask,we instead map that sequel information adn different query into objects, these objects are then things that we can call methods on 
+
+  we are going to be using a variant that is made to work with Flask  
+
+Installing sql alchemy 
+
+Need the program that lets Python speaks PostgresSQL :psycopg2
+Need the program taht provides SQLAlchemy :flask-sqlalchemy
+
+in terminal :
+
+pip3.8 install psycopg2-binary
+pip3 install flask-sqlalchemy
+
+in our flask app.py :
+
+from flask_sqlalchemy import SQLAlchemy
+
+Then we initialize a variable usually :
+
+db = SQLAlchemy()
+
+Then next things is associate our flask application with the db variable :
+
+db.app = app 
+db.init_app(app)
+
+we still haven't said wich database to use, what the name of it is, to do that we need to configure an very important property :
+This is where we specify not only taht we're using Postgres but also the particular name of the database we want to use 
+
+app.config['SQLALCHEMY_DATABASE_URI]='postgresql:///database_name'
+
+Then run ipython in terminal 
+
+%run app.py 
+ 
+
+
+ run db in terminal 
+    db 
+    <SQLAlchemy engine=postgresql:///movies_example>
+
+this line allows use to directly run SQL code a query from python;
+we save it to a variable:
+
+    movies = db.session.execute("SELECT * FROM movies;")
+
+    if we run the variable as a list: 
+   
+    list(movies)
+
+    this is what we get because movies database 
+
+    [(1, 'Star Wars: The Force Awakens', 2015, 136, 'PG-13', 1),
+ (2, 'Avatar', 2009, 160, 'PG-13', 2),
+ (3, 'Black Panther', 2018, 140, 'PG-13', 1),
+ (4, 'Jurassic World', 2015, 124, 'PG-13', 3),
+ (5, 'Marvel’s The Avengers', 2012, 142, 'PG-13', 1),
+ (7, 'Amadeus', 1984, 180, 'R', 4),
+ (8, 'Guardians 2', None, None, None, None)]
+
+looping
+
+all_movies =list(movies)
+
+for movie in all_movies:
+print(movies[1],movies[4])
+
+ *************************************************************************
+ A BETTER WAY TO CONECTING 
+ORM (object-relational mapping)
+
+Configuring SQLAlchemy
+
+usually we move all database stuff into a file \
+we define a model 
+a model is a class that represent something in your SQL database so if we're working with movies db we create a movie model 
+
+we create a model.py and pass all info related to database and in app.py we import everything 
+
+in app.py refer to app.py and models.py   : 
+
+from models import db , connect_db
+
+connect_db(app)
+
+
+Seting up SQLAlchemy :
+
+SQLALCHEMY_DATABASE_URI- Where is the database 
+
+SQLALCHEMY_TRACK_MODIFICATIONS- Set this to false or SQLAlchemy will yell at you :
+
+FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+
+To make this away :
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
+SQLALCHEMY_ECHO -Print all SQL statements to the terminal (helpful for debbugin )
+
+
+****************************************************************
+Our first MOdel 
+OO into SQL 
+The point of a model is to create a python class so we can call sql in python methods 
+
+first of all we create a new database in the terminal 
+
+createdb pet_shop_db 
+
+This are the types of constraints we are mostly be using 
+Integer
+
+an integer
+
+String(size)
+
+a string with a maximum length (optional in some databases, e.g. PostgreSQL)
+
+Text
+
+some longer unicode text
+
+DateTime
+
+date and time expressed as Python datetime object.
+
+Float
+
+stores floating point values
+
+Boolean
+
+stores a boolean value
+
+PickleType
+
+stores a pickled Python object
+
+LargeBinary
+
+stores large arbitrary binary data
+
+
+********************************************************
+ONCE WE CREATE THE MODEL IN MODELS.PY TO CREATE TEH DATABASE IN THE TERMINAL INSIDE IPYTHON 
+
+%run app.py 
+db.create_all()
+
+
+
+CHANGING  THE MODEL 
+
+ONCE THE MODEL IS CREATED WE CANT UPDATE THE TABLE , THE EASIES WAY IS TO GO TO POSTGRES AND:
+DROP TABLE pets 
+
+
+
+USING OUR MODEL 
+
+Creating and inserting new data into the table 
+
+All we need to do is create a new instance of the pet class 
+we need to make sure in app.py we are importing the class Pet, in this case the one we are working with 
+
+
+>>> fluffy =Pet(name="fluffy",species="Pet")
+>>> fluffy.hunger
+20
+
+>>>db.session.add(fluffy)  #required to add to database 
+>>> db.session.commit()  #commit the transaction
+
+
+--------------------------------------------------------
+Adding several info to our table 
+
+
+ names =['Rocky','Yuma','King']
+ species=['Bully','Dog','Criollo']
+ pets= [Pet(name=n,species=s)for n,s in zip(names,species)]
+
+ zip creates a tuple and relates names with species: Rocky -Bully ; Yuma-Dog; King - Criollo 
+
+ then to add all info to the table db 
+ db.session.add_all(pets)
+
+Modifying a pet in the table so far we have this 
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  2 | Blue          | Cat     |     15
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+
+
+in ipython there is avariable blue that contains information about blue name species and hunger and id ,
+if i want to change this instance in the table 
+
+blue.name= 'Blue Sanchez'
+
+db.session.addd(blue)
+db.session.commit()
+
+ id |     name      | species | hunger
+----+---------------+---------+--------
+  1 | Stevie Chicks | Chicken |     13
+  3 | Rocky         | Bully   |     20
+  4 | Yuma          | Dog     |     20
+  5 | King          | Criollo |     20
+  2 | Blue Sanchez  | Cat     |     15
+
+----------------------------------------------------------------
+
+Better representation 
+
+
+we use __repr__  to better see a representation of the variable created 
+
+
+    def __repr__(self):
+        """Show info about pet."""
+
+        p = self
+        return f"<Pet id={p.id} name={p.name} species= {p.species} hunger={p.hunger}>"
+
+
+ipython:
+blue 
+<Pet id=2 name=Blue Sanchez species=Cat hunger= 15>
+
+
+----------------------------------------------------------------------
+Quering basics using SQLAalchemy 
+In every single model we create like the Pet class, there is the query  attribute we can call, query is going to give us a query object 
+
+ipython:
+Pet.query
+
+ <flask_sqlalchemy.BaseQuery at 0x7f54dae1a850>
+
+ is like writing but witahout sendig it 
+ SELECT * FROM pets;
+
+  Pet.query.all()
+
+[<Pet 1 Stevie Chicks Chicken 13>,
+ <Pet 3 Rocky Bully 20>,
+ <Pet 4 Yuma Dog 20>,
+ <Pet 5 King Criollo 20>,
+ <Pet 2 Blue Sanchez Cat 15>]
+
+
+Pet.query.get(1)
+
+is like writing :
+
+SELECT* FROM pets WHERE id =1 
+
+FILTER -FILTER_BY 
+
+.query is a objetc that represents the class and has a bunch of methods 
+getting all species that are Dogs:
+
+Pet.query.filter_by(species='Dog').all()
+
+getting the first species that are Dog:
+
+Pet.query.filter_by(species='Dog').first()
+
+gets all dogs and hunger =20:
+
+Pet.query.filter_by(species='Dog',hunger=20)
+
+
+filter uses key words argument 
+
+ Pet.query.filter(Pet.species == 'Cat').all()
+
+
+ Pet.query.filter(Pet.hunger > 20).all()
+
+Pet.query.filter(Pet.Hunger > 15,Pet.species== 'Dog').all()
+
+is like saying 
+
+SELECT * FROMS pets WHERE hunger >15 AND species= 'Dog';
+
+
+***************************************************************
+ Pet.query.all()
+
+ gets all info , but to have all that we have to have  a function like __repr__ in models.py 
+
+ Better representation 
+
+
+we use __repr__  to better see a representation of the variable created 
+
+
+    def __repr__(self):
+        """Show info about pet."""
+
+        p = self
+        return f"<Pet id={p.id} name={p.name} species= {p.species} hunger={p.hunger}>"
+ *********************************************************************

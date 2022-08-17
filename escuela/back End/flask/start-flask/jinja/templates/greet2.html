@@ -1,0 +1,23 @@
+<!-- extending base.html to here  -->
+
+{% extends 'base.html' %}
+ {% block title %} Greet 2.0 Demo {% endblock %}  <!--name of title -->
+{% block content %}
+
+
+
+      <h1>Hello there {{username}}!</h1>
+
+      {% if wants_compliments %}
+     <h2>Here are the compliments</h2>
+     <ul>
+      {% for complement in complements %}
+
+         <li>{{complement}}</li>
+
+       {% endfor%}
+     </ul>
+      {% endif %}
+
+
+{% endblock %}

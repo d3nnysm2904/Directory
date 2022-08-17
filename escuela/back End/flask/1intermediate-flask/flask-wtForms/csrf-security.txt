@@ -1,0 +1,29 @@
+insde tempaltes snack_add_form.html
+
+if field.widget.input_type != 'hidden' %}
+
+if we take this away in html is gonna be something writen like 
+CSRF Token (a hidden field )
+
+CSRF Security 
+a form on any site can submit to any other site     
+with this if fiel ..... 
+we can make sure there are no hidden form send to our server 
+
+in html we include  inside the form  
+
+{{form.hidden_tag()}}
+
+and then if field.widget.input_type != 'hidden' %} do this  
+
+in our app.route we need to validate the token once the form is submited
+
+ if form.validate_on_submit():
+        name = form.name.data
+        price = form.price.data
+        flash(f"Added {name} at {price}")
+        return redirect("/add")
+
+    else:
+        return render_template(
+            "snack_add_form.html", form=form)

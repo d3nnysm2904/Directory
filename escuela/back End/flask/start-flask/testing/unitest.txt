@@ -1,0 +1,42 @@
+Unit test 
+python unittest module 
+
+
+first thing 
+
+/import adder (function in aritmetic.py)
+
+from unittest import TestCase
+
+class AdditionAdderTest(TestCase)
+"""Example of unit test """
+
+    def test_adder(self):
+        assert aritmetic.adder(2,3)==5
+
+there is also this way 
+    
+from unittest import TestCase
+
+class AdditionAdderTest(TestCase)
+"""Example of unit test """
+    def test_adder(self):
+        #instead of assert aritmetic.adder(2,3)==5
+        self.assertEqual(aritmetic.adder(2,2)==4)
+        
+
+
+python -m unittest
+
+
+we create a fuunction tha inherits TestCase, define a class 
+
+class AdditionAdderTest(TestCase)
+"""Example of unit test """
+
+
+After that we need to add "test_" to the function we testing 
+
+to run 
+python -m unittest NAME_OF_FILE 
+runs all cases 

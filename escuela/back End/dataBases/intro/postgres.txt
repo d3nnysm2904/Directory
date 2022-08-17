@@ -1,0 +1,87 @@
+installing postgres database:
+
+sude apt-get install postgresql
+
+-------------------
+to check if is running we use this command:
+
+sudo service postgresql status 
+-------------------
+to start it:
+
+sudo service postgresql  start 
+
+to stop it 
+
+sudo service postgresql  stop
+
+----------------------------
+ next we need to run this command , this is going to create a user a postgres user specifically with our username:
+
+ sudo -u postgres createuser -s $(whoami); createdb $(whoami) 
+
+ --------
+this tells u the username ()
+
+ whoami 
+
+-----
+this open the psotgres shell 
+
+psql
+
+to get out of it :
+
+\q 
+
+or 
+ctrl+d
+----- 
+to create a database we use a command :
+
+createdb database_name 
+
+this is inisde terminal not psql shell 
+---------------
+when database is created we can run "  psql database_name " and connects to the data base    
+---------
+
+selects information in the database
+
+SELECT * FROM name_in_database;
+---------
+
+seeding a database :
+sometimes we have some data we want to initialize  
+you can feed .sql scripts into the program psql 
+creating the data base from a file .psql 
+
+psql < my_database.sql 
+
+----------------------------------------
+Common Commands 
+
+\l - list all databases 
+
+\c db_name - connect to db_name 
+
+\dt -list all tables (in current db)
+
+\d table_name -gets details about table_name (in current db )
+
+\q -quit psql (also ctrl+d )
+
+---------------------------------------
+
+Delete database 
+
+dropdb my_database_name 
+
+-----------------------------
+you can also make a backup of your database by "dumping it" to a file :
+
+--pg_dump -C -c -0 my_database_name > backup.sql--
+
+this makes a file in the current directory (backup.sql)
+it contains all of the commands neccesary to recreate the current database when seeding 
+

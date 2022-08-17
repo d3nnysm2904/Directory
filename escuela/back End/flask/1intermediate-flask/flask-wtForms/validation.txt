@@ -1,0 +1,57 @@
+https://wtforms.readthedocs.io/en/3.0.x/validators/
+
+regular expresions 
+regexp 
+
+
+
+When we define our individual form classes, we can also add in special validators that can say for example  price can be between 0 and 20 $, input is required 
+
+in app.py when we do form = NewEmployeeForm()
+
+when there is a validators and validation is not meet in console whe can do : form.errors
+
+Syntax
+
+form.py 
+
+
+from wtforms.validators import InputRequired,Optional,Email
+
+class NewEmployeeForm(FlaskForm):
+
+    name=StringField('Name',
+                    validators=[InputRequired])
+    
+    email=StringField('Email Address'.
+                      validators=[Optional(),Email() ]  )
+
+
+in html 
+inside the form table 
+{{for err in field.error}}
+{{err}}
+{{%endfor%}}
+
+
+<form action="/employees/new" method="POST">
+        {{ form.hidden_tag() }} <!--add type=hidden form fields -->
+      
+        {% for field in form
+               if field.widget.input_type != 'hidden' %}
+      
+          <p>
+            {{ field.label }}
+            {{ field }}
+      
+            {% for error in field.errors %}
+              {{ error }}
+            {% endfor %}
+          </p>
+      
+        {% endfor %}
+      
+        <button type="submit">Submit</button>
+      </form>
+
+

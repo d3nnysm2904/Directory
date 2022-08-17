@@ -1,0 +1,152 @@
+installing postgres database:
+
+sude apt-get install postgresql
+
+-------------------
+to check if is running we use this command:
+
+sudo service postgresql status 
+-------------------
+to start it:
+
+sudo service postgresql  start 
+
+to stop it 
+
+sudo service postgresql  stop
+
+----------------------------
+ next we need to run this command , this is going to create a user a postgres user specifically with our username:
+
+ sudo -u postgres createuser -s $(whoami); createdb $(whoami) 
+
+ --------
+this tells u the username ()
+
+ whoami 
+
+-----
+this open the psotgres shell 
+
+psql
+
+to get out of it :
+
+\q 
+
+or 
+ctrl+d
+----- 
+to create a database we use a command :
+
+create database db_name 
+
+createdb database_name 
+
+this is inisde terminal not psql shell 
+---------------
+when database is created we can run "  psql database_name " and connects to the data base    
+---------
+
+selects information in the database
+
+SELECT * FROM name_in_database 
+---------
+
+seeding a database :
+sometimes we have some data we want to initialize  
+you can feed .sql scripts into the program psql 
+creating the data base from a file .psql 
+
+psql < my_database.sql 
+
+----------------------------------------
+Common Commands 
+
+\l - list all databases 
+
+\c db_name - connect to db_name 
+
+\dt -list all tables (in current db)
+
+\d table_name -gets details about table_name (in current db )
+
+\d+ table_name - gets more details 
+
+\q -quit psql (also ctrl+d )
+
+\x -changes the display of the table to be better read 
+
+ctrl+a go to beggining 
+ctrl+e go to end 
+---------------------------------------
+
+Delete database 
+
+dropdb name_db
+drop database  my_database_name 
+
+-----------------------------
+you can also make a backup of your database by "dumping it" to a file :
+
+--pg_dump -C -c -0 my_database_name > backup.sql--
+
+this makes a file in the current directory (backup.sql)
+it contains all of the commands neccesary to recreate the current database when seeding 
+
+
+
+
+
+
+
+What is CRUD: 
+
+letter     verb         Sql commands
+-------------------------------------------
+  C       Create          INSERT INTO 
+-------------------------------------------
+  R       Read            SELECT ... FROM 
+-------------------------------------------
+  U       Update          UPDATE ...SET 
+-------------------------------------------
+  D       Delete          DELETE FROM 
+
+
+---------------------------------------------
+Determine wich table to use to get data 
+opens all info from the db table 
+
+SELECT * FROM table_name_db; 
+
+---------------------------------------------
+
+this gives me only all titles from db choosed  
+
+SELECT titles FROM table_name; 
+
+---------------------------------------------
+
+this give me titles and author
+
+SELECT titles, author FROM table_name;
+
+---------------------------------------------
+
+WHERE (filter wich rows get included )
+In this case only books with price over $10 ()
+
+SELECT * FROM books WHERE price > 10;
+
+
+
+
+-----------------------------
+selects the titles and the page_count that are less than 800 and bigger than 700 
+
+SELECT title , page_count FROM books WHERE page_count >= 700 AND page_count <=800;
+-------------------------------------------
+
+if we want to retrieve some information and put a name to that info we use aliases   AS 
+
+SELECT AVG(page_count) AS avg_pages,AVG(price) AS avg_prices FROM books GROUP BY author ;

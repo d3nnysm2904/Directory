@@ -1,0 +1,17 @@
+Still working with library in demo 
+
+-- Inserting a row into the database 
+#title -The Iliad , author -Homer 
+
+INSERT INTO books (title, author )
+    VALUES('The Iliad','Homer') 
+
+
+
+Inserting severla books with titles only 
+INSERT INTO books(title) VALUES 
+ ('War and Peace')
+ ('Emma') 
+ ('Treasure Island')
+ 
+     

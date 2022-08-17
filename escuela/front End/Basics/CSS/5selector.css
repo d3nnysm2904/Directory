@@ -1,0 +1,82 @@
+img{  width: 20rem;}
+/*  the element (*) is the universal selector  */
+/* *{text-decoration: underline magenta wavy;} */
+
+
+/*  (ID SELECTOR )# and id name  to select a specific elemnt in the html like img or p*/
+/* #logo { width: 60rem;} */
+
+/* (CLASS NAME) to select  several elements  with < section class ="name of the section in html  hast to be .name (.first)>*/ 
+/* .first{ text-decoration: underline ;}
+.second {text-decoration: wavy underline ;} */
+
+/* descendent selector 
+target all paragraph tags inside of the body,regardless of how much nesting exist 
+ 
+ /* nav a { this is links a
+     font-size: 1.5em;color: rgb(255, 7, 19); 
+  } */
+
+ /* .first p { color: rgb(255, 230, 0); font-style: italic; font-family: fantasy;}
+
+.second ul { font-size: 1rem; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;} */
+
+/* adjacent sibling selector
+targets only the paragraphs tags that comes after h2 tags they must have the same element as well  */
+/* example  */
+h1 + h2 {font-size: 1rem; color: yellow;}
+h2 + h3{color: red;}
+
+/*  direct children selector 
+targets only h2 tags that are direct of section tags
+ex: HTML: 
+<body>
+   <section>
+     <h2> Yes me </h2>
+     <articel >
+      <h2> not me </h2>
+      <article>
+   </section>
+</body>*/
+section > h2 {color: green;}
+body {font-size: x-small;}
+/* multiple selector  */
+
+a, h2, .poem, #logo  { text-decoration: yellow
+    ; text-transform: uppercase;}
+
+    /*  pseudo class
+    a CSS pseudo class is a keyword added to a selector that specifies a special state of the selected element(s)
+    first-of-type*/
+    /*last-of-type*/
+    /*nth-of-type (2n) second type of each */
+
+    button:hover{color: rgb(108, 235, 4);
+    text-decoration:underline ;
+font-size: 5px;}
+
+input:focus {  background-color: rgb(255, 7, 7);}
+
+p:first-of-type { color: magenta;}
+
+.first section p:first-of-type { background-color: violet; text-shadow: 5px 5px maroon;}
+
+/*  pseudo element  */
+
+[type="text"]{background-color: yellow;}s
+
+img[src*="unsplash"] { width: 20rem;}
+
+/* SPECIFICITY
+Some selectors are far more specific than others
+-inline style
+-important!
+ - id
+-class
+-element */
+
+
+
+  .first h1 /*  hover over .first h1 sepecifity 0 1 0*/{color: rgb(255, 1, 1);}
+
+  h2 { color: lime !important;}

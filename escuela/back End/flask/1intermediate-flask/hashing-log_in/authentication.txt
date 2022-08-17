@@ -1,0 +1,3 @@
+Hashing functions 
+    Lets say we have a 1 or 20 character string, a hash function  willt take that input an spit out something that is of a fixed size, like a 10 character string or 100 character 
+    A has function is deterministic, meaning that for a given input value , it must generate the same hash value, you must get always the exact same output 

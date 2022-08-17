@@ -1,0 +1,62 @@
+Unit Test 
+    :does the individual component work ; test individual single components ,test one small piece of the app at a time like a single function 
+    testing code in isolated small pieces 
+    doesnt test integration of components
+    Promote modular code 
+        write code with testing in mind 
+
+
+Unit testing:
+    the first is using something thats built into python , is a assesment called 'assert' 
+    exmple:
+
+*
+
+def adder(x,y):
+        return x+y 
+    
+assert adder(1,1)==2, '1 +1 is not 2' 
+
+when assert find a error it will stop the code 
+
+
+python -o app.py 
+this will stop assert functionality 
+ *
+
+-----------------------------------
+DocTest are inside """ """ it tell u what the function does and can be tested from python terminal , comes with python 
+
+
+def mult(x, y):
+    """ Multiply numbers
+    >>> mult (3,4)
+    12
+    >>> mult(2,2)
+    4
+    """
+    return x*y
+to run :
+ python -m doctest -v aritmetic.py(name of file)
+
+
+
+
+----------------------------------------------------
+
+
+
+
+End-to-end Test:
+    You're testing the entire process, The entire application is tested in a real world scenario :
+
+*************************************
+
+
+--------------------
+vs code and unittest 
+
+
+-------------------------------------------------------------------
+
+Integr

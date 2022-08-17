@@ -1,0 +1,49 @@
+from http.client import responses
+from httplib2 import Response
+import request
+making request wiht python '
+
+pip3.8 install requests
+
+working with Itunes apis
+
+
+GET requests
+requests.get(url, params)
+
+
+resp = requests.get(
+    "https://itunes.apple.com/search",
+    params={"terms": "billy bragg", "limit": 3}
+)
+
+
+print(resp.json())
+
+responses
+Both .get() and .post() return a response instance 
+
+.text()
+    text of response 
+
+.status_code
+    Numeric status code (200,404,etc)
+
+.json
+    Converet JSON response text to python dictionary    
+
+
+POST requests
+
+requests.post(url,data,json)
+
+data
+    dictionary od data to send in traditional web from format 
+json    
+    Dictionary of data send as JSON string (best option )   
+
+
+requests.post(url, data={'username':'D3nnysm','password':'1234'})
+
+
+requests.post(url, json={'username':'D3nnysm','password':'1234'})

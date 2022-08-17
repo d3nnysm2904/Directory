@@ -1,0 +1,26 @@
+python debugger also known as pdb
+
+to add a breakpoint to your code 
+
+def my_function():
+    ...
+    import pbd 
+    pbd.set_trace()
+
+    ...
+
+in terminal to run test :
+python -m unittest file_name.py
+
+Debugger basic 
+? get help
+l  list code where i am
+p print this expresion
+pp Pretty print thid expresion
+n Go to next line (step over)
+s Step into function call 
+r Return from function call 
+c Continue to next breakpoint
+w print frame (where i am)
+q quit debugger 
+

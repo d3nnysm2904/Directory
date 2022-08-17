@@ -1,0 +1,19 @@
+forms.py
+
+class NewEmployeeForm(FlaskForm):
+
+    
+    dept_code = SelectField("Departament Code",coerce=int)
+
+app.py
+
+@app.route('/employees/new', methods=['GET', 'POST']')
+def handle_dept_code():
+***************************************    
+    form = NewEmployeeForm()
+    depts = db.session.query(Dt.dept_code, Dt.dept_name)
+
+    form.dept_code.choices=depts
+    
+  **************************************  
+    

@@ -1,0 +1,27 @@
+
+Keyboard shortcut	Action
+Ctrl + A	Select all content.
+Ctrl + C (or Ctrl + Insert)	Copy selected items to clipboard.
+Ctrl + X	Cut selected items to clipboard.
+Ctrl + V (or Shift + Insert)	Paste content from clipboard.
+Ctrl + Z	Undo an action, including undelete files (limited).
+Ctrl + Y	Redo an action.
+Ctrl + Shift + N	Create new folder on desktop or File Explorer.
+Alt + F4	Close active window. (If no active window is present, a shutdown box appears.)
+Ctrl + D (Del)	Delete selected item to the Recycle Bin.
+Shift + Delete	Delete the selected item permanently, skipping Recycle Bin.
+F2	Rename selected item.
+Esc	Close current task.
+Alt + Tab	Switch between open apps.
+PrtScn	Take a screenshot and stores it in the clipboard.
+Windows key + I	Open Settings app.
+Windows key + E	Open File Explorer.
+Windows key + A	Open Action center.
+Windows key + D	Display and hide the desktop.
+Windows key + L	Lock device.
+Windows key + V	Open Clipboard bin.
+Windows key + Period (.) or Semicolon (;)	Open emoji panel.
+Windows key + PrtScn	Capture a full screenshot in the "Screenshots" folder.
+Windows key + Shift + S	Capture part of the screen with Snip & Sketch.
+Windows key + Left arrow key	Snap app or window left.
+Windows key + Right arrow key

@@ -1,0 +1,60 @@
+The JOIN operation allows us to create a table in memory by combining information from different tables 
+Data from tables is matched according to a join condition 
+Most commonly , the join condition involves comparing a foreing key from one table and a primary key in another table  
+
+Types of Joins
+
+Inner 
+ only the rows that match the condition in both tables 
+
+
+
+----------------------------------------------------------------
+joinig both tables in memory 
+
+title is from movies tables and name is from studios table 
+
+ we are going to join studio_id on movies with the id of studios ,reference it 
+
+SELECT title,name
+ FROM movies 
+ JOIN studios 
+ ON movies.studio_id=studios.id;
+
+
+
+
+
+ if i wanted to select both id from movies and studio 
+
+ SELECT movies.id, studios.id FROM movies JOIN studios ON movies.studio_id = studios.id 
+--------------------------------------------------------------
+  INNER JOINS 
+
+  JOIN and INNER JOIN are the same , the INNER keyword is optional 
+
+  SELECT title, name
+  FROM movies 
+  INNER JOIN studios
+  ON movie.studio_id= studios.id  
+
+-------------------------------------------------
+  OUTER JOIN 
+  
+ Outer 
+ left -All of the rows from the first table (left) combined with matching rows from the second table 
+ 
+ rigth -The matching rows from the first table , combined with all  the rows from the second table 
+
+ full-All the  rows from both tables (left and rigth )
+
+ ---------------------------------------------------------------
+
+  this selects all information from the left side of table movies and added to our new in memory table ,but the rigth table wich is studios is not gonna have all the  info ,only info that is relateded tot he movies tables 
+
+  SELECT title ,name AS studio_name FROM movies LEFT JOIN studios ON movies.studio_id = studios.id;
+
+
+
+
+------------------------------------------------------------------

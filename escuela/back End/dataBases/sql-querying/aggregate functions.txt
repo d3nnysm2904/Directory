@@ -1,0 +1,33 @@
+working with library db 
+
+aggregate functions needs to be used with GROUP BY 
+
+COUNT selects all books rows and count how many they are 
+
+ SELECT COUNT(*) FROM books;
+=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+MIN 
+MAX 
+
+SELECTS the minimum and maximum price from the db_table books 
+
+SELECT MIN (price) ,MAX(price) FROM books;  
+
+=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+AVG 
+
+Does the average calculus from tha total pages 
+
+SELECT AVG(page_count) FROM books;
+
+=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+SUM 
+
+Sum all price of books
+
+SELECT SUM(price) FROM books; 
+
+=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+it does the avg to all books pages  of jk rowling , thr name has to be write the same
+
+SELECT AVG(page_count) FROM books WHERE author= 'J. K. Rowling';

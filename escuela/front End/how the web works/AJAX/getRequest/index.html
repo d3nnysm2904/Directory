@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>why use AJAX</li>
+      <li>dont need to reload page</li>
+      <li>interactive web sites</li>
+      <li>
+        fewer full page loads from server ;js can talk to other servers directly
+      </li>
+      <li>less info has to go acroos network</li>
+
+      <li>downside</li>
+      <li>Harder to make accesible websites</li>
+      <li>AJAX with axios</li>
+      <li>ctrl+c to stop server</li>
+      <li>adding axios js script </li>
+
+      <li>Asynchronicity </li>
+      <li>AJAX request are asynchronous1</li>
+    </ul>
+    <ul>
+        <li>Asynx/Await</li>
+        <li>when we do the get request the js code keeps going but the request takes time thats why we use asynx/await </li>
+        <li>axios.get() completes before the response is recieved </li>
+        <li>this meansthat if we want to use the data we get back from our AJAx request ,we need to wait until the response has been give to us </li>
+    </ul>
+
+    <button id="btn">Get misiion names </button>
+    <ul id="list">
+
+    </ul>
+<form action=""> <input id="breed"type="text">
+  <button id="pic">Dog pic</button>
+</form>
+   
+
+    <img id="dog" src="" >
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

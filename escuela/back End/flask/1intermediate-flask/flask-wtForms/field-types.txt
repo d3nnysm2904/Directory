@@ -1,0 +1,56 @@
+Field types 
+
+type of form field we want 
+
+-StringField: 
+    This field is the base for most of the more complicated fields, and represents an <input type="text">.
+    
+-FloatField:
+    A text field, except all input is coerced to an float. Erroneous input is ignored and will not be accepted as a value.
+
+
+-BooleanField:
+    (default field arguments, false_values=None)[source]
+    Represents an <input type="checkbox">. Set the checked-status by using the default-option. Any value for default, e.g. default="checked" puts checked into the html-element and sets the data to True
+
+
+-DateField:
+    DateField(default field arguments, format='%Y-%m-%d')[source]¶
+    Same as DateTimeField, except stores a datetime.date.
+
+
+-DateTimeField:
+    (default field arguments, format='%Y-%m-%d %H:%M:%S')[source]
+    A text field which stores a datetime.datetime matching a format.    
+
+-IntegerField:
+    Integer
+    (default field arguments)[source]
+    A text field, except all input is coerced to an integer. Erroneous input is ignored and will not be accepted as a value.
+
+
+-RadioField:
+    default field arguments, choices=[], coerce=str)[source]
+    Like a SelectField, except displays a list of radio buttons.
+    
+    Iterating the field will produce subfields (each containing a label as well) in order to allow custom rendering of the individual radio fields.
+
+    {% for subfield in form.radio %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+    {% endfor %}
+
+-EmailField:
+    (default field arguments)[source]
+    Represents an <input type="email">.
+
+-SelectField:
+        (default field arguments, choices=[], coerce=str, option_widget=None, validate_choice=True)[source]
+    Select fields take a choices parameter which is either:
+        a list of (value, label) pairs. It can also be a list of only values, in which case the value is used as the label. The value can be of any type, but because form data is sent to the browser as strings, you will need to provide a coerce function that converts a string back to the expected type.
+
+    a dictionary of {label: list} pairs defining groupings of options.
+
+    a function taking no argument, and returning either a list or a dictionary.

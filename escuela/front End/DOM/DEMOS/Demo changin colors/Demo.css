@@ -1,0 +1,28 @@
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+} */
+
+h1{ font-family: 'Press Start 2P', cursive;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-family: 'Titan One', cursive;
+    font-size: 200px;
+    text-align: center;
+    
+}
+.letter{
+    transition: 500ms;
+}
+
+h1:hover{
+
+}
+body{
+    background-color: black;
+}
+
+.yaki{
+    text-align: center  ;
+}

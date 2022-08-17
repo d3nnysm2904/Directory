@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="addfriend">
+        <label for="firstname">First Name</label>
+        <input type="text"  id="firstname">
+        <button>Add Friend</button>
+    </form>
+    
+    
+
+</form id="friendlist">
+    <h2>See your friend list </h2>
+    <ul id="friendlist">
+        <li>Yaki <button>Remove</button></li>
+        <li>Ado <button>Remove</button></li>
+        <li>Jenny <button>Remove</button></li>
+    </ul>
+    
+    
+<p>When click on the nwe button it doesnt work to remove <br>
+there are two ways</p>
+<ul> 
+    <li>adding the evnet listener when we create elements</li>
+    <li>Event delegation </li>
+</ul>
+
+<h1>Event delegation</h1>
+<p><b>Syntax:</b> <br>
+friendList.addEventListener('click',function(e){
+    if(e.target.tagName==="BUTON"){
+        event.target.parentElement.remove();}
+    }
+}</p>
+
+    <script src="app.js"></script>
+</body>
+</html>

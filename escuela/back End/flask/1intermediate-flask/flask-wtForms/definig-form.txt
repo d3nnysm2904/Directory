@@ -1,0 +1,51 @@
+Basic Example 
+
+from flask_wtf import FlaskForm
+from wtforms import StringField,FloatField
+
+class AddSnackForm(FlaskForm):
+'''Form for adding snacks '''
+
+name = StringField('SnackName') inside () is the label ;
+price = FloatField('Price in Usd')  inside () is the labe;
+
+
+
+
+the way we use these forms is defining a class that extends or inherits from the base Flask Form class 
+    so for every form that we want ,or every form type, you add a class name (AddSnackForm)  
+        then we are going to set up particular attributes(form firld) for each field we want to be on our form (name , price ,( in this case ) (these variables are not reflected in html))
+
+to add the form in our app 
+    in app.py 
+    from forms import class_form_name (in this case AddSnackForm)
+    
+then 
+    define our app.route 
+
+    @app.route("/add", methods=["GET", "POST"])
+    def add_snack():
+        """Snack add form; handle adding."""
+
+        form = AddSnackForm() #instance of AddSnackForm() 
+                              this makes a new obj a form obj base of the 
+                              class AddSnackForm() and we can add the form variable in html 
+
+        if form.validate_on_submit():
+            name = form.name.data
+            price = form.price.data
+            flash(f"Added {name} at {price}")
+            return redirect("/add")
+
+        else:
+            return render_template("snack_add_form.html", form=form)
+
+            
+
+type of form field we want 
+
+-StringField: 
+    This field is the base for most of the more complicated fields, and represents an <input type="text">.
+    
+-FloatField:
+    A text field, except all input is coerced to an float.        Erroneous input is ignored and will not be accepted as a value.

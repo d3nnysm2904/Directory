@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{% block title%} Create new Pet {%endblock%}
+
+{% block content%}
+<h1>Create new pet </h1>
+<form action="/new_pet" method='POST'>
+    <input type="text" name='name' placeholder='name'>
+    <input type="text" name='species' placeholder='species'>
+    <input type="number" name='hunger' placeholder='hunger'>
+    <button>Submit Pet</button>
+</form>
+{%endblock%}

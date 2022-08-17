@@ -1,0 +1,34 @@
+Jinja variables refer to jinja folder 
+
+
+Jinja will replace things like {{msg}} with value of msg passed when rendering 
+
+so inside html anything inside {{}} will return the variable inside python function 
+
+
+@app.route('/')
+def html():
+    return render_template('hello.html')
+
+@app.route("/lucky")
+def random_number():
+    """Example of simple dynamic template"""
+    num=randint(1,1000)
+
+    return render_template('lucky.html',lucky_num = num )
+------------------------------------------------------------------
+    html
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucjy number </title>
+</head>
+<body>
+    
+    <h1>Our lucky number is :{{lucky_num}}</h1>
+</body>
+</html>

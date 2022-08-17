@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+ {% block title %} Greet 2.0 Demo {% endblock %}  <!--name of title -->
+{% block content %}
+    <h1>Our lucky number is : {{lucky_num}}</h1>
+
+    {% if lucky_num ==4 %}
+
+    <h2>Thats my lucky number</h2>
+    <img
+      src="https://media3.giphy.com/media/rdma0nDFZMR32/200.webp?cid=ecf05e47u0my16fcn05ddwna6bm5wkepjpzvzo62se28q6xa&rid=200.webp&ct=g"
+      alt=""
+    />
+
+    {% else %}
+    <h2>{{lucky_num}} is not my lucky number</h2>
+    <img src="https://media2.giphy.com/media/BEob5qwFkSJ7G/200.webp?cid=ecf05e47zfgzd4dqswk2dglyufrx8y2giofr4i45t9xmrdl0&rid=200.webp&ct=g" alt="">
+    {% endif %}
+    
+ {% endblock %}

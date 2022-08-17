@@ -1,0 +1,10 @@
+updating books 
+----------------------------------
+this will update every author to be Matt 
+
+UPDATE books SET author='Matt';
+----------------------------------
+
+more precise, this will change allauthor with name  J. K. Rowling to Denny Sanchez 
+
+UPDATE books SET author='Denny Sanchez' WHERE author='J. K. Rowling';

@@ -1,0 +1,19 @@
+Adding to relationships 
+
+Can append to ;through ' relationship directly 
+
+nadine=Emp.query.get(4)
+
+nadine.projects.append(car)
+
+db.session.commit()
+
+nadine.assigment
+[<EmpPj 4, car>]
+
+
+nadine.assigment.append(EmpPj(proj_code='car',role='Director'))
+
+
+db.session.add(nadine)
+db.session.commit()

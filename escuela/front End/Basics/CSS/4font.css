@@ -1,0 +1,48 @@
+h1{font-family: 'Press Start 2P', cursive;
+    font-family: 'Qwitcher Grypen', cursive; */
+    /* font-size: 6em;
+  font-family: Nosifer; 
+  font-weight: 900;
+/* } */
+h2{ */
+    font-size: 3em;}
+    font-family: 'Times New Roman', Times, serif;} 
+    /* /* if one lenguaje doesnt work in mac but does in windows we can always select 2 fonts  */
+/* if the fontfamliy has number needs ""
+
+/* section */
+    /* font-size: 30p;} */
+    /* font-family: Brush Script MT; */
+
+/* a{ text-decoration: none;} */
+
+ h1 {font-size: 100px;
+     font-family: 'Neonderthaw', cursive;
+  text-decoration: line-through;
+  text-decoration-color:brown;
+  text-decoration-style :wavy;
+  text-decoration-thickness:2px; }  
+  /* h1{text-transform: none;
+                    capitalize
+                    uppercase
+                    lowercase
+                    full-width
+                    full-size-kana} */
+  h1{text-shadow: 2rem;}     
+  h3{font-size: 3rem;
+    font-weight: lighter;
+text-transform: capitalize;
+/* textshadow syntax: offset-y,blur-radius,color */
+text-shadow:20px 20px 5px rgb(205, 125, 50);}   
+h4{font-size: 3rem;
+    color:hsl(0, 100%, 50%,0.5);
+text-shadow: 5px 5px cyan;
+text-align: center;}      
+p{text-shadow: 5px 5px cyan;}   
+
+body{background: linear-gradient(45deg , rgb(248, 5, 195) 80%,rgb(60, 228, 9) );} 
+/* body{background: conic-gradient(cyan,purple );}  */
+/* body{background: repeating-radial-gradient(cyan,purple );}  */
+/* body{background: repeating-linear-gradient(cyan,purple );}  */
+/* body{background: radial-gradient (rgb(199, 7, 247),rgb(235, 231, 10));}  */
+

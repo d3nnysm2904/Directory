@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Intro to HTML
+    Hyper Text Markup Language
+    
+    It’s the language that forms the text or content on a web page
+    It consists of predefined elements that add meaning or appearance
+    What Does HTML Look Like?
+    <html>
+      <body>
+        <h1>Hi World!</h1>
+      </body>
+    </html>
+     
+    html, body, and h1 are elements
+    They are made up of start tags and end tags
+    <html>…</html> goes around entire page
+    <body>…</body> goes around visual body
+    Which, in this example, is the entire page
+    <h1>…</h1> contains a “heading”
+    That makes text inside it larger and bold
+    Viewing Our HTML
+    first.html
+    <html>
+      <body>
+        <h1>Hi World!</h1>
+      </body>
+    </html>
+     
+    In VSCode, create new file, first.html
+    
+    HTML pages use extension of .html
+    
+    Save somewhere convenient, like Desktop
+    
+    Double-click on first.html
+    
+    Common HTML Elements
+    first.html
+    <html>
+      <body>
+        <h1>Hi World!</h1>
+        <p>
+          This is
+          <b>bold</b> and
+          <i>italic</i>
+        </p>
+      </body>
+    </html>
+     
+    p goes around a paragraph
+    b goes around bold text
+    i goes around italic text
+    Nesting HTML Elements
+    first.html
+    <html>
+      <body>
+        <h1>Hi World!</h1>
+        <p>
+          This is
+          <b>bold</b> and
+          <i>italic</i>
+        </p>
+      </body>
+    </html>
+     
+    Elements are often nested inside other elements
+    html is the parent of body
+    body is a child of html
+    b and i are both children of p
+    HTML Has Hierarchy
+    
+    Some Elements Are Required
+    To be valid in browsers, there are some tags that are always required:
+    
+    html (wraps around entire page)
+    head (info about page, but isn’t part of visual content)
+    title (title of page; goes inside of head)
+    body (wraps around visual content of page)
+    Plus, at very top, you need a declaration of <!doctype html>
+    
+    Complete Example:
+    
+    <!doctype html>
+    <html>
+      <head>
+        <title>My Second Page</title>
+      </head>
+      <body>
+        <h1>My Second Example</h1>
+      </body>
+    </html>
+    (Note that doctype starts with ! and has no closing tag)
+    
+    HTML Mostly Ignores Spaces/Linebreaks
+    HTML mostly ignores spaces and linebreaks (we’ll clarify this later)
+    
+    Tidy, with indentation:
+    <!doctype html>
+    <html>
+      <head>
+        <title>My Second Page</title>
+      </head>
+      <body>
+        <h1>My Second Example</h1>
+      </body>
+    </html>
+     
+    Messy, all jammed together
+    <!doctype html>
+    <html><head><title>My Second Page</title>
+    </head><body>
+    <h1>My
+    Second Example</h1>
+    </body></html>
+    Paragraphs, Headings, and Breaks
+    Paragraphs
+    HTML is often used to present largely-textual information.
+    
+    It’s common for text to appear inside a paragraph:
+    
+    <p>It was a dark and stormy night.</p>
+    It’s possible for other tags to go inside a p tag, but a paragraph cannot contain another paragraph.
+    
+    Headers
+    There are different heading elements you can use, from largest/most-important, to smallest/least-important:
+    
+    h1 (largest) to h6 (smallest)
+    
+    You’ll often use several of these, in order
+    
+    <h1>Main Title</h1>
+    
+    <h2>Section Title</h2>
+    <p>Section text here...</p>
+    
+    <h3>Sub-section header</h3>
+    <p>Sub-section text here...</p>
+    
+    <h3>Another sub-section</h3>
+    ...
+    
+    <h2>Another Section</h2>
+    Breaks
+    There are two common kinds of breaks
+    
+    <br>
+    Breaks a line in the middle of the line
+    
+    <p>Hi<br>World</p> breaks this into two Linebreaks
+    
+    <hr>
+    Draws a line across the screen
+    
+    <p>Hi<hr>World</p> breaks this into two lines, with line drawn between
+    
+    Note that both of these elements only have a start tag — they don’t have an end tag after them.
+    
+    Lists in HTML
+    HTML can make two kinds of lists:
+    
+    unordered (bulleted, typically)
+    ordered (numbered, typically)
+    Unordered Lists
+    A sequence of list items surrounded by an unordered list element:
+    
+    <ul>
+      <li>apple</li>
+      <li>berry</li>
+      <li>cherry</li>
+    </ul>
+     
+    apple
+    berry
+    cherry
+    The list should only directly contain list items — but list items can contain text and other elements.
+    
+    Ordered Lists
+    A sequence of list items surrounded by an ordered list element:
+    
+    <ol>
+      <li>first</li>
+      <li>second</li>
+      <li>third</li>
+    </ol>
+     
+    first
+    second
+    third
+    The list should only directly contain list items — but list items can contain text and other elements.
+    
+    Text Modifications
+    HTML intentionally doesn’t have many elements to change appearance — that is more the domain of CSS
+    
+    We’ll cover some basic parts of HTML that do focus on appearance
+    
+    Bold and Italics
+    <b>...</b> or <strong>...</strong>
+    This is bold
+    <i>...</i> or <em>...</em>
+    This is italics
+    Smaller Text
+    <small>...</small>
+    Smaller than normal text
+    Superscript / Subscript
+    <sup>...</sup>
+    This is most useful for math or footnotes: x2
+    <sub>...</sub>
+    This is most useful for math or chemistry: H2O
+    Blockquotes
+    <blockquote>...</blockquote>
+    Quoted text that can stand on its own:
+    
+    To be or not to be That is the question
+    Links
+    HTML pages are often linked together:
+    
+    a page of yours can point to another page of yours
+    a page of yours can point to any other site on the Internet
+    Link Tag
+    To link to a page of yours:
+    
+    <a href="another.html">Visit here!</a>
+    That shows the text “Visit here!” and makes it a link to “another.html”, which is a file in the same folder as this page.
+    
+    Attributes
+    That’s our first example of an attribute, which can be a part of a tag.
+    
+    Attributes provide other info to a tag, such as:
+    
+    Changing the appearance of the element
+    Showing links what they link to
+    Telling image tags where the image file can be found
+    Attributes are always a word, followed by an equal sign, and a value (typically in quotes, like our example)
+    
+    Where To Link
+    You can also link to pages deeper down at your site:
+    
+    <a href="employees/elmo.html">About Elmo</a>
+    This links to the page “elmo.html” in the “employees” directory in this folder
+    
+    You can also link to pages higher up at your site:
+    
+    <a href="../another.html">Another Page</a>
+    This links to a page one folder up than the current folder.
+    
+    You can also link to other sites:
+    
+    <a href="https://en.wikipedia.org/wiki/Slow_loris">Adorable!</a>
+    This links directly to a page on Wikipedia.
+    
+    To link to another site, your href attribute needs to have a complete URL — typically starting with “http://” or “https://”
+    
+    Images
+    HTML can show images, either from your site or another site:
+    
+    <img src="https://photo.jpg">
+     https://tinyurl.com/y39p455z
+    This is another tag with an “attribute” — src is the location of the actual image file.
+    
+    You can link to images on your site or other sites:
+    
+    <img src="photo.jpg">
+    
+    <img src="../photo.jpg">
+    
+    <img src="employees/elmo.jpg">
+    
+    <img src="https://tinyurl.com/y39p455z">
+    Sizing Images
+    Until told otherwise, browsers show images at their real size.
+    
+    You can use height and width attributes to set the size of an image:
+    
+    <img src="photo.jpg" width="200" height="100">
+    That makes the image 200 pixels wide and 100 pixel high, regardless of normal size
+    
+    It’s often better to do this in an editing program, or use CSS for this.
+    
+    Image Types
+    Web browsers can show every type of image, but common types:
+    
+    GIF
+    JPG
+    PNG
+    You can export into one of these types in most image-designing programs
+    
+    Entities
+    HTML is meant to be text, and it can be tricky to get special symbols, like copyright symbols or curly quotes, into HTML
+    
+    HTML can have entities which are text spellings for common symbols.
+    
+    Entities are always an ampersand, a single word, and a semicolon:
+    
+    &example;
+    Less Than / Greater Than
+    Since HTML tags use angle brackets, if you try to use these symbols in your HTML, it will often confuse browsers.
+    
+    Instead use:
+    
+    &lt;
+    Turns into a “less-than” symbol: <
+    &gt;
+    Turns into a “greater-than” symbol: >
+    Copyright Symbol
+    &copy;
+    Turns into a “copyright” symbol: ©
+    Curly Quotes
+    You can put “straight quotes” directly into HTML: She said "Hello"
+    
+    Curly quotes can be trickier, and are often done with entities:
+    
+    &ldquo;
+    Turns into a “left-double-quote”: “
+    &rdquo;
+    Turns into a “right-double-quote”: ”
+    To write a pretty quote:
+    
+    She said: &ldquo;Hello!&rdquo;
+    Emmet
+    Emmet is a library for writing html with fewer keystrokes
+    We will be covering how to generate html quickly with Emmet shortcuts
+    
+    Try it out
+    Emmet comes pre-installed with VScode Create a new file with a .html extension
+    
+    Type ! and pres tab You should see some automatically generated html like the following:
+    
+    // index.html
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+    </head>
+    <body>
+    
+    </body>
+    </html>
+    Creating elements with Emmet
+    A pain point when writing html tags is typing the opening and closing brackets With Emmet we just need to specify the tag type and press tab
+    
+    
+    h1 tab
+     
+    <h1></h1>
+    
+    div tab
+     
+    <div></div>
+    Nested elements
+    It is also possible to create elements inside of elements
+    
+    
+    div>p tab
+     
+    <div>
+        <p></p>
+    </div>
+    
+    div>ul>li tab
+     
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    Creating multiple elements
+    To create multiple elements use * and the number of elements you want
+    
+    
+    div*3 tab
+     
+    <div></div>
+    <div></div>
+    <div></div>
+    This is especially useful for list items
+    
+    
+    ul>li*4 tab
+     
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    Adding text inside of elements
+    Place the text inside of curly braces following the tag type
+    
+    
+    div{hi} tab
+     
+    <div>hi</div>
+    
+    p>div{inner}*2 tab
+     
+    <p>
+        <div>inner</div>
+        <div>inner</div>
+    </p>
+    Creating sibling elements
+    Sibling elements are separated by +
+    
+    
+    div+p tab
+     
+    <div></div>
+    <p></p>
+    
+    div+ul>li+li+li tab
+     
+    <div></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    div+ul>li*3 tab
+    (a better way)
+     
+    <div></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    Creating elements with attributes
+    You can specify any attribute type inside square brackets
+    
+    
+    div[class=’class1’]*2 tab
+     
+    <div class="class1"></div>
+    <div class="class1"></div>
+    
+    div>p[class=’style1’]{text}*3 tab
+     
+    <div>
+        <p class="style1">text</p>
+        <p class="style1">text</p>
+        <p class="style1">text</p>
+    </div>
+    Resources
+    This should be enough to get you started When you are ready checkout the Emmet cheat sheet
+    
+    https://docs.emmet.io/cheat-sheet/
+
+
+
+
+
+
+
+
+
+</body>
+</html>

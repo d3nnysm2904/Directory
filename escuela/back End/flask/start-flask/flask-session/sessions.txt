@@ -1,0 +1,40 @@
+Refer to demo code flask-session to see examples 
+
+session in flask are a nice way of creating satteful http request or adding state on top 
+
+Session_ Storage
+
+Comparison of types of Browser Storage 
+
+Local Storage:
+ stores data in your browser with no expiration date , and gets cleared  only trhoug JavaScript or clearing the browser cache 
+ Domain specific 
+ Storage limit is much larger than a cookie 
+ info not needed in server side 
+ 5mb/10mb storage 
+
+
+Session Storage (different tahn flask session):
+ Stores data only for until the browser or tab is closed, as long as the borwsing session is open 
+ Storage limit is much larger thana cookie 
+ 5mb storage
+ 
+Cookie :
+ Cookies can be made secure by setting the httponlyglasg as true for that cookie. This prevent client-side acces to that cookie 
+ Sent from the browser to the server fo rvery request to the same domain  
+ 4kb storage
+
+
+ -------------------------------------------------------------------------------
+ Flask Sessions 
+
+ Cookies are just strings 
+ Cookies are limited by how much info u can storage 
+ bit of low-level in how you use them 
+
+ Flask session are a magic dictionary where we can add info in  or read info from   
+
+ Session is more secure
+ Contain info from the current browser 
+ Preserve type (list stays list )
+ Are "signed ", so user cant modify data : the data is not stored as readeble english, is been transformed and signed, signed is like a digital signature , a way of verifyng authenticity of the sener or receiver  

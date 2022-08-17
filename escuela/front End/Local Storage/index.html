@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="dark">
+    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+
+    <h1>Local storage</h1>
+    <ul>
+        <li>localStorage is a mechanism for storing information in the browser for a specific domain  </li>
+        <li><h2>localStorage vs sessionStorage</h2></li>
+        <li>data  stored in localStorage has no expiration time </li>
+        <li>data stored in sessionStorage gets cleared when the browsing session ends </li>
+    </ul>
+    <h3>Modifying localStorage</h3>
+    <ul>
+        <li>The most important thing to remember is that all of your keys in localStorage or sessionStorage must be strings. </li>
+        <li>localStorage stores everything as strings, so it's good to get in the habit of setting your keys as strings to avoid confusion </li>
+    </ul>
+    <h4>setting an item in localStorage</h4>
+    <ul>
+        <li>We do this using the <b>setItem </b> method</li> <br>
+      <li><b>localStorage.setItem</b>("firstName","Denny")</li>
+      <li><b>localStorage.setItem</b>("favoriteNumber","4")</li>
+      <li><b>localStorage.setItem</b>("hasDog",true)</li><br>
+      <li><h4>retrieving an item in localStorage</h4><br></li>
+      <li>to retrieve we use the getItem method (only passing the key)</li>
+      <li> <b> localStorage.getItem</b>(firstname)//Denny</li><br>
+      <li>you can alternatively just acces items on the <b> localStorage</b> object</li>
+      <li><b>localStorage.firstname</b></li>
+<li>to make the string into number </li>
+    <li><b>const favoriteNumber = parseInt(localStorage.favoriteNumber)//4</b></li><br>
+
+    <li>to remove <b>localStorage.removeItem("firstName"),</b></li>
+
+    <li><b>to clear everything</b></li>
+    <li><b>localStorage.clear()</b></li>
+    </ul>
+
+    <h1>Adding objects to localStorage </h1>
+<ul>
+    <li>const preferences = {
+        fontSize:'18px',
+        favoriteColor:'purple'
+    } <br>
+    
+    localStorage.setItem('preferences', preferences) <br>
+    
+    //when u look at console it gives back an string "[object,Object]"</li><br>
+
+    <li> in order to get back our original data type, we need to convert this array to a special string format called JSON</li> 
+<li>JSON(JavaScript object Notation) is a ligthweight data-interchange format.It is easy for humans to read and write.It is easy for machines to parse and generate </li>
+</ul>
+<h1>Working with JSON in the browser </h1>
+<ul>
+    <li>JavaScript has a built-in object, and this object are two methods used to convert JavaScript data into JSON , and to parse JSON strings into JS</li>
+    <br><li><b>JSON.stringify</b>-is used to convert JS to JSON (or to stringify)</li>
+    <li><b>JSON.parse</b>-parses a string into JSON </li>
+</ul>
+  <script src="app.js"></script>
+</body>re
+</html>

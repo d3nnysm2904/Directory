@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %} Pet List {% endblock %}
+<!--name of title -->
+
+{% block content %}
+<ul>
+  {% for pet in pets %}
+  <li>
+    <a href="/{{pet.id}}">{{pet.name}}</a>
+  </li>
+  {%endfor%}
+</ul>
+
+<a href="/">Go back</a>
+{% endblock%}

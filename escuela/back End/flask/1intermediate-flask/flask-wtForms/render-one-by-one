@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edit Employee</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"
+  </head>
+Instead of doing a for loop we can render one by one 
+  <body>
+    
+    <div class="container">
+      <h1 class="display-2 text-center">Edit Employee</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+            {{form.name.label}}
+            {{form.name(class_='form-control form-control-lg')}}
+            {{form.state.label}}
+            {{form.state()}}
+            {{form.dept_code.label}}
+            {{form.dep_code()}}
+          <!-- <form method="POST">
+            {{ form.hidden_tag() }} {% for field in form if
+            field.widget.input_type != 'hidden'%}
+            <div class="form-group">
+              {{field.label}}
+               {{field(class_='form-control')}}
+                {% for err in field.errors %} 
+                {{err}} 
+                {%endfor %}
+            
+            {% endfor %}
+          </div>
+            <button class="btn btn-primary btn-lg" type="submit">Save</button>
+            <a href="/phones" class="btn btn-danger btn-lg">Go Back</a>
+          </form> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

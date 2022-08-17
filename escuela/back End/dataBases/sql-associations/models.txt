@@ -1,0 +1,109 @@
+in models.py are the db departament and employees
+
+Setting up two models db
+
+relationships 
+
+Our example 
+departaments - employees 
+
+class Dt(db.Model):
+
+    '''Department . A department has many employees '''
+
+    __tablename__ = "departments"
+
+    dept_code = db.Column(db.Text,
+                          primary_key=True)  # we set a primary key
+
+    dept_name = db.Column(db.Text,
+                          nullable=False,
+                          unique=True)
+
+    phone = db.Column(db.Text)
+
+    def __repr__(self):
+        """Show info about pet."""
+
+        s = self
+        return f"< dept_code={s.dept_code} dept_name={s.dept_name} phone= {s.phone} >"
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+
+    id = db.Column(db.Integer, primary_key=True,
+                   autoincrement=True
+                   )
+
+    name = db.Column(db.Text,
+                     nullable=False,
+                     unique=True)  # must have a value (NOT NULL )
+
+    state = db.Column(db.String(2),
+                      nullable=False,
+                      default='FL')
+
+    dept_code = db.Column(db.Text,
+                          db.ForeignKey('departments.dept_code'))  # we create a relationship primary\foreign between both tables dept_code (s) , from  __tablename__= departments  , not the Dt model , __the tablename__
+
+
+
+departament
+
+dept_code(PK)	  dept_name	        phone                            
+fin           Finance	        555-1000
+legal	      Legal	            555-2222
+mktg	      Marketing	        555-9999 
+
+
+employees
+
+id(PKc)	name	    state	dept_code
+1	    Leonard	    CA	    legalc
+2	    Liz	        CA	    legal
+3	    Maggie	    DC	    mktg
+4	    Nadine  	CA	    null
+
+
+foreign key relationship 
+
+
+to set a primary key we set any value from our db table to
+
+
+__tablename__='departments"
+
+ dept_code=db.Column(primary_key = True) 
+
+
+
+
+then in the other table we create a relationship primary\foreign between both tables dept_code (s) , from  __tablename__= departments  , not the Dt model in models.py , __tablename__='department"
+
+
+dept_code2=db.Column=db.ForeignKey('departments.dept_code')
+
+
+once the primary key /foreignkey relationship is created we can create a departament , but when creating employees , dept_code needs to match any dept_code in departments table 
+
+
+relationship allows SQLAalchemy to 'naavigate' this relationship 
+    using the name 'dept' on an employee 
+
+we can add whats called a relationship (db.relationship), this will create a attribute on Emp model , in this case will be called dept and it will be fill with info about the related department (SQLAalchemy does it )
+
+So if we have a foreign key (dept_code in table employees )setup i can then pass db.relationship and pass in a model that matches (Dt)
+dept is what we'll use to actually view the data base of that relationship
+
+is like __repr__
+
+
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+
+    dept = db.relationship('Dt')

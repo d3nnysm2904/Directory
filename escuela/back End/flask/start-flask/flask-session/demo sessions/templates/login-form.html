@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %} <title>Log In Page</title>{%
+endblock %} {% block content %}
+<h1>Enter pin</h1>
+<p>Only way to access secret invite</p>
+
+<form action="/login">
+  <input type="text" placeholder="Secret Pin" name="secret_code" />
+  <button>Submit</button>
+</form>
+
+{% endblock content %}}

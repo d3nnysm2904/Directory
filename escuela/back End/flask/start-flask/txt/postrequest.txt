@@ -1,0 +1,50 @@
+Handling post request 
+By default a route only respond to GET request 
+to accepts POST request must specify the route and method=[POST]
+
+#decorator
+
+@app.route("/my_route",methods=["POST"])
+def handle_post_request():
+    return "i made a post request"
+
+but how we do send a post request to the URL?
+
+going to the the route /my_route  will not be the answer, that is just a get request 
+
+commonly post request are done trhu a form, but we can do it with ajax , or curl (in terminal)
+
+with curl :
+curl -X POST http://127.0.0.1:5000/my_route 
+
+most of the time POST request are done with forms
+by default a route only responds to a GET request , to accept POST request must specify that,
+first we need to start by making a GEt route wich will return the form, once the form is submitted it wil send the post request to another route
+
+@app.route("/add_comment")
+def add_comment_form():
+    return"""
+    <h1>Add comment</h1>
+    <form>
+    <input type='text' placeholder='comment/>
+    <button>Submit</button>
+    </form> 
+
+then we made a post request for that form 
+it can be the same route or different 
+
+@app.route("/add_comment",method=["POST"])
+def save_comment():
+    """
+this is post request with form ,specify the attribute method="post 
+this handles the add_comment_form we specify the request.form to receive the comment """
+
+     username = request.form["username"]
+    comment = request.form["comment"]
+    print(request.form)
+    return f"""<h1> Saved your comment</h1>
+     <ul>
+        <li>Username:{username}</li>
+        <li>Comment:{comment}</li>
+     </ul """
+

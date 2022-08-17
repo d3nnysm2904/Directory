@@ -1,0 +1,101 @@
+What is Cookies 
+
+Cookies are a way to store small bits of info on a user client in a web browser 
+information srtored in the browser  on the client side, login information , username etc, info about shopinn cart, pages visited ,adss
+this information can be send along with a request
+
+a way of making http stateful, 
+
+Cookies are key value pairs store in the browser,
+
+name/string-value-pair stored by the client (browser)
+
+  the server tells client to store these 
+the client seend cookies to the server with each request 
+
+Example 
+Site               cookie name    value 
+--------------------------------------
+rithmschool.com    number_visits  10
+rithmschool.com    costumer_type  "enterprise"
+rithmschool.com    favorit_food   "taco"
+
+
+Seeing cookies store in web browser 
+
+Dev Tools -> Aplicattion ->Storage -> Cookies 
+
+
+How we respond with cookies 
+Reading Cookies with flask
+@app.route('/later-cookie)
+def later():
+    """ An example page that can use that cookies """
+        fav_color=request.cookies.get('fav_color,<unset>)
+
+        return render_templates("later-cookie.html", fav_color = fav_color)
+
+
+we can use Cookies with "from flask import *request* "
+request.cookies  
+
+whatever function we define using "@app.before_request" , down there using python will run before every single request , before any route is runned :
+
+
+@app.before_request  
+def print_cookies():
+    print(*********)
+    print(request.cookies)
+    
+
+how to send a cookie to the browser from flask 
+Setting cookies 
+
+In order to set a cookie we need to set the cookie on the actual Response object that flask respond with 
+expose the underlying response object , if we want to respond with a template, we will call "render_templates" but were not going to return it, instead we save it to a variable (html =render_template("some-page.html"), then we call a function to that variable called *  make_response(variable)  *, this function is something flask does for us normally behind scenes, then we saved the function ta an variable "resp = make_response()html" Then we call set_cookie on that variable " resp.set_cookie('fav_color', fav_color)" this is setting a cookie, remmeber cookies are like key values pair    
+
+Function make_response is responsible of making response objects 
+
+
+instead of returing render_templates 
+
+@app.route("/handle-form-cookie")
+def handle_form():
+    """Return form response; include cookie for browser."""
+
+    fav_color = request.args["fav_color"]
+
+    # Get HTML to send back. Normally, we'd return this, but
+    # we need to do in pieces, so we can add a cookie first
+    html = render_template("response-cookie.html", fav_color=fav_color)
+
+    # In order to set a cookie from Flask, we need to deal
+    # with the response a bit more directly than usual.
+    # First, let's make a response obj from that HTML
+    resp = make_response(html)
+
+    # Let's add a cookie to our response. (There are lots of
+    # other options here--see the Flask docs for how to set
+    # cookie expiration, domain it should apply to, or path)
+    resp.set_cookie("fav_color", fav_color)
+
+    return resp
+
+
+every Cookies has a different option we can reconfigure: 
+
+Expiration: how long should the browser remembers this 
+ can be set to a time :defaukt is "as long as web browser is running "(session cookies)
+
+Domain: which domains should this cookie be sent to ?
+ Send only to 'book.site' or everything at 'site.com'
+
+
+HttpOnly: HTTP-only cookies aren't accesible via any kind of JavaScript 
+ Useful for cookies that contain server-side information and dont need to be available to JavaScript
+
+
+Cookies Options 
+Site    Cookie    Expiration    Domain    Value 
+
+

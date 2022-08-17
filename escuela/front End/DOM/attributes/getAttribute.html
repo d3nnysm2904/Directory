@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="getAttribute.css">
+</head>
+<body>
+ <h1>Modifiyng Attributes</h1> 
+
+<h2>Attributes</h2>
+
+<ul>
+    <li>it can be src , href class, id ,type,value </li>
+</ul>
+
+<h1>getAttribute</h1>
+
+<p>const firstInput =document.querySelector('input') <br>
+firstInput.getAttribute('type')// text</p>
+
+<h1>setAttribute</h1>
+<p>  <b>const firstInput =document.querySelector('input') <br>
+firstInput.setAttribute('type','email')</b></p>
+<hr>
+
+<p> There are a few attributes that u can directly acces and modify as well instead of using getAttribute or setAttribute ,
+     <br>
+     one is id <br>
+     <b> // input type="text" id="firstname">
+         <br>
+         const firstInput=document.querySelector("input") <br>
+         firstInput.id// first-name <br>
+         firstInput.id ="full-name"--> this changes the id name
+     </b>
+</p>
+
+<hr>
+<h1 class="large">HAPPY</h1>
+<ul>
+    <li class="todo">Chikens</li>
+    <li class="todo">Chicken</li>
+    <li class="todo">Eat Chikens(just kidding)</li>
+</ul>
+
+
+<h1 style="color: purple;">Giant Sequoia</h1>
+<hr>
+<form id="muffin-form">
+  <input type="text" placeholder="How Many Muffins">
+  <label>
+    How burned do you want the muffins?
+  </label>
+  <input type="range" min="1" max="10">
+
+  <button id="submit">Submit</button>
+<
+
+
+    <script src="getAttribute.js"></script>
+</body>
+</html>

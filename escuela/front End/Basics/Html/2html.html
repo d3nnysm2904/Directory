@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>forms </h1>
+    <p>Forms in HTML present opportunities for users to enter data
+
+        The forms won’t do much unless you also add in…
+        
+        JavaScript to process the form data in the browser
+        A server to send the form data to
+       <b>Form Element</b> 
+        The form element wraps around all inputs in a form:</p>
+        <form>
+            ... individual inputs on form
+          </form>
+          <b>Form Attributes</b>
+          Often the form element has other attributes that specify where and how data gets sent to a server
+
+This is outside our scope for now, but here’s a quick example:
+
+<form action="/survey-submission" method="post"></form>Technically, if the browser will use JavaScript directly to process the form input, it often doesn’t need to wrap the inputs in a form tag — but it’s still common and a good idea to do so.
+<b>Textual Elements</b>
+A common way to collect data is using plain text fields.
+
+These are created via the <b>input</b>  element:
+<form>
+    <p>First Name:
+      <input name="first-name">
+    </p>
+    </p> ... other fields ...
+  </form>
+Note that <b>input</b> doesn’t have a closing tag
+The name attribute won’t change anything visually. The name value is used to “label” the data when it is sent to a server (or client-side JS).
+Textual inputs are the most common & default — but there are many other types
+
+The <b>input</b> element takes a <b> type</b> attribute,
+To manually make a text field (the default if you leave off <b>type</b> ):
+<input type="text" name="first-name">
+<b>Other options </b>
+The input accepts many other attributes, here are a few:
+
+minlength
+Minimum number of characters to be valid
+maxlength
+Maximum number of characters to be valid
+placeholder
+Description that appears when input is empty
+required
+Whether this input is required
+This is an incomplete list, featuring some of the most popular attributes — for a full listing, see <MDN class="hr"></MDN>
+
+Here’s a text input with multiple attributes:
+<input type="text"
+       name="first-name"
+       minlength="2"
+       maxlength="20"
+       placeholder="Enter first name"
+       required> <hr>
+
+
+       Let’s take a look at other input types:
+
+       button: clickable buttons
+       checkbox: checkboxes that can be turned on/off
+       color: for picking colors from a color picker
+       date: date picker
+       email: text input with email validation
+       number: enter numbers with up/down controls
+       password: enter passwords that do not show on screens
+       radio: pick from choices (“radio buttons”)
+       url: entering URLs and validating them
+       This is a small sampling of the options — for a full list, see MDN.
+       
+       Let’s look at some of these in detail
+<b>chexbox </b>
+Checkboxes can be turned on/off:
+<form>
+    <input type="checkbox" name="extra-sprinkles">
+      Add extra sprinkles?
+  </form> If that checkbox is checked when form is submitted, JavaScript or server will be informed of that. <hr>
+<b>email </b>
+If that checkbox is checked when form is submitted, JavaScript or server will be informed of that.
+<form>
+    Enter your email: <input type="email" name="user-email">
+  </form>
+  <hr>
+  <b>password</b>
+  Enter password (like text, but doesn’t appear on screen)
+  <form>
+    Enter password: <input type="password" name="new-password">
+  </form>
+  <hr> 
+  <b>radio</b>
+  Radio buttons typically show a series of choices, and you pick just one:
+  <form>
+    Type of bicycle:
+    <input type="radio" name="bike-type" value="road"> Road <br>
+    <input type="radio" name="bike-type" value="mtn"> Mountain <br>
+    <input type="radio" name="bike-type" value="hybrid"> Hybrid <br>
+  <form>We use the same <b>name</b> for all of these choices — we vary the <b>value</b>
+
+    This makes these “one choice out of several” — JavaScript/server or server is sent the value so they know which was choice
+   <hr>
+
+<b>Form Submission</b>
+In order for a form to be submitted, you need to add one of these:
+
+input with type of submit
+button with type of submit
+<b>Input Type of Submit</b>
+<form>
+    First Name <input name="first-name"> <br>
+    Last Name: <input name="last-name"> <br>
+    <input type="submit" value="Go!">
+  </form>
+
+  <b>Button Type of Submit</b>
+  <form>
+    First Name <input name="first-name"> <br>
+    Last Name: <input name="last-name"> <br>
+    <button type="submit">Go!</button>
+  </form>This also shows a button labeled “Go!” which, when clicked, submits form
+
+  This way is newer and more flexible — you can add other HTML elements inside button
+
+<b>Form Submission</b>
+Handling forms isn’t something you can do in HTML directly; JavaScript or servers do this.
+
+Until you learn how to handle forms, browsers will just redirect you to the same page, but the URL will now reflect the form data
+
+So, our first-name/last-name form would show a URL like:
+example-form?first-name=Jane&last-name=Smith <br>
+Looking at that URL and looking for the first name (“Jane”) and the last name (“Smith”) can indicate that your form works, and is ready to be hooked up to JavaScript or a server.
+<a href="3html.html">next </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

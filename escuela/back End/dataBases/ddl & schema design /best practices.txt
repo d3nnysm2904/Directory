@@ -1,0 +1,6 @@
+Normalization 
+
+normalization is a datbase design technique wich organizes tables in a manner that reduces redundancy and dependency of data 
+
+It divides larger tables to smaller tables and links them using relationships 
+

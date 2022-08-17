@@ -1,0 +1,34 @@
+Indexing 
+
+a database index is a special data structure that efficiently stores column values to speed up row retrieval via SELECT and WHERE (i.e 'read') queries.
+
+For instance , if you place an inde on a username colmn in a users table, any query using username will execute faaster since fewer rows have to be scanned due to the efficient structure  
+
+
+Index Efficiency
+In general, database software (including PostgreSQL) use tree-like data structures to store the data , wich can retrieve values in logarithmic time O(lg(N)) instead of linear O(N) time   
+
+Translation : if i have 1000000 rows and are looking for a single column value , instead of examinig every row , we can examine approximately log2(1000000)= 20 rows to get our answer ,wich is an incredible improvement 
+
+
+Why Not Index Everything?
+
+there is a tradeoff with indexing !For every indexed column , a copy of that column's data has to be stored as a tree , which can take up a lot of space 
+Also every INSERT and UODATE query becomes more expensive , since data in both the regular table AND the index have to be dealt with 
+
+
+How To Create an index in PostgreSQL
+
+Indexing is oart of DDL , but indexes can be created or dropped at any time.
+The more records n the database at the time of ccreation , the slower the indexing process will be.
+
+CREATE INDEX index_name ON table_name(column_name);
+
+You can also create a multi-column index ,which is useful if you are constantly querng by two fields at once (ex ; first_name, last_name)
+
+CREATE INDEX index_name ON table_name(column1_name, column2_name);
+
+
+Droping an index in PostgreSQL
+
+DROP INDEX full_name ;

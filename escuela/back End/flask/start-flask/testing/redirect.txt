@@ -1,0 +1,26 @@
+curl -v localhost:5000/redirect-me
+
+to test redirects in app_testing.py
+
+
+from app import app  #this is importinmg thr app file to make test 
+from unittest import TestCase
+
+# client can be any name is just acting like a user , a client 
+class ColorView(TestCase):
+    def test_redirect(self):
+        with app.test_client()as client:
+            res = client.get('redirect-me')     
+            
+            self.assertEqual(res.status_code,302) # is the status code 302? 
+            self.assertEqual(res.location, 'http://127.0.0.1:5000')        
+ 
+    def test_redirection_followed(self):
+        with app.test_client()as client:
+            res=client.get('/redirect-me',follow_redirects=True)
+            
+            self.assertEqual(res.status_code,302)
+
+
+
+follow_redirect=True ; makes a new request when response redirects 

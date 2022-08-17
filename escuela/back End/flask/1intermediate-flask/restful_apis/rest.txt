@@ -1,0 +1,40 @@
+ RESTful APIs with flask 
+ Can still use Flask and Flask-SQLAlchemy
+ Will respond with JSON , not HTML 
+ Won’tTypically use Jinja to make JSON , just jsonify in route 
+ cant redirect-return JSON of answer 
+ To make a json api we need to respond with json 
+
+ Flask jsonify
+ return JSON of thing (usually dict , but could be list)
+
+ jsonify(name="Jane",age =21)
+Return JSON like {'name':'Jane','age':21}
+
+Limitations
+JSON can only represent dictionaries , list , and primitives types 
+ cannot represent thing like SQLAlchemy model instances 
+ Python can't just turn yout obj into JSON 
+    requires a process called 'serialization'
+
+    def serialize_dessert(dessert):
+    """Serialize a dessert SQLAlchemy obj to dictionary."""
+
+    return {
+        "id": dessert.id,
+        "name": dessert.name,
+        "calories": dessert.calories,
+    }
+
+
+
+    
+@app.route("/desserts")
+def list_all_desserts():
+    """Return JSON {'desserts': [{id, name, calories}, ...]}"""
+
+    desserts = Dessert.query.all()
+    serialized = [serialize_dessert(d) for d in desserts]
+
+    return jsonify(desserts=serialized)
+    # end list_all_desserts

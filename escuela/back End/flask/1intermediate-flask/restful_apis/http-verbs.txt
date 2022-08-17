@@ -1,0 +1,39 @@
+GET
+    Searching /filtering
+
+POST 
+    sending a email
+    updating a user 
+
+
+(PUT/PATCH/DELETE are not supported by html )
+
+
+PUT 
+    Update an entire resource (resource is like a reddit comment, a post in instagram)
+    We use Put when we updating a comment a photo in instagram
+
+
+PATCH 
+    Update a part of a resource (patch it up )
+
+DELETE 
+    Delete resource
+
+    Requesting With Methods
+HTTP Verb	Forms / Links	AJAX	Server-side
+GET	              ✓	         ✓	        ✓
+POST	          ✓     	 ✓	        ✓
+PUT / PATCH	      ✗	         ✓	        ✓
+DELETE	          ✗	         ✓	        ✓
+
+
+Safety & Idempotence 
+
+Safe
+    A safe operation is one that does not change the data requested 
+
+Idempotence
+    An idempotent operation can be performed many times (with same data) with the result of all calls being the same as if it was done once.    
+    Idempotence refers to side-effects not all-effects or responses.
+    Example: In arithmetic, calculating absolute value

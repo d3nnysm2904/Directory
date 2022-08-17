@@ -1,0 +1,29 @@
+def firstngen(n):
+    num = 0
+    while num < n:
+        yield num
+        num += 1
+
+
+# yield is like the return keyword , it will return a value and then pause the loop until we ask for the next value or something in python ask for the next value
+
+# returns a generator obj
+
+it = firstngen(10)
+
+next(it)  # will give me next value of loop 0
+
+for n in it:
+    print(n)
+    # from 0 to 9
+
+
+def find_like_num(nums):
+    for num in nums:
+        if input(f"Do you like {num}") == 'y':
+            return num
+
+def even(start):
+    while True:
+        yield start
+        start=start + 2

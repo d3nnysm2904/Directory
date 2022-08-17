@@ -1,0 +1,18 @@
+Preguntas para la profesore 
+
+diferencia en <section> and <div>
+
+the exat way of html 
+
+all html files need to be index.html ?
+
+why all need to be betwwen >]<div>
+
+block level elements 
+inline elements 
+
+selectors order 
+
+box sizing
+
+console.log

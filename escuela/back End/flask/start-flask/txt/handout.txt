@@ -1,0 +1,3 @@
+http://curric.rithmschool.com/springboard/lectures/flask-intro/
+
+dir() in terminal

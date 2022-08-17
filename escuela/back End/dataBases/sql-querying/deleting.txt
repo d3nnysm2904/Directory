@@ -1,0 +1,12 @@
+still in library 
+
+Deleting 
+
+-Delete title =emma
+DELETE FROM books WHERE title ='emma';
+
+-Delete pages > 200
+DELETE FROM books WHERE page_count >200 ;
+
+-Delete all books 
+DELETE FROM  books 

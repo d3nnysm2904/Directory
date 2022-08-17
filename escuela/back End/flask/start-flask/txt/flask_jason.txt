@@ -1,0 +1,23 @@
+returning json 
+
+from flask import jsonify
+
+JSON is just a string -so you dint need to do anything especial 
+
+@app.route('/movies/json)
+def get_json_movies():
+    return '{"Boyhood:{"year":2015}}'
+
+
+most of the times if not always we will not respond with a string 
+two considerations 
+its finicky to hand-write JSON and get it rigth 
+its sometimes helpful to send header to browser that "this is JSON"
+ some ajax plugins are better than others in guessing in absence of this 
+
+ @app.route('/movies/json')
+ def get_json_movies():
+    info={"name": "whiskey","cute":"Hella"}
+    return jsonify(info)
+#alternate syntax 
+return jsonify(name: "whiskey",cute:"Hella")

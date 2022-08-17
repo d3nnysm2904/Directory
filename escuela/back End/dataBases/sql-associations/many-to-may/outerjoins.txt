@@ -1,0 +1,10 @@
+Outer join 
+we use outer join to get info that is either None or not accesible with join the outer info left behind when call join 
+
+This will get all info wheter is empty or not 
+
+db.session.query(Emp.name, Dt.dept_name,Dt.phone).outerjoin(Dt).all()
+
+
+This allows me to call methods or update table s
+db.session.query(Emp, Dt).outerjoin(Dt).all()

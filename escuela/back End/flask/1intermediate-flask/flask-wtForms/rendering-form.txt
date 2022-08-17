@@ -1,0 +1,29 @@
+refer to templates snack_add_form.html
+
+in htmlwe add a form templates and inside 
+
+we start a loop for field in form we make the p for spacing and the render the {{field}} 
+when we itirate over a form obj automaticly each thing we get from that iterator is going to be a form field that i can direclty render , this will make the input  
+{{field.label}} is the label text 
+
+the wtforms automaticly connects the labels with the inpt (for id name etc )
+
+        <form id="snack-add-form" method="POST">
+        {{ form.hidden_tag() }} <!--add type=hidden form fields -->
+
+        {% for field in form
+                if field.widget.input_type != 'hidden' %}
+
+         <p>
+            {{ field.label }}
+            {{ field }}
+
+            {% for error in field.errors %}
+             {{ error }}
+            {% endfor %}
+         </p>
+
+         {% endfor %}
+
+         <button type="submit">Submit</button>
+        </form>

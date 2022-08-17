@@ -1,0 +1,24 @@
+SQL Columns  Data Types 
+
+INTEGER - integer numbers 
+
+FLOAT -Floating-point numbers (you can specify the precision )
+
+TEXT -Text strings 
+
+VARCHAR -Text  strings , but limited to a certain size and we can pass a maximum length for our string for the text 
+
+BOOLEAN -True or false 
+
+TIMESTAMP - date and time 
+
+
+SERIAL - Auto-incrementing numbers (used for primary keys ; most commonly ids )
+
+
+NULL - is a special value in SQL for "unknown "; it's not the same thing as 0 or empty string (dont leave value empty )
+
+
+This selects empty tables from subreddit table
+SELECT * FROM subreddits
+WHERE name IS NULL 

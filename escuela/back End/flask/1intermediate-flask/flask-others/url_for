@@ -1,0 +1,18 @@
+from cgitb import html
+from re import A
+from flask import url_for
+
+
+@app.route('users/<int:id>')
+def user_profile(id):
+    ....
+
+
+html
+
+<a href = "{{'url_for(user_profile',id=user.id }}" > go < /a >
+
+
+def someother_view():
+    redirect_url = url_for('user_profile', id=user.id)
+    return redirect(redirect_url)

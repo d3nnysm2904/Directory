@@ -1,0 +1,68 @@
+Template inheritance
+
+this is use to prevent repetition 
+we use to copy one style of page to all pages link to the page created 
+
+How to use 
+
+make a base.html that will hold all the repetitive stuff 
+extend "that base template in your other pages
+Substitute blocks in your extended pages 
+
+SAMPLE BASE Template
+
+{% block BLOCKNAME %}...{% endblock %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}TITLE GOES HERE{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="http://unpkg.com/jquery"></script>
+</head>
+<body>
+  <h1>Our Site</h1>
+  {% block content %}BODY CONTENT GOES HERE{% endblock %}
+  <footer>Copyright by Whiskey.</footer>
+</body>
+
+
+</html>
+
+the page we want to copy 
+
+{% extends 'base.html' %}
+
+{% block title %}My awesome page title{% endblock %}
+
+{% block content %}
+
+  <h2>I'm a header!</h2>
+  <p>I'm a paragraph!</p>
+
+{% endblock %}
+
+
+STATIC FILES 
+where we do put stylesheet or java static resources  
+
+we could do :
+@app.route('my-css.css)
+def my_css():
+    return """ b { color:red }
+
+this is tedious so we do :
+
+create a "static" folder in templates folder 
+
+directory/
+venv/
+app.py
+static/
+    stylesheet.css
+    app.js    
+
+
+Find Files like:
+<link rel="stylesheet" href="/static/stylesheet.css"

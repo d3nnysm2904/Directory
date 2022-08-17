@@ -1,0 +1,35 @@
+Accesing the relationships 
+%run app.py
+
+
+liz =Emp.query.get(2)
+
+liz.assigment 
+
+[<EmpPj 2, server>, <EmpPj 2, car>]
+
+backref 
+
+this gives me access from Emp to Pj 
+from name 'Liz' that is link to proj_code 'car'
+
+assig=liz.assigment[1]
+
+assig.proj_code
+
+same as 
+
+liz.assigment[1].proj_code
+
+
+this gives back all info thru backref 
+assig.employee
+ < id=2 name=Liz state= FL >
+
+
+accesing model Dt from relationship dept 
+assig.employee.dept_code
+ 'legal'
+
+db.session.query()
+

@@ -1,0 +1,6 @@
+demo test.py 
+
+for testing the post request we need to disbale csrf token 
+
+app.config['WTF_CSRF_ENABLED']=False 
+

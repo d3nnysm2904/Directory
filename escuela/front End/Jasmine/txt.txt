@@ -1,0 +1,85 @@
+html:
+  5      <title></title>
+  6:     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css">
+  7:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+  8:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+  9:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+  10      <script type="text/javascript" src="foreach-map-filter.js"></script>
+
+front End/Advance array methods/solution/js-array-find-findindex/index.html:
+  5      <title></title>
+  6:     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css">
+  7:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+  8:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+  9:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+  10      <script type="text/javascript" src="find-findindex.js"></script>
+
+front End/Advance array methods/solution/js-array-reduce/index.html:
+  5      <title></title>
+  6:     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css">
+  7:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+  8:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+  9:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+  10      <script type="text/javascript" src="reduce.js"></script>
+
+front End/Advance array methods/solution/js-array-some-every/index.html:
+  5      <title></title>
+  6:     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css">
+  7:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+  8:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+  9:     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+  10      <script type="text/javascript" src="some-every.js"></script>
+
+front End/ES2015/js-let-const-demo/Rest&Spread/spread_arrays.js:
+  5  
+  6: const greenTeas = [ 'snow jasmine', 'fragrant leaf' ];
+  7  const oolongTeas = [ 'honey orchid', 'winter sprout' ];
+
+front End/ES2015/rest spread operator/app.js:
+  83  
+  84: const greenTeas = [ 'snow jasmine', 'fragrant leaf' ];
+  85  const oolongTeas = [ 'honey orchid', 'winter sprout' ];
+
+front End/Handouts/developer fundamental/5jasminetesting.html':
+    1: Testing with Jasmine
+    2  Goals
+
+    4  Understand why we write tests
+    5: Write tests with Jasmine
+    6  Writing Tests
+
+   14  It’s a core skill for professional devs
+   15: Jasmine
+   16: Jasmine is a popular JavaScript testing framework
+   17: We’ll use Jasmine for testing until we get to Python
+   18  We’ll see another framework, Jest, with Node and React
+   19: Running Tests in the Browser with Jasmine
+   20  <!doctype html>
+
+   24  
+   25: <!-- include CSS for Jasmine -->
+   26  <link rel="stylesheet"
+   27:   href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css" />
+   28  </head>
+
+   30  
+   31: <!-- include JS for Jasmine -->  
+   32  <script 
+   33:   src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+   34  <script 
+   35:   src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+   36  <script 
+   37:   src= "https://unpkg.com/jasmine-core/lib/jasmine-core/boot.js"></script>
+   38  
+
+   45  
+   46: Writing tests with Jasmine
+   47  Write your functions that will be tested:
+
+   83  Test cases are functions passed to it(...)
+   84: First argument become test case name (shown by Jasmine)
+   85  demo/taxes.test.js
+
+  105  Add before matcher to invert (eg expect(...).not.toEqual(7))
+  106: https://jasmine.github.io/api/edge/matchers.html
+  107  

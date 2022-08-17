@@ -1,0 +1,103 @@
+working app.py inside jinja folder and inside base.html in tempaltes folder 
+
+message flashing 
+
+Often you eant to provide feedback at "the next page user sees "
+This is most comomn when u will redirect 
+we import flash
+we add in our app.py @app.route or flash('message)
+inside file.html
+{%for msg in get_flashed_messages() %}
+<p> {{msg}} </p>
+{% endfor %}
+
+----------------------------------
+form flask import flash 
+
+@app.route('/your_route')
+def your_route():
+    flash('mesage for user')
+    return redirect("/somewhere/else")
+
+
+template used by /somewhere/else
+
+{% for msg in get_flashed_messages() %}
+<p> {{msg}} </p>
+{% endfor %}
+
+------------------------------------------------------
+flash message categories 
+message is categorie
+
+@app.route('/your_route')
+def your_route():
+    flash('mesage for user','message')
+    return redirect("/somewhere/else")
+
+
+
+
+template used by /somewhere/else
+
+{% for category,msg in get_flashed_messages(with_categories=true) %}
+<p class ="{{category}}" >  - {{msg}} </p>
+{% endfor %}
+
+
+inside class so we can use css 
+
+
+
+
+---------------------------------------------
+
+this is inside the base.html file 
+this is to add messages using from falsk import flash , if there are no messages with flash the content is not going to be added to html.file 
+
+
+  <main id="content">
+      
+      <!-- this with messages is to check wheter we have a flash message or not , if so we add the section with class=message -->
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      
+      {% if messages %}
+      <section class="messages">
+        {% for category, msg in messages %}
+        <p class="{{category}}">{{msg}}</p>
+        {% endfor %}
+      </section>
+
+      {% endif %}
+      {% endwith %} 
+   
+      
+    </main>
+
+
+    ------------------------------
+    app.py
+    
+    MOVIES = {'300', 'Batman', 'IronMan', 'DoctorStrange', 'SpiderMan',
+          'Morbius', 'Chicken Run', 'Pirates of the Caribean'}
+
+
+@app.route('/movies')
+def show_movies():
+    """Show list of movies in fake data base """
+    return render_template('movies.html', movies=MOVIES)
+
+
+@app.route('/movies/new', methods=["POST"])
+def add_movie():
+    """"Add to pretend DB
+    inside flash the error and success are creating a class to do some css, is in base.html and the css file """
+    title = request.form['title']
+    # MOVIES.append(title)# this is with list
+    if title in MOVIES:
+        flash('Movie already Exists ! ', 'error')
+    else:
+        MOVIES.add(title)  # set method
+        flash('Created your movie', 'success')
+    return redirect('/movies')

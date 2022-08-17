@@ -1,0 +1,2 @@
+query string is a part of an URL from a get request where we have a question mark(?) to start the query string and the key-values pairswe see this most commonly doing searchs 
+http://127.0.0.1:5000/search?q=dogs&sort=top

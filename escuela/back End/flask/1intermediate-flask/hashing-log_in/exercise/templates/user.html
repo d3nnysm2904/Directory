@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block title %}{% endblock %}} {% block content %}
+{% if user.img_url %}
+
+<div class="col-sm-2 col-6">
+  <img src="{{ user.img_url }}" alt="{{ user.full_name }}" class="img-fluid" />
+</div>
+{% endif %}
+
+<div class="container">
+  <h4>
+    Information
+    <form action="/users/{{session['username']}}/img" method="post" enctype="multipart/form-data" >
+      {{ form.hidden_tag() }}
+      {{ form.file }}
+      <input type="submit">
+  </h4>
+  <hr />
+  <ul>
+    <li><b> First Name</b>:{{user.first_name}}</li>
+    <li><b> Last Name </b>{{user.last_name}}</li>
+    <li><b> Email: </b>{{user.email}}</li>
+  </ul>
+
+  {% for feedback in user.feedback %} {%if feedback %}
+  <h2>Feedback</h2>
+
+  <ul>
+    <li>
+      {{ feedback.title }}
+      <small>{{ feedback.content }}</small>
+    </li>
+
+    <form>
+      <button
+        class="btn btn-info"
+        formmethod="GET"
+        formaction="/feedback/{{ feedback.id }}/edit"
+      >
+        Edit
+      </button>
+      <button
+        class="btn btn-danger"
+        formmethod="POST"
+        formaction="/feedback/{{ feedback.id }}/delete"
+      >
+        Delete
+      </button>
+    </form>
+
+    {%endif%} {% endfor %}
+  </ul>
+  {% if session['username'] %}
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <form class="justify-content-end">
+    <button
+      class="btn btn-danger btn-lg"
+      formmethod="POST"
+      formaction="/users/{{ user.username }}/delete"
+    >
+      Delete User
+    </button>
+  </form>
+</div>
+{%endif%} {% endblock %}

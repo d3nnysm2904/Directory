@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-ligth bg-info justify-content-between ">
+    <div class="container">
+    <nav class="nav" >
+      <a href="/" class="navbar-brand text-light ">Home</a>
+     
+   
+      {% if session['username'] %}
+      <a href="/users/{{session['username']}}" class="navbar-brand text-light ">User</a>
+      
+      {%endif%}
+    </nav>
+    
+      <ul class="nav navbar-nav flex-row float-right">
+       
+        {% if session['username'] %}
+       
+        <li class="nav-item">
+          <a class="nav-link pr-3 text-light" href="/users/{{session['username']}}/feedback/new">Create Feedback</a>
+         
+          <li class="nav-item">
+           
+           
+           
+
+           
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link pr-3 text-light" href="/logout">Logout</a>
+        </li>
+       
+        {% else %}
+        <li class="nav-item">
+          <a class="btn-link nav-link pr-3 text-light" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/register">Sign up</a>
+        </li>
+        {% endif %}
+       
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 2em">
+    {% for category, msg in get_flashed_messages(with_categories=True) %}
+    <div class="alert alert-{{category}}">{{ msg }}</div>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock %}
+  </div>
+
+</body>
+<script src="static/app.js"> </script>
+
+</html>

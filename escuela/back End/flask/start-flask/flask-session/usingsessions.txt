@@ -1,0 +1,39 @@
+Refer to demo code flask-session to see examples 
+
+import session from flask
+
+set a secret key 
+
+
+from flask import session 
+
+app=Flask(__name__)
+app.config["SECRET_KEY"]= "SHHHH SEEKRIT"
+
+
+TO use it 
+in routes you can read session as a dictionary 
+
+@app.route ('/some-route')
+def some_route():
+""" Set fav_number in sessions , username and leaderboard"""
+    session['fav_number']= 4
+    session['username']= 'denny'
+    session['leaderboard']=['butters','kratos','luffy']
+    
+   # return f"Favorite number is {session['fav_number']}"
+    return render_template('index.html')
+
+
+Once the request is made we can eliminate 
+ session['username']= 'denny'
+ session['leaderboard']=['butters','kratos','luffy']
+
+ but if we ask in the function :
+ print(session['username']) 
+ we will be able to see the username because once it was send its stored with flask session 
+
+ we dont need to return variables using render_template, because when we use session we have acces to the magical  dictionary inside our jinja templates 
+
+ refer to demo code flask-sessions inside response-session.html
+ 

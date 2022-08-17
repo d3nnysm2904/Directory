@@ -1,0 +1,13 @@
+Deleting_SQLA   
+
+Pet.query.filter_by(name='Dina').delete()
+db.session.commit()
+
+
+Eliminating all species that are pig 
+Pet.query.filter(Pet.species=='pig').delete().all()
+
+
+If i want to undo that 
+
+db.session.rollback()

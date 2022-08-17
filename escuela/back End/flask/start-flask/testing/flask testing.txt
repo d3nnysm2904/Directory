@@ -1,0 +1,39 @@
+Integration Testing Flask App 
+what kinf of thing de we want to test in our falsk aplication ?
+ Does this URL path map toa route function \
+ Does this route return HTML
+ Does this route return the correct status code 
+ aftera POST request tot his route ,are we redirected 
+ after this route does the session contains expected info 
+
+ Writing integration test
+  you write with "unittest"  framework  
+
+
+
+to do this testing we dont need to start a server, we can do it from the app.py ,flask comes with a particular method called "test_client"
+"test_client' is goint to make us a testing client, like a version of  server as long as we call test_client
+
+
+in testing.py inside of demo folderr 
+
+from app import app  #is like from app.py import app=Flask(_name_)
+ (importing the "app=Flask(_name_)" that we are testing from the app.py)
+
+class ColorViewsTestCase(TestCase):
+  """ examples of integration test:testing Flask app"""
+
+  def test_color_form(self):
+    with app.test_client()as client :
+    #sending a get request 
+    #making a request to '/'
+            res = client.get('/')
+            #  this gives us whatever data is being received in this case html data
+            html = res.get_data(as_text=True)
+
+            # making sure our get request(res) is 200 code (ok)
+            self.assertEqual(res.status_code, 200)
+
+            # is this inside our html variable ,
+            self.assertIn('<h1>Color Form</h1>', html)
+    

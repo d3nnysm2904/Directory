@@ -1,0 +1,23 @@
+Errors and rollback  
+
+if we try to add a unnique name to the table that already exist we gonna have an error , and then if we try to add anpther name tot he table we gonna still have an error 
+
+the name Rocket already exist so this is gonna be an error 
+in ipython:
+
+pet_problem= Pet(name='Rocky',species='Dog')
+db.session.add(pet_problem)
+db.session.commit()
+
+Then when we try to add another animal 
+
+
+gato=Pet(name='Kitty',species='Cat')
+db.session.add(gato)
+db.session.commit()
+
+this is also gonna raise give an error 
+
+when we encounter those issues we call 
+
+db.session.rollback()

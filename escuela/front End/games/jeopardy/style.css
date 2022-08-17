@@ -1,0 +1,96 @@
+
+body{
+  background-image: url("jeopardy_logo.jpg");
+  background-size: cover;
+}
+
+#jeopardy{
+  margin: 0 auto;
+}
+#jeopardy thead tbody{
+  display: grid;
+  grid-template-columns: repeat(6,5 ,100px);
+  width: 800px;
+  height: 600px;
+  text-align: center;
+  font-size: 10pt;
+  margin-top: -20px;
+
+  color: rgb(23, 22, 22);
+  border-collapse: collapse;
+  
+}
+
+#jeopardy thead{
+  background-color: rgb(255, 153, 0);
+}
+
+
+#jeopardy tbody{
+  background-color: rgba(251, 255, 0, 0.965);
+}
+h1{
+  display: grid;
+justify-content:center;;  
+margin-top: 0;
+}
+
+#restart ,.start{
+/* text-align: center;
+margin-bottom: 20px;
+margin-top: 100px; */
+
+
+  font-family: 'Press Start 2P', cursive;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-family: 'Titan One', cursive;
+   font-size: 2rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    text-decoration-color: red;
+    background-color :rgb(194, 17, 218);
+    color: yellow;
+    border: solid rgb(30, 2, 2) 5px;
+    border-radius: 10px;
+}
+
+
+
+
+#jeopardy th, #jeopardy td {
+  border: solid 1px rgb(25, 24, 24);
+  width: 10em;
+  padding: 1em;
+}
+
+
+
+td:hover {
+  cursor: pointer;
+}
+
+#hidden{
+  display:none;
+}
+.restart{
+  display: none;
+}
+
+@media screen and (min-width:1920px){
+
+  #restart{
+    margin-top: 110px;
+  }
+  #jeopardy th, #jeopardy td {
+    border: solid 1px rgb(25, 24, 24);
+    width: 12em;
+    height: 4em;
+    padding: 1em;
+    
+   
+  }
+    
+  }
+  

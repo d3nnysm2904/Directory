@@ -1,0 +1,33 @@
+model_name.query.get(1)# gets the primary key 1 if id is pk 
+
+model_name.query.filter(column_name='Name_column') gets the columns name = 'Name_column'
+
+model_name.query.get(1)
+
+is like writing :
+
+SELECT* FROM pets WHERE id =1 
+
+model_name.query.filter_by(species='Dog').all()
+
+getting the first species that are Dog:
+
+model_name.query.filter_by(species='Dog').first()
+
+gets all dogs and hunger =20:
+
+model_name.query.filter_by(species='Dog',hunger=20)
+
+
+filter uses key words argument 
+
+ Pet.query.filter(model_name.species == 'Cat').all()
+
+
+ model_name.query.filter(model_name.hunger > 20).all()
+
+model_name.query.filter(model_name.Hunger > 15,model_name.species== 'Dog').all()
+
+is like saying 
+
+SELECT * FROMS mtable_name WHERE hunger >15 AND species= 'Dog';

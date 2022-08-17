@@ -1,0 +1,59 @@
+working with library in demo 
+
+
+<> or !=  is not equal 
+
+
+SQL Operators 
+
+Operators are used to build more complicated queries 
+they involve reserved keywords 
+
+These include
+ IN
+ NOT IN 
+ BETWEEN 
+ AND 
+ OR 
+
+
+ LIKE
+ ( A PERCENT SIGN % MATCHES ANY SEQUENCE OF ZERO OR MORE CHARACTERS ,
+ _ _ UNDERSCORE REPRESENT ONE AND EXACTLY ONE CHARACTER )
+
+Some examples :
+
+'abc' LIKE 'abc'  true 
+
+'abc' LIKE 'a%'  true 
+
+'abc' LIKE '_b_'  true 
+
+'abc' LIKE 'c'  false  
+
+ILIKE is not case sensitive 
+
+ using them :
+
+this will give me ids 1,5,9 with respective titles
+
+ SELECT id ,title FROM books WHERE id IN (1,5,9);
+
+
+this gives me all id except 1,5,9
+
+ SELECT id ,title FROM books WHERE id NOT IN (1,5,9);
+
+
+ this gives me all id betwwen 20 and 25 
+
+SELECT id , title FROM books WHERE id BETWEEN 20 AND 25 ;
+
+
+this will will give me all titles that start with T 
+
+SELECT id,title FROM books WHERE title LIKE 'T%'
+
+this will give me all author with 3 names 
+
+SELECT author FROM books WHERE author ILIKE '% % %';

@@ -1,0 +1,88 @@
+app.py
+
+Under the keyword argum,ent of obj for object , it will pre-populate those fields in HTML 
+on our employee obj we pass in , whatever the obj is needs to have matching attributes to our form fields 
+
+@app.route('/employees/<int:id>/edit', methods=["GET", "POST"])
+def edit_employee(id):
+    emp = Employee.query.get_or_404(id)
+
+    *form = EmployeeForm(obj=emp)*
+    
+    depts = db.session.query(Department.dept_code, Department.dept_name)
+    form.dept_code.choices = depts
+
+    if form.validate_on_submit():
+        emp.name = form.name.data
+        emp.state = form.state.data
+        emp.dept_code = form.dept_code.data
+        db.session.commit()
+        return redirect('/phones')
+    else:
+        return render_template("edit_employee_form.html", form=form)
+
+
+templates/edit.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit Employee</title>
+</head>
+
+<body>
+  <h1>Edit Employee</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden'%}
+    <p>
+      {{field.label}}
+      {{field}}
+      {% for err in field.errors %}
+      {{err}}
+      {% endfor %}
+    </p>
+    {% endfor %}
+    <button>Save</button>
+  </form>
+
+</body>
+
+</html>
+
+
+
+
+templates/phones.html
+
+
+<body>
+  <div class="container">
+    <h1 class="display-1">Phone Numbers</h1>
+    <table class="table table-striped ">
+      <thead class="thead-dark">
+        <th>Employee</th>
+        <th>Department</th>
+        <th>Phone</th>
+      </thead>
+      <tbody>
+        {% for emp in emps %}
+        <tr>
+          <td>{{emp.name}} <a class="btn btn-sm btn-info" href="/employees/{{emp.id}}/edit">Edit</a></td>
+          <td>{{emp.dept.dept_name}}</td>
+          {% if emp.dept.phone %}
+          <td>{{emp.dept.phone}}</td>
+          {% else %}
+          <td class="text-danger">NO PHONE</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/employees/new" class="btn btn-success">Add Employee</a>
+  </div>
+</body>

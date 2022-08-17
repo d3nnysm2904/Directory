@@ -1,0 +1,70 @@
+Quering 
+
+Fetching records
+.all()
+    get all records 
+
+.first()
+    Get first record, ok if there is none 
+
+.one()
+    Get only record, error if 0 or more than 1 
+
+.one_or_none()    
+    Get only record,error if >1 None if 0
+
+.count()
+    Get number of records found without fetching all 
+
+.get()
+    gets the primary key or return None
+
+.get_or_404
+    gets primary key or 404 
+
+SELECT * FROM db_name WHERE name = 'Liz';
+
+Model_name.query.filter_by(name='Liz')
+
+More flexible 
+
+Model_name.query.filter(Model_name.name=='Liz')
+Model_name.query.filter(Model_name.id >1)
+
+
+Chaining 
+
+#just_ca: gets all state='CA' and id >1 
+
+new_emps=Model_name.query.filter(Model_name.id >1)
+just_ca = new_emps.filter(Model_name.state='CA')
+
+Simple version
+Model_name.query.filter_by(name='Liz')
+Model_name.query.filter(Model_name.name =='Liz')
+
+More flexible version 
+
+db.session.query(Model_name).filter_by(name ='Liz)
+db.session.query(Model_name).filter(Model_name.name =='Liz)
+
+Returnig Tuples 
+We dont have acces to anything in the Model created 
+
+Useful when:
+
+You dont need full SQLA objects 
+
+    Dont need all fields in table 
+    Dont have objects to update 
+    Cant call useful methods on objects 
+     a bit faster  
+
+SELECT id FROM db_name;
+
+db.session.query(Model_name.id,Model_name.name).all()
+[(1,"Leonard "),(2,'Liz'),(3/)]
+
+
+
+Model_name.query.filter(Model_name.id.in_([22, 33, 44]))   # IN ()

@@ -1,0 +1,13 @@
+a database is a collection of data organnized to be efficiently stored accesed and managed  
+
+
+
+relational databases 
+  Model data as rows and column of tabular data (like spreadsheet)
+  Key tems include :
+   RDBMS -relationa; Dtabase Management System 
+   Schema- alogical representation of a Dtabase including its tables 
+   SQL -Structured Query Lenguage , a human readeble langueage for querying 
+   Table -
+   column 
+   row  

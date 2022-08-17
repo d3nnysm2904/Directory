@@ -1,0 +1,36 @@
+the past code we done the URL route are been hardcoded , if we wanted to add a route for a specific user in our aplication , we dont want to add every single username as a posible route 
+what we can do is add a path  like /user and and then all users are goin to be directed to that route syntax goes like this 
+we wrap the variable 'username' inside '<>' in the path and that turn it into a variable
+ 
+USERS={
+    "whiskey":"WHISkey the dog",
+    "spike":"Spike the pig"
+}
+
+@app.route('/user/<username>')
+def show_user_profile(username):
+    """show user profile"""
+    name= USERS[username]
+    return f"<h1> Profile for {name}</h1>
+
+
+we can have more than one route 
+
+@app.route("/products/<category>/<int:product_id>")
+def product_detail(category,product_id):
+"""Show details page for product"""
+
+
+
+URL parameter 
+/shop/<toys>
+"feels more like 'subject of page'
+
+
+QUERY parameter 
+/shop?toy=elmo
+"feels more like 'extra info abbout page' often used coming from form 
+
+
+basically URL is for the subject of the page 
+query strings are for modifiers or additional info  

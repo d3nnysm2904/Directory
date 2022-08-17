@@ -1,0 +1,28 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+<h1>Edit Feedback </h1>
+
+
+<form method="post">
+    {{form.hidden_tag()}}
+    
+    {% for field in form
+        if field.widget.input_type != 'hidden' %}
+       
+        <div>
+            {{field.label}}
+            {{field(class_='form-control')}}
+            
+        {% for error in field.errors %}
+        <span class="form-text text-danger">{{ error }}</span>
+        {% endfor %}
+        </div>
+    {%endfor%}
+    
+    <button class="btn btn-info btn-md">Edit Feedback </button>
+    </form>
+    <form action="/users/{{session['username']}}">
+    <button>Go back</button>
+</form>
+{% endblock %}

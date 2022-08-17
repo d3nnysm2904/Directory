@@ -1,0 +1,23 @@
+/*h1 { color: rebeccapurple }
+pattern of css  select-some-html { property: value;} body {background-color: rgb(218, 39, 203);}
+p {color: yellow; background-color: fuchsia;} li {background-color: whitesmoke;}
+li :nth-of-type(2n){background-color: black;}
+ li :nth-of-type(2n):hover {background-color: darkgray;} 
+ colors in css
+ 
+ 
+ RGB -rgb (121,12,41)-3 diferent channels 121 is red ,12 is green and 41 is blue going to 0-255 */
+/* body { */
+    /* background-color: rgb(240, 14, 240); 
+}
+/* h1 {background-color: rgba(255, 255, 255, 0.1);} */
+
+/* HEX 16 BASE NUMBER -THIS IS COLOR  */
+/* 0123456789ABCDEF  */
+
+/* body { background-color:#5500f3e7;   } */
+
+/* HSL- 3 PIECES , HUE, SATURATION AND LIGHTNESS */
+
+h1 { background-color:hsl(0, 100%, 50%) } 
+body {background-color: hsla(128, 96%, 47%, 0.7);}

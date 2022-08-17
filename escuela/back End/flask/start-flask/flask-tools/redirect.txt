@@ -1,0 +1,68 @@
+working in app.py inside jinja folder 
+
+
+HTTP redirect
+an http response
+the status code is a "redirect code "(often 302)
+it contains a URL fro browser to re-request 
+
+in order to redirect we need to import from flask
+
+from flask import redirect 
+
+if there is a page that is no longer working(refer to app.py inside jinja 'redirect )
+if we go to /redirect because is no longer working and has redirect it gives me 
+
+Redirect (302)
+Location: /
+
+The Flask Debug Toolbar has intercepted a redirect to the above URL for debug viewing purposes. You can click the above link to continue with the redirect as normal. If you'd like to disable this feature, you can set the config variable DEBUG_TB_INTERCEPT_REDIRECTS to False.
+
+the debug toolbar makes redirect explicit. This is very useful for debbugging ,if u dont want this you can turn it off 
+to turn off this settings and make the URL redirect direct to page we want insde app.py 
+
+*** app.config['DEBUG_TB_INTERCEPT_REDIRECTS']=False ***
+
+
+
+BUT THE MSOT COMMON USE IS TO REDIRECT A POST REQUEST TO A GET REQUEST 
+
+POST request are often from a form 
+and change data on the server 
+
+if you return HTML from a POST request the browser shows its fine 
+but if user hits 'refresh' they get weird 'ok to resubmit ' dialog 
+
+@app.route('/movies')
+def show_movies():
+    """Show list of movies in fake data base """
+    return render_template('movies.html', movies=MOVIES)
+
+
+@app.route('/movies/new', methods=["POST"])
+def add_movie():
+    """"Add to pretend DB"""
+    title = request.form['title']
+
+    MOVIES.append(title)
+    return render_template('movies.html', movies=MOVIES)
+
+
+better strategy 
+Do the work u want inside your POST routethe redirect to a page that shows confirmation 
+so we did the post request to movies/new
+and redirect to /movie
+
+@app.route('/movies')
+def show_movies():
+    """Show list of movies in fake data base """
+    return render_template('movies.html', movies=MOVIES)
+
+
+@app.route('/movies/new', methods=["POST"])
+def add_movie():
+    """"Add to pretend DB"""
+    title = request.form['title']
+
+    MOVIES.append(title)
+ ****   return redirect('/movies') ***

@@ -1,0 +1,40 @@
+This is git (like wsl)
+
+https://gitforwindows.org/
+
+
+wsl
+https://docs.microsoft.com/en-us/windows/wsl/install
+
+install window terminal in appstore 
+
+Configurin windows terminal directory 
+
+Open window terminal 
+pwd -print working directory (it tells me where i am )
+
+go to settings inside vscode settings in profile there a setingg call source , below that we can add a new setting called 
+"startingDirectory":"//wsl$/Ubuntu/home/your_username
+
+where Ubuntu is , that name has to be any terminal name you are using 
+to know the name open shell terminal and write : wsl -l
+
+
+adding vscode 
+extension  
+
+Remote-wsl
+
+or 
+WSL 
+
+
+if "code ." in terminal doesnt work 
+
+LOOK UP 
+VS Code Command is not detected 
+
+
+
+
+'/home/d3nnysm2904/directory/escuela/back End/flask/1intermediate-flask/externalApiRequest/venv/bin/python3.8 -m pip install --upgrade pip' command.

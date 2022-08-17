@@ -1,0 +1,5 @@
+The _.sampleSize() method is used to give an array of n random elements from the given array.
+
+Syntax:
+
+_.sampleSize(array, n)

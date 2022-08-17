@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1>Edit User</h1>
+
+{% for msg in get_flashed_messages() %}
+  <div>{{ msg }}</div>
+{% endfor %}
+
+<form method="POST">
+
+  {{ form.hidden_tag() }}
+  <!-- we start a loop for field in form we make the p for spacing and the render the {{field}}  
+  when we itirate over a form obj automaticly each thing we get from that iterator is going to be a form field that i can direclty render , this will make the input-->
+  
+  {% for field in form
+         if field.widget.input_type != 'hidden' %}
+  <p>
+    {{ field.label }}
+    {{ field }}
+
+    {% for error in field.errors %}
+    {{ error }}
+    {% endfor %}
+  </p>
+  {% endfor %}
+
+  <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>

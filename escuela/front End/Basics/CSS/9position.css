@@ -1,0 +1,80 @@
+/*a { border: 1px solid black;
+    display: inline-block;
+     anchor tags cant change top and bottom because is inline element  
+}
+h1{
+    width: 30%;
+    height: 3em;
+    border: 1px solid red ;
+    margin: 1em;
+    padding: 1em;
+    display: inline;
+}
+
+h2 {
+    margin: 3em;
+}
+
+#container {
+    border: 1px solid red;
+    width: 50%;
+    margin: 0 auto;
+}
+
+ #container section {
+    box-sizing: border-box;
+    width: 50%;
+    display:inline-block ;
+    border:  1px solid yellow;
+    text-align: center;
+    
+    
+}
+*/
+/* FLECBOX */
+#container2 {
+    border: 1px solid red;
+    width: 50%;
+    margin: 0 auto;
+}
+
+ #container2 section {
+    box-sizing: border-box;
+    width: 50%;
+    display:inline-block ;
+    border:  1px solid yellow;
+    text-align: center;}
+
+    nav{ display: flex;
+        justify-content: center;
+        /* jusstifycontente -space between  */
+ 
+        
+        color: blue;
+    }
+
+    nav a { font-size: 2em;
+        margin: 0 1em ;
+        position: fixed relative ;
+
+    } 
+
+
+
+    img {
+        position: absolute;
+    }
+
+    div {
+        position: relative;
+        width: 50%;
+        height: 100px;
+        top: 100px;
+        left:200px;
+        border: 2px solid red ;
+    }
+    h1 {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+    }

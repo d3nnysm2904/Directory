@@ -1,0 +1,12 @@
+Loops
+working in  spell.html
+
+
+{% for VAR in ITERABLE %}...{% endfor %}
+
+<ul>
+{% for complement in complements %}
+<li> {{complement}} </li>
+{% endfor %}
+
+</ul>

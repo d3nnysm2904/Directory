@@ -1,0 +1,45 @@
+starting a server (in terminal)
+(we dont have to create virtual enviroment but is better )
+
+ 1-python3 -m venv venv
+
+ 2-source venv/bin/activate
+
+ 3-pip3 install flask
+
+
+ 4- touch app.py ;make a python file (usually called app.py)
+
+ 5-(Inside app.py file import Flask)  
+ " from flask import Flask "  (refer to app.py for example);
+
+ 5.1-create our flask aplicattion(in file write the next ):
+  "app= Flask(__name__)"   --> (this creates an aplication obj)
+
+6-flask run (in terminal)
+
+if your flask app file is not called app.py (let say is called my_app.py ) we can do the next command 
+      "FLASK-APP=my_app.py flask run "
+      this is an enviroment variable 
+
+7-in terminal "enviroment" is set to "production" we usually want developer  mode so we use this command to set it to development 
+   "FLASK_ENV=development flask run"
+
+  7.1 to always set to virtual enviroment to be in developer mode we can do the next command line 
+        "export FLASK_ENV=development" 
+        and then "flask run" will be in developer mode but once closed venv(virtual enviroment) we need to do it again 
+
+  7.2- to make it permanent we copy "export FLASK_ENV=development"
+  and put it in our -bash profile we go to the beggining of directory "cd" , once there "ls -a"  and look for bash_profile (in mac) ;in windows is (profile ) open it and inside put "export FLASK_ENV=development"
+
+8-Adding routes (from here is inside app.py file)
+(@is a decorator)
+route refers in general to the mapping of URL  slash /somewhere 
+we need to add the line in file 
+
+@app.route('/somewhere') # define a function 
+def take_me_somewhere():
+   return "hello there" 
+
+
+refer to file app.py inside folder firstapp-flask 

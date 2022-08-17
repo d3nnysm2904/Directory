@@ -1,0 +1,4 @@
+Hidden inpouts are form fields that a user is not going to change or update 
+its a way of sending data along with the form that u want the server to have but u dont need the user to specify 
+
+<input type="hidden " id="hidden" name='hidden ' >

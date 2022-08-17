@@ -1,0 +1,177 @@
+
+
+button{ 
+    background-color: blue
+    ;font-size: 2rem;
+    color: white;
+padding: 0.2em 0.7em;
+border-radius: 10px;
+}
+
+/* BORDER
+border-width 
+border-style : groove, dotted, solid, double,hidden,ridge,inset
+
+border-style: to change each border squares 
+vertical-horizontal 2 elements --border-style:hidden solid
+top-horizontal-bottom 3 elemnts --border-style:hidden double dashed
+top-right-bottom-left 4 elements --border-style: double dashed solid hidden 
+
+border-color
+
+ */
+
+ img /*:hover*/ { width: 80px ; 
+min-width: 10px;
+min-width: 300px;
+ border: 10px solid red;/*--this is width/style/color */
+ border-left:  10px dotted; 
+ margin:0px auto;
+ padding: 5% 5%  ;
+
+
+ /*more examples of border :
+ 
+ border-color: magenta red yellow;
+border-width: 10px
+;border-style: groove dashed double; */
+}
+
+img:hover{border: 10px solid red ;
+box-sizing: content-box;}
+body > h1 {
+    /* height: 10px; */
+    /* font-size: 2rem; */
+    background-color: limegreen ; width: 50%;
+border-bottom: 5px solid blue;
+margin: 0px auto;}
+
+
+/* PADDING is the space betwween the content and the space area (bprder and content)
+
+2 elements is top/bottom and rigth/left
+paddding: 10% 20%
+
+3 elemnts is left rigth and bottom 
+padding: 10% 20% 0%
+
+padding-bottom
+padding-left
+padding-right-` `
+
+
+padding-top
+ */
+
+
+
+/* p:hover*/ p, #par
+{ height: 100px;
+ border: 1px solid black; 
+/* padding: 20% 50% 30% 90%;top,rigth,bottom,left, */
+margin: 0px auto;
+box-sizing: content-box  ;
+}
+
+
+
+
+/* MARGIN
+
+Margin values :
+Lenght :The size of the margin as a fixed value.
+
+percentage:The size of the margin as a percentage, relative to the width of the containing block.
+
+auto:The browser selects a suitable margin to use. For example, in certain cases this value can be used to center an element.
+
+margin collapsing
+The top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the individual margins (or just one of them, if they are equal), a behavior known as margin collapsing. Note that the margins of floating and absolutely positioned elements never collapse.*/
+
+#goul {margin: 0 autos;
+border-right: rgb(255, 255, 255) solid;}
+
+
+/* to center a img 
+the width has to be less than 90px  */
+.center{ 
+    box-sizing: content-box ;
+    border: none;  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;}
+
+    /* BOX SIZING  
+    content-box is the default 
+    es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.
+    
+    border-box 
+    es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.*/
+
+.table #par:hover{border: 10px solid chartreuse
+    ; box-sizing: border-box;
+    width: 80%;
+;}
+
+
+ /* width: 5%;
+height: 5%;}  */
+   
+/* OUTLINE 
+OUTLINE ARE LIKE BORDERS but are putside of borders ,but never take space
+solid;
+ dashed
+ 1rem solid;
+  thick double
+   8px ridge rgba(170, 50, 220, .6);
+border-radius: 2rem;
+*/
+
+div{
+    border: 10px solid pink ;
+    padding: 5rem ;
+    margin: 10%;}
+
+    button {outline: none;}
+
+
+    
+    /* What is the box model? CSS box model is a container which contains multiple properties including borders, margin, padding and the content itself. It is used to create the design and layout of web pages. It can be used as a toolkit for customizing the layout of different elements.
+
+What is the difference between margin and padding? Margin is the space between elements, padding is the space between content and the border
+
+What is collapsing margin? Collapsing margins happen when two vertical margins come in contact with one another. If one margin is greater than the other, then that margin overrides the other, leaving one margin.
+
+What is the purpose of the box-sizing CSS property? The CSS box-sizing property allows us to include the padding and border in an element’s total width and height.
+
+What does the outline property do? An outline is a line that is drawn around elements, outside the borders, to make the element “stand out”.
+
+How do you add a background image in CSS? ` background-image: url(“home.png”);`
+
+Given a div with a width of 200px, margin of 20px and padding of 20px, what is the calculated width by the browser? 240px (200 + 20 padding left + 20 padding right)
+
+Given a div with a height of 100px, border of 10px and padding of 20px, what is the calculated height by the browser? 160px (100 + 10 border top + 10 border bottom + 20 padding top + 20 padding bottom)
+
+What does margin:auto do? You can set the margin property to auto to horizontally center the element within its container. The element will then take up the specified width, and the remaining space will be split equally between the left and right margins. */
+
+
+
+
+/* BACKGROUND IMG 
+properties :
+background-size: contain ; cover 
+background-repeat
+background-position
+background 
+*/
+
+div{
+    font-size: 1.5em
+    ;background-image: url("https://tse4.mm.bing.net/th?id=OIP.90JO4TrQXrBpyHTD-kweWwHaEo&pid=Api&P=0&w=289&h=181");background-size: contain; background-repeat: no-repeat;
+    background-position: center;}
+
+    span { border: 10px solid white;
+        padding: 10px;
+        margin: 10px;
+        background-image: url("tokyo-ghoul-art-pic-2048x1152.jpg");
+     background-size: cover; background-position: center; background-repeat: no-repeat;}

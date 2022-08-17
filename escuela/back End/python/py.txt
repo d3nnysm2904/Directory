@@ -1,0 +1,3 @@
+to add a function in terminal form any file.py
+in terminal inside python 
+from app import function 

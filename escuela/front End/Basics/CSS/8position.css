@@ -1,0 +1,81 @@
+/* POSITION 
+static
+
+relative -Un elemento posicionado relativamente es un elemento cuyo valor computado de position es relative. Las propiedades top y bottom especifican el desplazamiento vertical desde su posición original; las propiedades left y right especifican su desplazamiento horizontal.
+
+absolute-Un elemento posicionado absolutamente es un elemento cuyo valor computado de  position es absolute o fixed. Las propiedades top, right, bottom, y  left especifican el desplazamiento desde los bordes del bloque contenedor del elemento. (El bloque contenedor es el ancestro relativo al cual el elemento está posicionado). Si el elemento tiene márgenes, se agregarán al desplazamiento. el elemento establece un nuevo contexto de formato de bloque para su contenido
+
+FIXED-Un elemento posicionado fijamente es un elemento cuyo valor de  position computado es sticky. Es tratado como un elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido (como por ejemplo dando a top cualquier valor distinto de auto), dentro de su flujo principal (o el contenedor dentro del cual se mueve), desde el cual es tratado como "fijo" hasta que alcance el borde opuesto de su bloque contenedor.*/
+
+h1{
+    background-color: lightcoral;
+    width: 25%;
+     ;position: relative;
+     display: inline-block;
+ /* position:absolute; */
+ top: 100px;
+ left: 100px;
+
+ 
+
+}
+div {
+    border: 2px solid red
+    ;width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+
+}
+
+img{
+    position: relative ;
+    top: 0;
+    left: 0;
+}
+
+#deer {
+    left: 0px ;
+    top: 0px;
+    z-index: 2;
+
+} 
+p {
+    font-size: 2em;
+}
+nav { background-color: turquoise;
+     color: white;
+    height: 80px;
+    position: fixed;
+    top: 0em;
+    left: 0em;
+    width: 100%;
+    z-index: 1;
+}
+
+nav a{ color: white
+    ;font-size: 2em;}
+
+    /* z-index 
+    allow us to set the stacking order off elements in our page 
+     */
+
+     /*  responsive design
+     @media
+     is to design website for different sizes  of screens   */
+
+     body {
+background-color: rgb(218, 218, 47);       
+     } 
+@media (max-width: 1000px ) {body
+{background-color: red;}  
+}
+/*  this is for the size of the screen becomes smaller the color changes  */
+@media (max-width:1000px) { #essay{width:80% ;} nav {
+    background-color: rgb(251, 255, 3);}
+}
+#essay { width: 50%;
+    margin: top 80% ;
+    display: inline-block;
+}

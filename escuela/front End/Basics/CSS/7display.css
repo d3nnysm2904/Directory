@@ -1,0 +1,49 @@
+/*  DISPLAY property is to 
+flex` 
+inline
+block
+inline-block */
+/* h1 {background-color: lightskyblue;
+width: 50%;
+height: 100px;
+margin: 2em;
+display: inline;} */
+
+ /*a{
+    background-color: red;
+    display: block
+    ;margin: 100px;
+    height: max-content; */
+
+ #container {
+     border:1px solid black ;
+margin:  0 auto;
+width: 50%;
+
+}
+
+#container section {
+    border: 1px solid red;
+    width: 50%;
+    box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+}
+
+/* FLEXBOX  */
+nav { 
+    background-color: #eee ;
+    display: flex;
+    justify-content: center;
+height: 100px;
+align-items: center;
+    
+}
+nav a{ 
+    font-size: 2em ;
+    margin: 0em 1em ;
+}
+
+
+
+a{ position: relative;}

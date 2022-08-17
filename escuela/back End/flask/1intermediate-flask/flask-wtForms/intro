@@ -1,0 +1,11 @@
+WTForms
+Is a python library providing 
+    validation 
+    Html production 
+    security 
+
+Flask wtf 
+    is built on top of that and adds integration with Flask (get data from request etc )
+
+
+

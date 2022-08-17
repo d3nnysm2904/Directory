@@ -1,0 +1,21 @@
+Templates
+ 
+we need to create a 'templates' directory , flask will look for a directory with that name , needs to be in the same file ass our app.py 
+
+inisde jinja folder go checkeout 
+
+my-project-directory/
+venv/
+app.py
+templates/  (this is a folder inside venv) 
+hello.html
+
+
+next we need to use a function called a render template , and then we give it the name of file
+
+@app.route('/)
+def index():
+    """return homepage"""
+    return render_template('hello.html')  //file name(hello.html)
+
+

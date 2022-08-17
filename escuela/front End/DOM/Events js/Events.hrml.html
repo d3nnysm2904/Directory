@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+<h1>Intro to Events </h1>
+<ul> 
+    <li> are actions  that ocuurs in the browser </li>
+   
+</ul>
+
+<h1>events listeners </h1>
+
+  <!-- when a _____ event ocuurs on _____ element do this ___ 
+  clik 
+  button 
+  alert hi  -->
+
+
+
+       
+   <!-- this is not used anymore-->  
+   <button onclick="purpleBody()">Clik me  </button>  
+
+    <button ondblclick="colors('green')">Double Clik me   </button>  
+
+    <button id="red" >Make background red </button> 
+    
+<!-- Best way to add event listeners  -->
+
+
+<h1>JS onclick</h1>
+<h1>syntax:addEventListener</h1>
+
+<p><b>EXAMPLE <hr>
+const h1 =document.querySelector('h1')
+<br>h1.addEventListener('click, function(){console.log('you just clicked the h1 ')}')
+<hr></b></p>
+
+
+<button id="violet"> Violet two Click Yellow one </button>
+
+<h1>Load events </h1>
+
+<button id="load">Alert </button>
+
+<p>The script tag has to be all the way at the bottom </p>
+<p>Another way for the script to be up top  is to add an event that waits for the dom the be loaded <hr>
+    document.addEventListener('DOMContentLoaded' fumction(){
+        //place code inside 
+    })
+ </p>
+
+
+ <!-- <img width="200px" src="https://images.unsplash.com/photo-1572288623190-5bb8b0d81aa2" alt="">
+ <img width="200px" src="https://images.unsplash.com/photo-1571993003949-8066997ec70b" alt="">
+ <img width="200px" src="https://images.unsplash.com/photo-1572162396896-7a30d5f9a261" alt="">
+ <img width="200px" src="https://images.unsplash.com/photo-1572151813105-a05fd9e37e8d" alt="">
+ <img width="200px" src="https://images.unsplash.com/photo-1571766280138-1ba739fcc856" alt=""> -->
+\
+
+<h1>Event object </h1>
+    <p><b>Syntax:</b>we can call the parameter whatever we want <hr>
+        const h1 =document.querySelector('h1')
+    h1.addEventListener('click;,function(event){
+console.log(event)
+    }</p>
+
+    <p><b>Whats is inside </b></p>
+
+    <ul>
+         <li>
+target-what element is te target of the event
+    </li>
+<li>pageX/pageY-where on the [age this occurs </li>
+<li>key-what key was pressed</li>
+<li>preventDefault()- a function used to prevent the default behavior of the event </li></ul>
+
+
+<p id="par">click me <b> i am bold </b> </p>
+ <script src="Events.jes.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+from random import choice
+
+COMPLIMENTS=['COOL','AMAZING','AWESOME','BEATIFUL']#IMPORT choice
+
+nice_compliment=choice(COMPLIMENTS) #chooses a random complement from COMPLIMENTS 
+
+the best option to select something our of a list is from random import "sample"
+
+refer to app.py inside of jinja folder 
+
+
+@app.route('/greet2')
+def get_greet2():
+   username = request.args['username']
+
+   wants_compliments = request.args.get('wants_compliments')
+
+   nice_things = sample(COMPLIMENTS, 3)  # select 3 out of COMPLIMENTS
+
+   return render_template('greet2.html', username=username, wants_compliments=wants_compliments, complements=nice_things)

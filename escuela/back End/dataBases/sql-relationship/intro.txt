@@ -1,0 +1,175 @@
+working with movies seed 
+
+Relationships 
+
+There is a term in SQL called primary key:
+a primary key within a single table is a unique iidentifier for each row initially is gonna be 'id' 
+
+A foreign key is usually an id referencing another table a foreign table  
+
+
+\dt to see all tables names 
+
+One to Many relationship 
+
+adding an studio name  to the studio table 
+
+INSERT INTO studios (name ,founded_in)VALUES ('Orion Pictures','1980-10-10');
+
+
+then inserting a new movie 
+
+INSERT INTO movies (title,release_year,runtime,rating,studio_id)VALUES
+('Amadeus','1984',180,'R',4);
+
+
+now delete 
+we can't do this because the studios tables has a foreing key that is linked to movies and is used aas reference 
+
+DELETE FROM studios WHERE id =1;
+
+option 1 :
+Clear out the studio_id columns of movie that reference it 
+
+UPDATE movies SET studio_id= NULL WHERE studio_id=1;
+DELETE FROM studios WHERE id =1 ;
+
+
+option 2 :
+delete the movies aassociated with the studio first 
+
+DELETE FROM movies WHERE studio_id=1;
+DELETE FROM studios WHERE id =1; 
+
+
+-------------------------------------------------------------
+Many to Many relationship  
+
+
+movies_example=# \d movies
+                               Table "public.movies"
+    Column    |  Type   | Collation | Nullable |              Default
+--------------+---------+-----------+----------+------------------------------------
+ id           | integer |           | not null | nextval('movies_id_seq'::regclass)
+ title        | text    |           | not null |
+ release_year | integer |           |          |
+ runtime      | integer |           |          |
+ rating       | text    |           |          |
+ studio_id    | integer |           |          |
+
+
+not null mean that the info needs to be added when inserting  
+
+Adding a movie to movies tables
+
+INSERT INTO movies (id, title)
+VALUES(8,'Guardians 2);
+
+ id |            title             | release_year | runtime | rating | studio_id
+----+------------------------------+--------------+---------+--------+-----------
+  1 | Star Wars: The Force Awakens |         2015 |     136 | PG-13  |         1
+  2 | Avatar                       |         2009 |     160 | PG-13  |         2
+  3 | Black Panther                |         2018 |     140 | PG-13  |         1
+  4 | Jurassic World               |         2015 |     124 | PG-13  |         3
+  5 | Marvel’s The Avengers        |         2012 |     142 | PG-13  |         1
+  7 | Amadeus                      |         1984 |     180 | R      |         4
+  8 | Guardians 2                  |              |         |        |
+
+
+Adding Chris Pratt
+
+INSERT INTO actors (id,first_name,last_name,birth_date)
+ VALUES(4,'Chris','Pratt','1985-10-10');
+
+  id | first_name | last_name | birth_date
+----+------------+-----------+------------
+  1 | Scarlett   | Johansson | 1984-11-22
+  2 | Samuel L   | Jackson   | 1948-12-21
+  3 | Kristen    | Wiig      | 1973-08-22
+  4 | Chris      | Pratt     | 1985-10-10
+
+
+
+Adding movie_id and actor_id 
+
+  INSERT INTO roles (movie_id,actor_id)
+  VALUES(8,4);
+
+   id | movie_id | actor_id
+----+----------+----------
+  1 |        1 |        1
+  2 |        1 |        2
+  3 |        3 |        2
+  6 |        8 |        4
+
+
+JOiN TABLES WITH MANY TO MANY 
+
+
+SELECT first_name, last_name COUNT(*) AS total_roles FROM roles JOIN actors ON roles.actor_id =actors.id GROUP BY actors.id ORDER BY total_roles DESC;
+
+
+Joining 3 tables 
+
+SELECT * FROM roles JOIN actors ON roles.actor_id = actors.id JOIN movies ON roles.movie_id =movies.id
+
+
+
+CONNECTING movies and actors 
+SELECT * FROM movies 
+JOIN roles 
+ON movies.id =roles.movie_id
+JOIN actors
+ON roles.actor_id = actors.id; 
+
+
+Selecting certain columns , using table alias shorthand :
+
+SELECT m.title , a.first_name, a.last_name
+FROM movies m
+JOIN roles r 
+ON m.id = r.movie_id
+JOIN actors a 
+ON r.actor_id = a.id  
+
+
+
+
+SELECT m.title , a.first_name, a.last_name 
+FROM movies m 
+JOIN roles r 
+ON m.id = r.movie_id
+JOIN actors A
+ON a.id = r.actor_id 
+WHERE m.release_year > 2000; 
+
+
+SELECT m.release_year, m.title, a.first_name, a.last_name
+FROM movies m 
+JOIN roles r
+ON  m.id = r.movie_idJOIN actors a 
+ON a.id = r.actor_id 
+WHERE m.release_year >2000 
+ORDER BY m.release_year, a.first_name;
+
+
+MANY TO MANY OUTER JOIN 
+
+ SELECT *
+ FROM role r
+ JOIN movie m  
+ ON r.movie_id = a.id 
+ JOIN ACTORS A 
+ ON r.actor_id = a.id ;
+
+
+ Get all the id , first name and last name of the actors that have been in more tahn one movie 
+
+ SELECT a.id , a.first_name,a.last_name
+ FROM movies m
+ JOIN roles r
+ ON m.id = r.movie_id
+ JOIN actors a 
+ ON r.actor_id =a.id 
+ GROUP BY a.id ,a.first_name, a.last_name
+ HAVING count (*) >=2; 

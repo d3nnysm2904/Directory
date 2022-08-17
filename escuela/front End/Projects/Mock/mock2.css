@@ -1,0 +1,103 @@
+.elements {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.object{
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border: rgb(224, 4, 125) solid 2px ;
+    position: relative;
+}
+
+.caption{   
+    display: flex;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(182, 8, 80, 0.377);
+    font-size: 4em;
+    align-items: center;
+ 
+    position: absolute;
+    top: 300px ;
+    transition: top 1s;
+}
+.wraper{width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+.img1{
+    background-image: url("https://media1.giphy.com/media/k83Aztp45O0qzeR4hc/giphy.gif");
+}
+.img2{
+    background-image: url("https://media.giphy.com/media/5WJeTrvmvxb7VjCdlY/giphy.gif");
+}
+
+.img3{
+    background-image: url("https://i.pinimg.com/originals/63/e4/4a/63e44aaf2c3b2cf4e2b505a90ae04ff5.gif");
+}
+
+.object:hover .caption {
+    top: 0;
+}
+
+
+.objcat{
+    margin: 0 auto;
+    width: 300px;
+    height: 300px ;
+
+    border: solid red 3px ;
+}
+.imgcat{
+    border: solid 1px red;
+    box-shadow: 2px ;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://media3.giphy.com/media/VHYtiOgRpFPwkESEbF/giphy.gif");
+}
+.catp{ 
+    width: 100%;
+    height: 15%;
+    border-left-width: initial;
+     border: solid 2px red;
+    font-size: 2em;
+    background-color: #eee;
+    padding-top: 10%;
+    left: 100%;
+    right: 100%;
+    border-radius: 0 2 2 0;
+}
+
+.lorem{ width: 100%;
+    height: 50%%;
+
+ 
+     border: solid 2px red;
+  font-style: italic;
+    background-color: #eee;
+    padding-top: 10%;
+    left: 100%;
+    right: 100%;
+    border-radius: 0 2 2 0;
+
+}
+
+button{
+    width: 4em;
+    height: 2em;
+    color:white;
+    border-radius: 10%;
+    background-color: rgba(43, 0, 235, 0.705);
+    font-size: 2em;
+}
+button:hover{ color: black;
+    background-color: #eee;
+    transition: ease-in 0.5s
+}

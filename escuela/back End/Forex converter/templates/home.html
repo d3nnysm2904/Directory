@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Tip Pool</title>
+    <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+   
+
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+
+  <body>
+
+ <h1 class="display">Forex converter</h1>
+ 
+
+    
+     {% for msg in get_flashed_messages() %}
+<p> {{msg}} </p>
+{% endfor %}
+
+      
+     
+
+
+    <form action="/" method="POST" id='form' >
+
+
+      <div class="container">
+      
+      <div class="row justify-content-center">
+        <div class="col-6 border shadow rounded p-4">
+          <div class="form-group">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Convert from</label>
+                
+                <select name ="currency" class="form-control" id="exampleFormControlSelect1">
+                 
+                  <option value="">Choose Currency</option>
+                  <option value="EUR">Euro</option>               
+                  <option value="IDR">Indonesia </option>               
+                  <option value="BGN">Bulgaria</option>               
+                  <option value="ILS"> Israel</option>               
+                  <option value="GBP">United Kingdom</option>               
+                  <option value="DKK">Denmark</option>               
+                  <option value="CAD">Canada</option>               
+                  <option value="JPY">Japan</option>               
+                  <option value="HUF">Hungary</option>               
+                  <option value="RON">Romania</option>               
+                  <option value="MYR">Malaysia</option>               
+                  <option value="SEK">Sweden Krona</option>               
+                  <option value="SGD">Singapore</option>               
+                  <option value="HKD">Hong Kong</option>               
+                  <option value="AUD">Australia Dollar</option>               
+                  <option value="CHF">Switzerland</option>               
+                  <option value="KRW">Korea (South)</option>               
+                  <option value="CNY">China</option>          
+                  <option value="TRY">Turkey</option>     
+                  <option value="HRK">Croatia</option>     
+                  <option value="NZD">New Zealand</option>     
+                  <option value="THB">Thailand</option>     
+                     
+                  <option value="NOK">Norway</option>     
+                  <option value="RUB">Russia</option>     
+                  <option value="MXN">Mexico</option>     
+                  <option value="CZK">Czech Republic</option>     
+                  <option value="BRL">Brazil</option>     
+                  <option value="PLN">Poland</option>     
+                  <option value="PHP">Philippines</option>     
+                  <option value="ZAR"> South Africa</option>
+                       
+                  <option value="USD">United States</option>  
+                  <option value="INR"> India</option>
+                </select>
+              </div>
+            
+            
+            <div class="form-group">
+                <label >Convert to</label>
+                <select name= "currency2" class="form-control" >
+               
+                  <option value="">Choose Currency</option> 
+                  <option value="EUR">Euro</option>               
+                  <option value="IDR">Indonesia </option>               
+                  <option value="BGN">Bulgaria</option>               
+                  <!-- <option value="ILS"> Israel</option>                -->
+                  <option value="GBP">United Kingdom</option>               
+                  <option value="DKK">Denmark</option>               
+                  <option value="CAD">Canada</option>               
+                  <option value="JPY">Japan</option>               
+                  <option value="HUF">Hungary</option>               
+                  <option value="RON">Romania</option>               
+                  <option value="MYR">Malaysia</option>               
+                  <option value="SEK">Sweden Krona</option>               
+                  <option value="SGD">Singapore</option>               
+                  <option value="HKD">Hong Kong</option>               
+                  <option value="AUD">Australia Dollar</option>               
+                  <option value="CHF">Switzerland</option>               
+                  <option value="KRW">Korea (South)</option>               
+                  <option value="CNY">China</option>          
+                  <option value="TRY">Turkey</option>     
+                  <option value="HRK">Croatia</option>     
+                  <option value="NZD">New Zealand</option>     
+                  <option value="THB">Thailand</option>     
+                  <option value="USD">United States</option>     
+                  <option value="NOK">Norway</option>     
+                  <option value="RUB">Russia</option>     
+                  <option value="INR"> India</option>     
+                  <option value="MXN">Mexico</option>     
+                  <option value="CZK">Czech Republic</option>     
+                  <option value="BRL">Brazil</option>     
+                  <option value="PLN">Poland</option>     
+                  <option value="PHP">Philippines</option>     
+                  <option value="ZAR"> South Africa</option>     
+                 
+                </select>
+              </div>
+
+          </div>
+          <div class="form-group">
+            <label for="">Amount</label>
+            <input  min= '0' type="number" class="form-control" name="amount" />
+            
+            
+          </div>
+          <div><button class="btn btn-primary container-fluid btn-lg">Submit</button></div>
+        </div>
+      </div>
+    <div id='result' >
+    <!-- {{rate}} -->
+  {{answer }}{{answer2}}
+</div>
+    </div>
+
+
+
+
+ 
+
+      {# <script src="static/app.js"></script> #}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+   
+    </body>
+
+  </html>

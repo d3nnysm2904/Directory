@@ -1,0 +1,25 @@
+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
+
+sudo is to run as an administrator 
+
+sudo update-alternatives --config python3
+
+ python get-pip.py --force-reinstall
+
+python3.8 -m pip install --upgrade pip
+
+sudo apt-get remove python3.7
+
+sudo apt-get install python3.8 python3.8-dev python3.8-distutils python3.8-venv
+
+python -m pip uninstall pip
+
+sudo apt-get install python3-pip
+
+sudo apt install python3-pip
+
+
+-----
+installing database postgres
+
+sudo apt-get install postgresql

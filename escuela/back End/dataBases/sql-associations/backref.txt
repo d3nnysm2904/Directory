@@ -1,0 +1,46 @@
+
+
+class Dt(db.Model):
+
+
+    __tablename__ = "departments"
+
+     emp = db.relationship('Emp')
+
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+
+   
+
+    dept = db.relationship('Dt')
+
+-----------------------------------------------------
+with backref (needs to reference dept variable )
+
+class Dt(db.Model):
+
+
+    __tablename__ = "departments"
+
+     emp = db.relationship('Emp',backref='departments')
+
+
+
+class Emp(db.Model):
+
+    __tablename__ = "employees"
+#dont need to specify here , will aoumatically get .employees to navigate to employees beacuse of backref
+   
+
+
+in ipython
+
+  d= Dt.query.get('mktg')  gets mktg pk 
+
+  d.employees  # all employees with pk mktg
+
+  id=1 name=Denny Sanchez state= NYC >,
+ < id=2 name=Jenny Mosquera state= FL >]

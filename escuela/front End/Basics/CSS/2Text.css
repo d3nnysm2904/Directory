@@ -1,0 +1,36 @@
+/*Text properties
+Font size -how big should the font be 
+Font family -what type of font
+Text align -left center
+/* Line - how much space between line*/
+
+/* text align left rigth center justify etc */
+/* 
+h1 { text-align: center; font-weight: 100;}
+p { font-weight: bolder;} */
+
+/* p{line-height:3.5; 
+    letter-spacing: 
+    5px; 
+    word-spacing: 4px;
+     text-indent: 2px; 
+     font-size:   25px;} */
+/* p { font-size: 1vw;} */
+/* h2{ text-decoration:
+     underline;
+      underline dotted; 
+      underline dotted red;
+      green wavy underline; 
+      underline overline #ff3028} */
+
+p {font-size: 10vh;}
+fontzise
+em	Font size of the parent, in the case of typographical properties like font-size, and font size of the element itself, in the case of other properties like width.
+ex	x-height of the element's font.
+ch	The advance measure (width) of the glyph "0" of the element's font.
+rem	Font size of the root element.
+lh	Line height of the element.
+vw	1% of the viewport's width.****
+vh	1% of the viewport's height.***
+vmin	1% of the viewport's smaller dimension.
+vmax	1% of the viewport's larger dimension.

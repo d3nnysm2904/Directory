@@ -1,0 +1,116 @@
+ Flask
+ 
+ pip3 install flask
+
+ ******************************************
+ sql
+ pip3.8 install psycopg2-binary
+pip3 install flask-sqlalchemy
+
+in our flask app.py :
+
+from flask_sqlalchemy import SQLAlchemy
+
+Then we initialize a variable usually :
+
+db = SQLAlchemy()
+
+Then next things is associate our flask application with the db variable :
+
+db.app = app 
+db.init_app(app)
+
+we still haven't said wich database to use, what the name of it is, to do that we need to configure an very important property :
+This is where we specify not only taht we're using Postgres but also the particular name of the database we want to use 
+
+app.config['SQLALCHEMY_DATABASE_URI]='postgresql:///database_name'
+
+***************************************************
+
+wtforms
+
+pip3.8 install flask-wtf
+
+************************************************
+
+isntalling Bcrypt
+
+# terminal
+# pip install bcrypt
+
+# app.py
+# import bcrypt
+
+# salt =bcrypt.gensalt() # This will make us a password salt (a random string included with our password once we created it )
+
+# password =b'iampassword' #binary string (bytes )
+
+# bcrypt.hashpwd(password,salt)
+******************************************************
+# in terminal
+pip install flask_bcrypt
+
+from flask_bcrypt import Bcrypt
+
+bcrypt = Bcrypt()
+h = bcrypt.generate_password_hash('secret')
+# b'$2b$12$zxq70q67pjmdNtdq5o44yu3wRpCZ5R6qGMU9Zlrgt1LFFbI3Nmgve'
+
+bcrypt.check_password_hash(h, 'secret')
+# true
+
+****************************************************************
+
+Ultra useful add-on for Flask that shows, in browser, details about app
+install add-on produt 
+in terminal:
+
+pip3 install flask-debugtoolbar
+
+pip3 freeze > requirements.txt
+
+inside app.py 
+
+from flask import Flask, request, render_template
+from flask_debugtoolbar import DebugtoolbarExtension
+
+app=Flask(__name__)
+app.config['SECRET KEY']= 'oh secret' #this needs to be inside our app for the debugger to work 
+
+debug =DebugToolbarExtension(app)
+
+
+******************************************
+installing postgres database:
+
+sude apt-get install postgresql
+
+to start it:
+
+sudo service postgresql  start 
+
+to stop it 
+
+sudo service postgresql  stop
+
+*******************************************************
+
+Heroku 
+Adding Procfile
+echo "web: gunicorn app:app" > Procfile
+
+
+Adding a runtime.txt
+To make sure you are using a certain version of Python on Heroku, add a file called runtime.txt and specify the version of Python you want to use.
+$ echo "python-3.7.2" > runtime.txt
+$ echo "python-3.8.13" > runtime.txt 
+
+$ heroku login
+$ heroku create NAME_OF_APP
+$ git remote -v           # make sure you see heroku
+$ git push heroku master  # make sure you've added & commited!
+$ heroku open
+
+https://first-app-d3.herokuapp.com/ | https://git.heroku.com/first-app-d3.git
+
+https://first-app-h.herokuapp.com/ 

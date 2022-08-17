@@ -1,0 +1,17 @@
+# class Emp(db.Model):
+
+#     __tablename__="employees"
+
+#     projects=db.relationship('Pj',
+#                              secondary='employee_projects',
+#                              backref='employees')
+
+
+# secondary  is a reference to a __tablename__
+
+# in ipython
+
+# liz =Emp.query.get(2)
+
+# liz.projects
+# <Pj server Deploy Server>,<Pj car Design car

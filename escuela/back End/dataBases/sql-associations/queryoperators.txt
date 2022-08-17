@@ -1,0 +1,65 @@
+Common operators 
+
+SELECT * FROM Model_name WHERE state IN ('CA',OR','LA')
+Operators
+Employee.query.filter(Employee.name == 'Jane')
+
+Employee.query.filter(Employee.name != 'Jane')
+
+Employee.query.filter(Employee.id > 65)
+
+Employee.query.filter(Employee.name.like('%Jane%'))    # LIKE
+
+Employee.query.filter(Employee.id.in_([22, 33, 44]))   # IN ()
+Employee.query.filter(Employee.state == None)     # IS NULL
+
+Employee.query.filter(Employee.state.is_(None))   # IS NULL
+
+
+Employee.query.filter(Employee.state != None)     # IS NOT NULL
+
+Employee.query.filter(Employee.state.isnot(None)) # IS NOT NULL
+
+q = Employee.query
+---------------------------------------------------------------
+AND:
+
+q.filter(Employee.state == 'CA', Employee.id > 65)
+
+q.filter( (Employee.state == 'CA') & (Employee.id > 65) )
+---------------------------------------------------------
+
+
+OR:
+
+q.filter( db.or_(Employee.state == 'CA', Employee.id > 65) )
+
+q.filter( (Employee.state == 'CA') | (Employee.id > 65) )
+--------------------------------------------------------------
+
+NOT:
+
+Employee.query.filter( db.not_(Employee.state.in_(['CA', 'OR'])) )
+
+------------------------------------------------------------
+
+Employee.query.filter( ~ Employee.state.in_(['CA', 'OR']) )
+
+
+
+Learning More
+Self-Learning
+q = Employee.query
+
+q.group_by('state')
+
+q.group_by('state').having(db.func.count(Employee.id) > 2)
+
+q.order_by('state')
+
+q.offset(10)
+
+q.limit(10)
+
+
+

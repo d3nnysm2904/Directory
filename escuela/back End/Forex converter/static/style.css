@@ -1,0 +1,42 @@
+body {
+    font-family: helvetica;
+    margin: 30px;
+    
+  }
+
+ h1{
+  display: flex;
+  justify-content: center;
+ }
+
+ #result{
+  font-weight: bold;
+  margin: auto 0;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+ }
+
+ button{
+  margin-top:20px ;
+ }
+
+ 
+ p{
+  display: grid;
+  text-align:center;
+  padding: 1px;
+  border-radius: 1rem ;
+  font-size: 2em;
+  box-shadow: 0 2px 5px rgba(0,0,.1);
+  width: 500px;
+  height: 60px;
+  margin: 0 auto ;
+  margin-bottom: 30px;
+
+}
+
+
+/* inside section with category success or error  */
+
+

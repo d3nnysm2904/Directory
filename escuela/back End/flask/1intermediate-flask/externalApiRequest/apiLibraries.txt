@@ -1,0 +1,3 @@
+Some popular apis have specialized libraries (sometimes now as SDKs) written for specific programming lenguaje that can help out 
+
+for exmple , tere is a python api for calling the twitter API  (python-twitte r)

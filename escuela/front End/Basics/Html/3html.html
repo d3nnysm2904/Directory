@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: contents;">
+    <b><b>Advanced Form Inputs</b></b>
+    There are additional types of form fields that don’t use the input element:
+
+drop down menus
+larger text blocks
+submission of files
+<b>Drop Down Menus</b>
+Drop down menus (where you can pick exactly one choice) use select and option elements:
+Pick an animal:
+<select name="animal">
+  <option value="cat">Cat</option>
+  <option value="dog">Dog</option>
+  <option value="porcupine">Porcupine</option>
+</select>That results in a drop-down menu with options of cat/dog/porcupine.
+
+It starts with “cat” selected — if you want to start with an empty choice, add an option with value of "", and add some text like “Select choice”
+
+<b>Larger Text Areas</b>
+The input type of text accepts one line of text.
+
+If you want larger text fields that can also include linebreaks, use textarea instead:
+<textarea name="biography"></textarea>
+Notice that this has a starting and ending tag.
+
+This allows you to enter default text (for example, a generic bio)
+
+You can set height/width of box with rows and cols attributes:
+<textarea name="biography" rows="10" cols="40"></textarea>
+
+<b>File Submission</b>
+File submission requires that your server is set up to receive the file.
+
+It requires you to change the form tag and have an input type of file:
+<form method="post" enctype="multipart/form-data">
+    Choose file to upload:
+    <input type="file" name="my-file">
+    <button type="submit">Upload File</button>
+  </form>
+  This submits the form in a special way so that it includes the file data.
+
+<a href="tables.html"> NEXT</a>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,73 @@
+from falsk import render_template
+
+this is to add html from inside a 'template 'folder to an @app.route('/thisroute') 
+
+when returning a template and more variables , those variables are to return in the html page as logic variabels  "inside html {{}}"
+
+return render_template('index.html', base= variable in function)
+--------------------------------------------------------------------------------
+
+flask provides an object ,'request , to represent web request 
+
+from flask import request 
+
+if we want acces to the query string well find it inside of 'request.args'
+
+@app.route
+def search():
+    """handle GET request like/search?term=fun"""
+    term = request.args['term']
+    return f"<h1> Searching for {term} </h1>
+
+
+@app.route("/add_comment")
+def add_comment_form():
+    """ the name='comment' will be used to store the value from this input when is sent to the server  """
+    return """
+    <h1>Add comment</h1>
+     <form method="POST">
+      <input type='text' placeholder='username' name="username"/>
+       <input type='text' placeholder='comment' name="comment"/>
+       <button>Submit</button>
+     </form> """
+
+
+@app.route("/add_comment", methods=["POST"])
+def save_comment():
+    """
+this is post request with form ,specify the attribute method="post 
+this handles the add_comment_form """
+
+    username = request.form["username"]
+    comment = request.form["comment"]
+    print(request.form)
+    return f"""<h1> Saved your comment</h1>
+    <ul>
+        <li>Username:{username}</li>
+        <li>Comment:{comment}</li>
+    </ul """
+
+
+
+
+request.arg is more like an get method where we get values passed 
+
+request.from is more like POST request beccasue we send a form 
+
+How do session works 
+  Different web frameworks handle this different
+  In flask , session re stored in the browser as a cookie(clietnt side session )
+  they re serialized and signed , so user could see , but cant change their actual session data  ,only flask can  
+
+
+----------------------------------------------- 
+Server Side sesion 
+ Some web frameworks store session data on the server instead of serialized and signed 
+ Send a cookie with "session Key" wich tells server how to get the real data
+ Useful when u have alots of sessions data or complex setups 
+
+
+ Flask sessions docs  
+ easy_install Flask-Session
+ or
+ pip install Flask-Session

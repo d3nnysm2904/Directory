@@ -1,0 +1,9 @@
+HTTP is what is called a "stateless"protocol 
+on its own it remembers nothing 
+
+"Saving State"
+Every request to a site is regarded by the server as separate from every other  
+
+Some Ways To Save State 
+ passing info in a query param ?POST form hidden field 
+  /step-zero?fav-color=blue --> step-one?fav-color=blue -->
