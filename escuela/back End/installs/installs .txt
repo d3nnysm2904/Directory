@@ -83,7 +83,7 @@ debug =DebugToolbarExtension(app)
 ******************************************
 installing postgres database:
 
-sude apt-get install postgresql
+sudo apt-get install postgresql
 
 to start it:
 
@@ -104,6 +104,9 @@ Adding a runtime.txt
 To make sure you are using a certain version of Python on Heroku, add a file called runtime.txt and specify the version of Python you want to use.
 $ echo "python-3.7.2" > runtime.txt
 $ echo "python-3.8.13" > runtime.txt 
+$ echo "python-3.9.13" > runtime.txt 
+
+$ echo "python-3.10.04" > runtime.txt 
 
 $ heroku login
 $ heroku create NAME_OF_APP

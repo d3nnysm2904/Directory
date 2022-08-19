@@ -1,0 +1,13 @@
+heroku config 
+
+adding a postgres 
+
+heroku addons:create heroku-postgresql:hobby-dev 
+                                        (price point) 
+
+heroku pg:psql
+
+/l ; shopws the table db 
+
+
+heroku run python seed.py 

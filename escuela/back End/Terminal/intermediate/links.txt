@@ -1,0 +1,72 @@
+Regular expresions 
+
+in terminal 
+
+man ln 
+
+creating links ( a copy of a file )
+
+$ ln path_to_link name_of_link 
+$ln ../directory/file.txt file
+
+two types of links 
+
+hard links (a copy of the original and if original deleted copy of link will persist :
+$ ln path_to_link name_of_link 
+
+symbolic link (to create a symbolic link we use the -s flag when creating a link :
+    $ ln -s path_to_link name_of_link 
+
+
+The find command
+
+find file_name
+
+*-any  =number of characters
+find . -name '*.css'
+find  flask -name '*.css'
+
+?-one characters
+
+find . -name '*.?? '
+[]-any of the characters insde the brackets 
+
+
+grep "exact letter " file_name
+
+grep -i (case insentive)
+
+grep -A 3 "def" app.py(3 lines after def )
+
+grep -B 3 "def" app.py (lines before it) 
+
+grep -C 3 "def" app.py (3 lines in either side )
+
+grep -v pattern (evrething that is not the pattern )
+
+grep -c "3" (prints count of 3 in file  )
+
+grep -n "def" app.py (shows the lines )
+
+
+Wildcard with grep 
+
+. - match any character 
+
+grep '....' file_name (looks for word with 4 words  or more )
+grep -w '....' file_name (looks for word with 4 words  exactly  )
+
+
+* - match zero or more of the preceding character or expresion 
+
+grep -wc "T.*" file_name(How many starts with capital T )
+
+[^]- do not match 
+
+grep -wc "[^T]" file_name (How many do not start with T)
+
+\. represents .
+
+d represent digit 
+
+grep -r "bcrypt" (looks for bcrypt in all files inside open directorie ) 

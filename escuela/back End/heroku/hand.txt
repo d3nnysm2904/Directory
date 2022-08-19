@@ -59,6 +59,7 @@ Since we’re on a different server, we need different environment variables val
 $ heroku config:set SECRET_KEY=nevertell FLASK_ENV=production
 $ heroku config    # see all your environment variables
 import os
+'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
 
 # use secret key in production or default to our dev one
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'shh')
