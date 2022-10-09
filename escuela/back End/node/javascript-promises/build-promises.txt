@@ -1,0 +1,78 @@
+Building promises 
+
+You can use promises with the 'new' keyword to make ur own promises 
+Unfortunately , the syntax here takes some getting used to 
+
+'Promises' accepts a single function (call it fn) as an argument 
+    'fn' accepts two functions as arguments , 'resolve' and 'reject'
+    Pass 'resolve' a value for the promise to resolve the value 
+    Pass 'reject' a value for the promise to reject value  
+
+
+demo 
+
+function myAsyncFunction() {
+    // return a new Promise
+    return new Promise((resolve, reject) => {
+      /*
+  
+        DO ASYNC STUFF HERE
+  
+      */
+  
+      // if it succeeds, call the resolve callback
+      resolve(/* success value*/);
+  
+      // if it fails, call the reject callback
+      reject(/* fail value*/);
+    });
+  }
+
+
+function threeSecond()
+{
+    return new Promise (
+        (resolve,reject)=>{
+      setTimeout(resolve,3000)
+    })
+    .
+    then(()=>console.log('All done'))}
+
+
+
+
+Promise.all and Promise.race  
+
+Promise.all accepts an array of promises and returns a new promise 
+This new promise will resolve when every  promise in the array resolve and will be rejected if any promise in the array is rejected   
+Promise.all is extremely useful whenever u want to send out several independent request in parallel
+let fourPokemonPromises = [];
+
+for (let i = 1; i < 5; i++) {
+  fourPokemonPromises.push(
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+  );
+}
+
+Promise.all(fourPokemonPromises)
+  .then(pokemonArr => (
+    pokemonArr.forEach(p => console.log(p.name))
+  ))
+  .catch(err => console.log(err));
+
+
+Promise.race accepts an array of promises and return a new promise 
+This new promise will resolve or reject as soon as one promise in the array resolve or rejects  
+     
+
+let fourPokemonRace = [];
+
+for (let i = 1; i < 5; i++) {
+  fourPokemonRace.push(
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+  );
+}
+
+Promise.race(fourPokemonRace)
+  .then(pokemon => console.log(`${pokemon.name} won!`))
+  .catch(err => console.log(err));

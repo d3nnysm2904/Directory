@@ -1,0 +1,48 @@
+https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
+
+terminal 
+javascript syntax works in terminal
+$node app.js 
+(opens app.js )
+
+
+$npm
+(node package manager)
+
+installing packages 
+$cd-my-project’s
+
+$npm init 
+(Creates 'packages.json' with metadata & dependencies ;node equivalent of requirements.txt )
+or if in a hurry and want default 
+$npm init --yes
+
+install axios 
+$npm install axios
+or 
+$npm i axios 
+
+
+if u want to install dependencies 
+$npm install 
+(this will install all modules from packages.json)
+
+*************************************************************
+Using libraries 
+inside app.js
+
+const axios=require('axios')
+***************************************************
+Process Env Argv 
+
+ 
+
+Get value of envirmontal variables from shell 
+process.env.SECRET_KEY
+
+process.env is an object ;its keys are the names of enviroment variables 
+
+$export SECRET_INFO=abc123
+$node 
+$process.SECRET_INFO
+'abc123'

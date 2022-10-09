@@ -48,7 +48,7 @@
 }
 
 #game{
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(4,250px );
    margin-top: 0px; 
  justify-content: center;

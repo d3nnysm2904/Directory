@@ -1,0 +1,13 @@
+Installing jest 
+
+terminal 
+npm i --global jest
+
+npm install --save-dev jest
+
+/home/d3nnysm2904/.nvm/versions/node/v16.17.0/bin/jest
+files should in FILE.text.js
+or folder called __tests__
+
+If you have a package.json, you don’t need additional configuration.
+If not, create jest.config.js file. It can be empty, you just need one.

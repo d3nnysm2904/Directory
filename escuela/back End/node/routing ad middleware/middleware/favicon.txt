@@ -1,0 +1,2 @@
+A favicon is something that a browser automatically asks for, a tiny little icon 
+

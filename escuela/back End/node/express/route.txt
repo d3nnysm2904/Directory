@@ -1,0 +1,120 @@
+const express = require("express");
+
+const app = express();
+
+// route
+app.get("/first", () => {
+  console.log("Hello");
+res.send('Hello ,hello ')
+});
+
+// 3000 is the port
+app.listen(3000, () => {
+  console.log("App on port 3000");
+});
+
+
+Route Handler callbacks 
+
+Every handlre should have a callback with two parameters :
+  request:
+   information about request(query string,url parameters ,form.data)
+  
+  response:
+  useful methods for sendig a response (html,txt,json,etc )
+  You will commonly see these parameters named req and res 
+
+
+app.get('/') listen for a GET Request to the / endpoint 
+In teh callback, response.send() issues a response of plain text or html 
+
+
+nodemon 
+When you make changes to your files, you'll need to restart your server through the command line keyword nodemon in order for the changes to take effect. Flask does this refresh automatically, so Express is a bit more high level in that regard.
+
+Nodemon restarts the server when you edit files or if the server crashes 
+Install globally , so you can use in any projects 
+
+$npm install --global nodemon
+
+$nodemon fle_name.js 
+
+
+
+req (request) params:
+Specify parameters in teh route by prefixing them with a colon 
+app.get('/param/:fname',function(req,res){
+return res.send(`this instructor is ${req.params.fname}`)
+})
+
+app.get('/param/:language/:color',function(req,res){
+  console.log(req.params))
+  })
+  # in chrome  http://localhost:3000/spanish/red
+console.log(req.params) = {language:'spanish',color:'red'}
+
+
+Other useful Request(req) Property 
+  query string (req.query)
+  headers (req.headers)
+  body (req.body)
+
+
+req.query
+app.get('/search',(req,res)=>{
+  # console.log((req.query))
+  const {term,sort}=req.query
+  return res.send(`SEARCH PAGE! Term is ${term} and sort is ${sort}`)
+})  
+in server(chrome) http://localhost:3000/search?terms=games&sort=new
+
+
+
+req.headers 
+app.get('show-headers',(req,res)=>{
+  res.send(req.headers)
+})
+
+
+
+req.body
+
+we need to send a post request (insomnia or in a html form  )
+
+app.post('/register',(req,res)=>{
+  # res.send(req.body)
+  res.send(`Welcome ${req.body.username}`)#username if we send a form data with  username on it 
+})
+
+to get a body response we have to configure express 
+
+app.use(express.json())  //jason 
+app.use(express.urlencoded({extended:true}))  // form data
+
+
+res.sendStatus() - its a way of just sending back a status code 
+
+responding with json 
+
+check json.Api.js
+
+
+Error handling  
+
+check demo videoCode ExpressError 
+
+-----------------------------
+
+App use and next 
+
+
+
+app.use - Is a way of runnig a callback on every single request 
+app.use((req,res next)=>{
+  console.log('The server got a request')
+  next()  # if we dont put the next it will only runn the console.log
+})
+
+
+next - Is a third parameter we can add in app.get('/',(req,res,next )=>{})
+  Is a function we can call to tell express to move on to the next matching route or the next error handler, basically move on 

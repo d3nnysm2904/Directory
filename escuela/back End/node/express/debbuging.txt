@@ -1,0 +1,4 @@
+Debugging Node 
+
+Start up node with 
+$ node --inspect-brk name_file.js

@@ -1,0 +1,7 @@
+Express router 
+Placing all routes in app.js gets messy quickicly 
+express provides a feature ro place routes elsewhere and use them in app.js 
+
+const router =new express.Router()
+
+
