@@ -1,0 +1,7 @@
+Using external middleware 
+Instead of writng our own logger , we will use a more robust one called morgan 
+
+When using external middleware , we follow a simple process 
+install it - $ npm install morgan 
+require it - const morgan =require('morgan') 
+use it -app.use(morgan('dev'))

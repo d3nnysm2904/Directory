@@ -1,0 +1,48 @@
+
+toBe is to test exact equality. 
+If you want to check the value of an object, use toEqual instead:
+toBeNull matches only null
+toBeUndefined matches only undefined
+toBeDefined is the opposite of toBeUndefined
+toBeTruthy matches anything that an if statement treats as true
+toBeFalsy matches anything that an if statement treats as false
+
+toEqual
+    has the same value 
+
+toBe
+    is the same obj
+
+toContain
+    Does object\array contain this item 
+
+,not
+    add before matcher to invert
+    
+    Before / After
+    Jest gives us hooks we can tap into so to not repeat common setup/teardown:
+    
+    For one-time setup/teardown:
+    beforeAll: run before all tests start
+    afterAll: run after all tests finish
+    For frequent setup/teardown:
+    beforeEach: run before each test starts
+    afterEach: run before teach test finish
+    describe("my set of tests", function () {
+      beforeAll(function(){
+        console.log("Run before all tests")
+      })
+    
+      beforeEach(function(){
+        console.log("Run before each it")
+      })
+    
+      afterEach(function(){
+        console.log("Run after each it")
+      })
+    
+      afterAll(function(){
+        console.log("Run after all tests")
+      })
+    });
+    Can put these directly in file (outside of functions) to run before/after any/all tests in entire file.
