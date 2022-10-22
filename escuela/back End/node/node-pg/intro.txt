@@ -1,3 +1,22 @@
+connecting postgres pg 
+
+install express app again 
+
+in terminal 
+ connect sql  to the data.sql
+
+ psql < data.sql
+
+SELECT * FROM users; 
+
+Connect database to node app 
+using pg package 
+
+$npm i pg
+
+require the pg in db.js 
+
+# grabbing client from pg librarie 
 const { Client } = require("pg");
 
 let DB_URI;
@@ -9,6 +28,7 @@ if (process.env.NODE_ENV === "test") {
 } else {
   DB_URI = "postgresql:///usersdb";
 }
+
 
 let db = new Client({
   connectionString: DB_URI
