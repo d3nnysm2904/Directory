@@ -1,0 +1,12 @@
+
+once connected to psql type this in
+$create user test_iser with encrypted password 'mypassword';
+
+CREATE ROLE
+then write this 
+$grant all privileges on database usersdb to test_iser;
+
+$GRANT SELECT ON ALL TABLES IN SCHEMA public to test_iser;
+
+now change DB_URI to
+ "postgresql://test_iser:mypassword@localhost/usersdb"

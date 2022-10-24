@@ -1,6 +1,6 @@
 installing postgres database:
 
-sude apt-get install postgresql
+sudo apt-get install postgresql
 
 -------------------
 to check if is running we use this command:

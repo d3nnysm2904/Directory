@@ -1,0 +1,18 @@
+Process Env Argv 
+
+ 
+
+Get value of envirmontal variables from shell 
+process.env.SECRET_KEY
+
+process.env is an object ;its keys are the names of enviroment variables 
+
+$export SECRET_INFO=abc123
+$node 
+$process.SECRET_INFO
+'abc123'
+
+
+process.argv is array of command line arguments given to start this programm 
+
+process.argv[index]
