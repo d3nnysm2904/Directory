@@ -1,0 +1,12 @@
+\i data.sql with the psql open and inside the dababase u want to create 
+
+
+$createdb pg_relationship
+
+$psql
+
+$\c pg_relationship
+
+$\i data.sql   
+
+\i runst the file isnide psql 
