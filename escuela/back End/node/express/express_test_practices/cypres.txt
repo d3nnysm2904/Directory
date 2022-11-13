@@ -1,0 +1,9 @@
+installing cypress 
+
+$ npm i --save-dev cypress
+
+add a script in package.json 
+
+"scripts":{
+    "cypress:open":"cypress open"
+}

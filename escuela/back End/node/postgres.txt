@@ -4,9 +4,13 @@ $create user test_iser with encrypted password 'mypassword';
 
 CREATE ROLE
 then write this 
-$grant all privileges on database usersdb to test_iser;
+$grant all privileges on database dbname to test_iser;
 
 $GRANT SELECT ON ALL TABLES IN SCHEMA public to test_iser;
 
 now change DB_URI to
- "postgresql://test_iser:mypassword@localhost/usersdb"
+ "postgresql://test_iser:mypassword@localhost/dbname"
+
+ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO my_user;
+
+Update it to your user

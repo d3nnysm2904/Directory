@@ -1,0 +1,11 @@
+  JSON SCHEMA BASICS
+
+ $  npm i jsonschema
+
+ const jsonschema=require('jsonschema')
+
+const result=cjsonschema.validate('Hello',{"type":"string"})
+
+
+App to help creating schemas 
+jsonschema.net

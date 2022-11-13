@@ -1,0 +1,85 @@
+json web tokens 
+
+Authentication Via tokems 
+there are three different sections to a token 
+
+Header  
+     :metadata about a token (signign algorithm used & type of token )
+
+Payload: data ro be stored in token      
+    Often this will store thing likethe user id 
+    This is encoded , not encrypted-dont put secret info here
+
+
+    Node jwt package 
+install 
+$ npm i jsonwebtoken
+
+const jtw =require('jsonwebtoken')
+
+jwt.sign(payload,secret-key,jwt-options) 
+    is gonna allows us to sign a token and generate a new token     
+    payload:sobject string used to 'sign' token 
+
+    secret-key:secret string used to signed token 
+
+    jwt-options is optional object of setting for making the token 
+
+
+1- $const  token =jwt.sign({username:"Tod"},'seceret')
+
+
+Decoding /Verifying Tokens  
+
+        jwt.decode(token)
+            Return the payload from the token (works witouthsecret key, the tokens are signed not enciphered  )\
+
+        jwt.verify(token,secret-key)
+            Verify Token signature and return paylod is valid , if not reaise error     
+
+
+2- $jwt.verify(token,'secret')
+{ username: 'Tod', iat: 1668127401 }             
+
+
+const jwt=require('jsonwebtoken')
+
+const secret_key='secret'
+
+const jwt_options={expiresIn:60*60}  //1 hour 
+
+let payload={username:'jane'}
+
+let token =jwt.sign(payload,secret_key,jwt_options)
+
+
+Protected Routes 
+
+After a client receives a token, they should send with every future request that needs authenticathion 
+
+
+Code :
+
+# get token from login route 
+let resp=await axios.post('/login',{username:"jane",password:'secret'})
+
+let token =resp.data
+
+# use that token for future request
+
+await axios.get('/secret',{params:{_token:token}})
+await axios.post('/other',{_token:token})
+
+
+Autentication middleware 
+function authenticateJWT(req, res, next) {
+    try {
+      const tokenFromBody = req.body._token;
+      const payload = jwt.verify(tokenFromBody, SECRET_KEY);
+      req.user = payload;
+      return next();
+    } catch (err) {
+      // error in this middleware isn't error -- continue on
+      return next();
+    }
+  }

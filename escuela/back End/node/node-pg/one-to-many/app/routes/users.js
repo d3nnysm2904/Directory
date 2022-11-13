@@ -2,7 +2,6 @@
 
 const db = require( "../db" );
 const express = require( "express" );
-const expressError = require( '../expressError' );
 const router = express.Router();
 
 
@@ -35,11 +34,10 @@ router.get( '/:id', async ( req, res, next ) =>
     const userResults = await db.query( 'SELECT name ,type FROM users WHERE id =$1', [ id ] );
 
     const msg = await db.query( 'SELECT id, msg FROM messages WHERE user_id =$1', [ id ] );
-    if ( userResults.rows.length === 0 )
-    {
-      throw new expressError( `User ${ id } does not exist`, 404 );
-    }
+
+    // making a object of users to add the messages 
     const user = userResults.rows[ 0 ];
+    // adding the messages to the user obj 
     user.messages = msg.rows;
 
     res.send( user );

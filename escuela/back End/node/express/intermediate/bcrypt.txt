@@ -1,0 +1,26 @@
+package fopr node 
+
+$npm i bcrypt
+
+Password hashing with bcrypt 
+
+Hash password using work factor (12 is a good choice )
+
+Returns promises -resolve to get hashed password 
+
+in terminal 
+
+const bcrypt =require('bcrypt')
+
+$ bcrypt 
+
+this hash the password 
+$ bcrypt.hash('thispassword',12).then(d=>console.log(d))
+
+$ const hashPW='wherever value bycrpt.hash gave me'
+
+In order to log someone in , we need to use bcrypt.compare
+
+$ bcrypt.compare('password',hashPW)
+    Check if pw is valid 
+    return promise -resolve to get boolean (true or false )

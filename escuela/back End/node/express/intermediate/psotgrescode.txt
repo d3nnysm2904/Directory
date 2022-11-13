@@ -1,0 +1,2 @@
+In postgress there are code errors as well 
+23505: unique violation onstrain code  
