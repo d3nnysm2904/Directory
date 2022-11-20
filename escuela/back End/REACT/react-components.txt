@@ -1,0 +1,5 @@
+Components 
+
+function Cat (name){
+    return `<p>${name}</p>`
+}
