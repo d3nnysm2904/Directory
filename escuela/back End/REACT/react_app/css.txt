@@ -1,0 +1,5 @@
+Make a css file for each component  in react 
+\
+House.css for house component s
+
+Conventional to add className='house' onto house <div/>

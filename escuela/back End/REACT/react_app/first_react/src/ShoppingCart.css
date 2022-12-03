@@ -1,0 +1,13 @@
+.ShoppingCart {
+    border: 2px solid rgb(12, 15, 1);
+    width: 400px;
+    margin: 20px;
+}
+
+.ShoppingCart-items {
+    border: 2px solid rgb(42, 45, 42)
+}
+
+.ShoppingCart-header {
+    text-align: center;
+}
