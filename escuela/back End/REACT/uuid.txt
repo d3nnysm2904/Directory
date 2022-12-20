@@ -1,0 +1,10 @@
+npm install uuid
+
+import uuid from 'uuid/v4'
+
+# add new item t object cart 
+
+const addItem=(item)=>{
+    let newItem={...item,id:uuid()}
+    setITems(items=>[...items,newItem])
+}

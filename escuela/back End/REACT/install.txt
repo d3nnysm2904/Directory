@@ -1,0 +1,17 @@
+
+$ npx create-react-app my-app 
+
+older node 
+npm install -g create-react-app
+
+then run 
+
+create-react-app my-app
+
+starting your app 
+
+to start it  
+
+npm start 
+
+(i had to add "import REACT from 'react '" in my app.js )
