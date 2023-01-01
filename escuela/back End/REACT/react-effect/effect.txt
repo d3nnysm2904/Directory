@@ -1,0 +1,5 @@
+useEffect takes two arguments , the first one is a function , the side effect 
+the second argument is a way of specifying when it should run 
+
+useEffect will ren after the first render 
+useEffect will run after all rerenders by default 

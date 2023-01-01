@@ -1,0 +1,5 @@
+To get started with React Router ,install react-router-dom
+
+$ npx create-react-app routed 
+$ cd routed 
+$npm install react-router-dom

@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.Clicker-dark {
+  background-color: black;
+}
+
+.Clicker-ligth {
+  background-color: whitesmokes;
+}
+
+.Clicker-ligth button {
+  background-color: red;
+  color: blanchedalmond;
+}
+
+.Clicker-dark button {
+  background-color: blue;
+  color: chartreuse;
+}
