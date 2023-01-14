@@ -1,0 +1,8 @@
+we create the context.js
+
+we wrapp  the context in a 
+<CountContext.Provider value={ counter }> only takes one value 
+
+then we import useContext in react 
+
+value=useContext(CountContext)
