@@ -1,0 +1,8 @@
+.Form-submited {
+
+    display: none;
+}
+
+.Form-not-submited {
+    display: inline;
+}
