@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import History from './History';
 import Toggle from './Toggle';
+import 'Form.css'
 
 
 const Form = () =>
@@ -44,7 +45,9 @@ const Form = () =>
 
 
 
-    return ( <>
+    return (
+        <div className={ toggle ? 'Form-submited' : 'Form-not-submited' } >
+
 
         <form onSubmit={ handleSubmit } >
 
@@ -83,10 +86,16 @@ const Form = () =>
 
             <button >Create History</button>
 
+
         </form>
 
-        < History formData={ formData } toggle={ toggle } />
-    </>
+            < History
+
+                formData={ formData }
+                toggle={ toggle }
+
+            />
+        </div>
     );
 };
 

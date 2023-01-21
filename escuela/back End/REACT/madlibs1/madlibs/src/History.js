@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './Form.css';
 
 
 
-const History = ( { formData, toggle } ) =>
+const History = ( { formData, toggle, handleSubmit } ) =>
 {
 
     let history;
@@ -20,17 +21,18 @@ const History = ( { formData, toggle } ) =>
         const idx = Math.floor( Math.random() * history.length );
         choice = history[ idx ];
     }
-    else { <div>Create History</div>; }
+    else
+    {
+        return ( <div>Create History</div> );
+    }
 
 
 
 
 
-    return (
-        <div
-        >
-            { choice }
-
+    return ( <div className={ toggle ? "Form-not-submited" : 'Form-submited' }  >
+        { choice }
+        <button onClick={ handleSubmit }>Restart</button>
     </div> );
 
 
