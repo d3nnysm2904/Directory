@@ -45,4 +45,16 @@ process.env is an object ;its keys are the names of enviroment variables
 $export SECRET_INFO=abc123
 $node 
 $process.SECRET_INFO
-'abc123'
+'abc123 '
+
+
+process.argv[index]
+process.argv is a array of command-line arguments given to start this programm 
+
+
+Process.exit 
+Exit the programm inmediately and return exit code to the shell 
+
+process.exit(0) exit with success
+process.exit(1-10) exit with failure
+
