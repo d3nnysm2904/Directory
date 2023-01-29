@@ -23,11 +23,12 @@ app.get("/users/:username", function (req, res, next) {
   }
 })
 
+// localhost3000/secret?password=popcorn
 app.get("/secret", (req, res, next) => {
   try {
     if (req.query.password != 'popcorn') {
       throw new ExpressError("invalid password", 403)
-    }
+    } 
     return res.send("CONGRATS YOU KNOW THE PASSWORD");
   } catch (e) {
     next(e)

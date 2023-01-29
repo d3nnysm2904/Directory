@@ -4,7 +4,7 @@
 
  const jsonschema=require('jsonschema')
 
-const result=cjsonschema.validate('Hello',{"type":"string"})
+const result=jsonschema.validate('Hello',{"type":"string"})
 
 
 App to help creating schemas 

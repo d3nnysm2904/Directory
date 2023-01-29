@@ -1,0 +1,1 @@
+express doesnt care if you return somthing or no , but it does matters for js 

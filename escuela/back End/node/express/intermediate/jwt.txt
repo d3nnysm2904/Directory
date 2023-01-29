@@ -7,7 +7,7 @@ Header
      :metadata about a token (signign algorithm used & type of token )
 
 Payload: data ro be stored in token      
-    Often this will store thing likethe user id 
+    Often this will store thing like the user id 
     This is encoded , not encrypted-dont put secret info here
 
 

@@ -25,6 +25,7 @@ class Pokemon {
     console.log(res);
     this.name = res.data.name;
     for (let type of res.data.types) {
+      console.log(type)
       this.types.push(type.type.name);
     }
   }

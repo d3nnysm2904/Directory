@@ -1,12 +1,24 @@
+// import express
 const express = require("express");
 
+// execute express as a function 
 const app = express();
 
+// if we making psot request and send in it as json we need express,json
+// parses  req.body as JSON 
 app.use(express.json());
+
+// this one is for fom data
 app.use(express.urlencoded({ extended: true }));
 
 // first route
+//  first argument is the path , then a function 
+// function will be executed as soon the it match the route on the web 
+// req and res are parameters , request , and response 
+// request :information about request (query string , url paramaters ,form data)
+// response :useful methods for sending a response (html,text ,json ,etc)
 
+// res.send 
 app.get("/", function (req, res) {
   res.send("Homepage");
 });
@@ -24,7 +36,7 @@ app.get("/params/:fname", function (req, res) {
 });
 
 const greetings = {
-  en: "hello",
+  en: "hello", 
   fr: "bonjour",
   js: "konnichiwa",
 };
@@ -55,10 +67,17 @@ app.get("/show-lan", (req, res) => {
   res.send(`Your language is ${lang}`);
 });
 
+// using imsomnia we send a post request 
+
 app.post("/register", (req, res) => {
   //   res.send(req.body);
   res.send(`Welcome ${req.body.username}`);
 });
+
+
+
+// start the server 
+// always needs to be at the bottom of the file 
 // 3000 is the port
 app.listen(3000, () => {
   console.log("App on port 3000");
