@@ -13,7 +13,7 @@ const USERS = [
     { username: "StacysMom", city: "Reno" },
     { username: "Rosalia", city: "R" },
 ];
-
+// next is used to tell the app to move on onte the next route or callback; move on onto the enxt thing 
 app.get( "/users/:username", function ( req, res, next )
 {
     try
