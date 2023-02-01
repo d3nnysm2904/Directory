@@ -51,3 +51,4 @@ async function getUsers() {
   return [elie, matt, joel];
 }
 ```
+The request are independent and can slow down the aplication,

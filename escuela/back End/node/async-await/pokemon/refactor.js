@@ -40,3 +40,4 @@ async function get3Pokemonasync() {
   let { data: p2 } = await axios.get(`${url}/2`);
   console.log(p2.name);
 }
+
