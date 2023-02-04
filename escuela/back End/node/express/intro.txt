@@ -1,7 +1,7 @@
 Getting started
 $ mkdir first-express-app
 $ cd first-express-app
-$ npm init -y
+$ npm init --y
 $ npm install express
 Nodemon
 Nodemon restarts server when you edit files or if the server crashes.
