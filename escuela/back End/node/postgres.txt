@@ -14,6 +14,8 @@ now change DB_URI to
 
  GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO test_iser;
 
+ GRANT ALL ON SEQUENCE descriptions_id_seq TO test_iser;
+
 Update it to your user
 
 
