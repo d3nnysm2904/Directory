@@ -1,0 +1,10 @@
+Goals 
+Describe abstract data type 
+compare arrays 
+
+List :
+are an abstract data type 
+a set of requiremnes
+keep multiple itesn 
+can insert  or delete items 
+can contain duplicates

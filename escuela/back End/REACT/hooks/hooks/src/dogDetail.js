@@ -27,4 +27,4 @@ const DogDetail = () =>
     );
 };
 
-export default DogDetail; tgg;
+export default DogDetail; 

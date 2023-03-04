@@ -1,0 +1,170 @@
+Arrays 
+
+Arrengement of items at equally-spaced addresses in memory 
+[3,7,4,6,8]
+
+retrieving by index 
+O(1)
+
+Finding 
+O(n)
+
+Insertion 
+O(n)
+
+Deletion 
+O(n)
+
+Direct array /Vector 
+
+Direct arrays only work if items are same size :
+.All numbers
+all same length 
+
+Inidrect arrays 
+In any indirect array, the array doesnt directly hold the value 
+it holds the memory of the real value 
+This lets an array store different types of data , or different length data
+
+Linked list 
+Items arent stored in contiguis memory , isntead , each item references the next item in the sequence 
+
+Can rearrange without having to move other items in memory 
+
+Node class implementation
+
+A  basic node has tow attrinbutes 
+    val:
+     the information the node contains 
+    (could be string, int ,instance,etc)
+
+    next:
+        reference to the nenxt node(for last items , this is null)
+
+class Node{
+    constructor (val,next=null){
+        this.val=val
+        this.next=next
+    }
+}
+
+const firstPage=
+    new Node('google.com',
+        new Node('amazon.com',
+            new Node('twitter.com')))
+
+
+
+antNode
+// {val:'ant,next:'caterpillaNode',next:null}
+
+//caterpillarNode;
+    //{val:caterpillr'}
+
+
+List class
+
+
+calss linkedList{
+    constructor(){
+        this.head=null
+    }
+}
+const firstPage=
+    new Node('google.com',
+        new Node('amazon.com',
+            new Node('twitter.com')))
+
+const history =new linkedList(
+    history.head=firstPage
+)
+
+Traversing linked list
+
+    class linkedList{
+    constructor(){
+        this.head=null
+    }
+    traverse(){
+        let currentNode=this.head
+        while(currentNode){
+            console.log(currentNode.val);
+            currentNode =currentNode.next
+        }
+    }
+    find(val){
+      let currentNode=this.head
+      while(currentNode) {
+        if(currentNode.val===val)return true
+        currentNode=current.next
+      }
+      return false 
+    }
+}
+
+Appending a Node
+
+class linkedList{
+    constructor(){
+        this.head=null
+    }
+    traverse(){
+        let currentNode=this.head
+        while(currentNode){
+            console.log(currentNode.val);
+            currentNode =currentNode.next
+        }
+    }
+    find(val){
+      let currentNode=this.head
+      while(currentNode) {
+        if(currentNode.val===val)return true
+        currentNode=current.next
+      }
+      return false 
+    }
+    //O(n)
+    append(val){
+        let currentNode=this.head
+        while(currentNode.next){
+             currentNode=currentNode.next
+        }
+        currentNode.next=new Node(val)
+    }
+}
+
+//a better solution for append 
+lass linkedList{
+    constructor(){
+        this.head=null
+    }
+    traverse(){
+        let currentNode=this.head
+        while(currentNode){
+            console.log(currentNode.val);
+            currentNode =currentNode.next
+        }
+    }
+    find(val){
+      let currentNode=this.head
+      while(currentNode) {
+        if(currentNode.val===val)return true
+        currentNode=current.next
+      }
+      return false 
+      }
+        append(val){
+                const new Node=new Node(val)
+            if(!this.head){
+                this.head=new Node
+            }
+ 
+     this.tail.next=newNode
+     this.tail=newNode
+    }
+}
+
+const train =new linkedList()
+
+//train.append('Engine')//cant do this because this.head and this.tail are cureently null 
+
