@@ -1,0 +1,29 @@
+Runtime of link list 
+
+Going to 'next' item :
+O(1)
+
+Going to item by arbitrary index:
+O(n)
+
+Searching value
+O(n)
+
+General insertion or deletion 
+
+O(n)
+
+ADDING TO START 
+O(1)
+
+Appendig to end 
+O(1) if know tail; 
+O(n)if dont 
+
+Deleting at start:
+O(1)
+
+Deleting at the end 
+O(n)
+
+Double link list 

@@ -1,0 +1,204 @@
+
+Goals
+Describe what an “abstract data type” means
+Compare different types of arrays
+Define singly and doubly linked lists
+Compare performance characteristics of arrays and lists
+Implement linked lists in JavaScript
+Lists
+A list is an abstract data type
+
+It describes a set of requirements, not an exact implementation.
+
+Keep multiple items
+Can insert or delete items at any position
+Can contain duplicates
+Preserves order of items
+Arrays
+Arrangement of items at equally-spaced addresses in memory
+
+[3, 7, 2, 4, 1, 2]
+In memory:
+
+
+Therefore, inserting or deleting an item requires moving everything after it.
+
+Array Runtimes
+Retrieving by index
+O(1)
+Finding
+O(n)
+General insertion
+O(n)
+General deletion
+O(n)
+Direct Arrays / Vectors
+This kind of array is often called a direct array or vector
+
+Direct arrays only work if items are same size:
+
+all numbers
+all same-length strings
+Don’t work well when items are varied sizes:
+
+different length strings
+subarrays or objects
+They’re not commonly used, but JavaScript provides these as Typed Arrays
+
+Indirect Arrays
+In any indirect array, the array doesn’t directly hold the value.
+
+It holds the memory address of the real value.
+
+This lets an array store different types of data, or different length data.
+
+["ant", "bee", "caterpillar"]
+
+What Does JavaScript Use?
+Indirect arrays — since you can store different-length things in them
+
+It’s complicated, though: some implementations have specialized or adaptive structures to handle edge cases like sparse arrays
+
+Linked Lists
+
+Items aren’t stored in contiguous memory; instead, each item references the next item in the sequence.
+
+Can rearrange without having to move other items in memory.
+
+
+This is a lot faster than having to move everything around in a big list.
+
+A Node
+The basic unit of a linked list is a node.
+
+
+ant, bee, and caterpillar are nodes.
+
+A basic Node has two attributes:
+
+val
+the information the node contains (could be string, int, instance, etc)
+next
+reference to next node (for last item, this is null)
+ 
+
+antNode;
+// {val: "ant", next: beeNode}
+
+beeNode;
+// {val: "bee", next: caterpillarNode}
+
+caterpillarNode;
+// {val: "caterpillar", next: null}
+The Node Class
+demo/linkedlist.js
+/** Node class for item in linked list. */
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+let antNode = new Node("ant");
+let beeNode = new Node("bee");
+let caterpillarNode = new Node("caterpillar");
+
+antNode.next = beeNode;
+beeNode.next = caterpillarNode;
+ 
+
+antNode;
+// {val: "ant", next: beeNode}
+
+beeNode;
+// {val: "bee", next: caterpillarNode}
+
+caterpillarNode;
+// {val: "caterpillar", next: null}
+Smarter Node Class
+Some people make a Node class which accepts optional next argument:
+
+class Node {
+  constructor(val, next=null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+Then you can add a chain of nodes:
+
+let antNode = new Node("ant",
+                new Node("bee",
+                  new Node("caterpillar")));
+This ends up exactly the same, but can be harder to read at first.
+
+LinkedList Class
+A Linked List is just a bunch of nodes linked sequentially.
+
+The only attribute it must have is a reference to its first node, called the head.
+
+Since the list starts empty, the head is initially null.
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+}
+let insects = new LinkedList();
+In Pictures…
+An empty Linked List:
+
+
+A Linked List with nodes in it:
+
+
+Things you might want to do
+Print each node
+Find a node by its data
+Append to end
+Insert at specific position
+Remove a node
+Traversing
+Assumption: we’ve already built list, leaving the actual construction for later.
+
+We’re just going to traverse the list and print it.
+
+demo/linkedlist.js
+  /** print(): traverse & console.log each item. */
+
+  print() {
+    let current = this.head;
+
+    while (current !== null) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
+Searching
+Like printing—but stop searching once we find what we’re looking for.
+
+demo/linkedlist.js
+  /** find(val): is val in list? */
+
+  find(val) {
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.val === val) return true;
+
+      current = current.next;
+    }
+
+    return false;
+  }
+Appending/Removing Nodes
+Append a Node
+Q: How do we append a node to the end of a linked list?
+
+
+A: Walk to the end and add it there.
+
+(But wouldn’t it be faster to append if we “know” the end?)
+
+
+This way, appending is always O(1)

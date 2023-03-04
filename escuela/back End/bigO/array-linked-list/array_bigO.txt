@@ -157,6 +157,7 @@ lass linkedList{
                 const new Node=new Node(val)
             if(!this.head){
                 this.head=new Node
+                this.tail=new Node
             }
  
      this.tail.next=newNode
