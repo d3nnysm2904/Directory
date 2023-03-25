@@ -10,9 +10,9 @@ const TodoList = ( props ) =>
         <div>
             <h4>Todo list</h4>
             <ul>
-                { props.todos.map( t =>
+                { props.todos.map( t,idx =>
 
-                ( <li>
+                ( <li key={idx}>
                     <input type="checkbox" />
                     <b>{ t }</b>
                 </li> )

@@ -1,0 +1,41 @@
+form {
+    color: rgb(10, 10, 10);
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    background-color: rgb(24, 24, 0);
+    color: rgb(247, 239, 239);
+    font-weight: bolder;
+    font-family:cursive;
+    border-radius: 10%;
+ 
+  }
+
+  label{
+    color:rgb(241, 239, 239);
+    background-color: rgb(24, 24, 0);
+  
+
+
+  }
+  select{
+    background-color: rgb(250, 195, 43);
+
+  }
+  input {
+    margin-bottom: 10px;
+    background-color:   rgb(250, 195, 43);
+  }
+
+  textarea{
+    background-color: rgb(250, 195, 43);
+  }
+
+  button{
+    color :rgb(250, 249, 249);
+    background-color: black;
+    
+  }
+  

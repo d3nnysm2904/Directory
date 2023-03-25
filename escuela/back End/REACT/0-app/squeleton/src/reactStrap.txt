@@ -1,0 +1,2 @@
+npm i reactstrap --legacy-peer-deps
+
