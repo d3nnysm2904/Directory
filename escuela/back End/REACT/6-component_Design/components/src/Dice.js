@@ -10,9 +10,6 @@ const Dice = ( { numDice = 6, title, maxVal = 20 } ) =>
         setNumber( numbers => numbers.map( n => Math.floor( Math.random() * maxVal ) + 1 ) )
     );
 
-
-
-
     return (
         <Die numbers={ numbers } rollDice={ rollDice } />
     );
